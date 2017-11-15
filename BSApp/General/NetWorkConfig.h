@@ -13,14 +13,13 @@
 //********************************数据库 * 测试*********************************
 
 /** 基础业务链接 */
-//#define kBaseUrl      @"http://192.168.18.114:8090/ecp-zfl-mobile-api"
-//#define KBaseUrl(s)  [@"http://192.168.18.114:8090/ecp-zfl-mobile-api/" stringByAppendingString:s]
-//#define kBaseFile(s) [@"http://192.168.18.114:8090/ecp-zfl-mobile-api/fileserver/" stringByAppendingString:s]
+//#define kBaseUrl      @""
+//#define KBaseUrl(s)  [@"/" stringByAppendingString:s]
+//#define kBaseFile(s) [@"/" stringByAppendingString:s]
 
 
 //********************************数据库 * 正式*********************************
 
-//阿里云 com.baothink.dianxian（以下是临时正式地址） //原：http://119.23.34.4:8090
 #define kBaseUrl      @""
 #define KBaseUrl(s)  [@"/" stringByAppendingString:s]
 #define kBaseFile(s) [@"/" stringByAppendingString:s]
@@ -48,10 +47,10 @@
 //#define VERSION_CODE @"2"
 
 /** 版本代码：团体版正式库更新 */
-#define VERSION_CODE @"5"
+#define VERSION_CODE @"1"
 
 /** appid：链接到AppStore上面的ID,一经确定后不能需改 */
-#define appIdInAppStore @"1277531091"
+#define appIdInAppStore @""
 
 //------------- App 设置------------
 
@@ -62,9 +61,9 @@
 //#define BundleIdentifierForApp @"com.未设置.bbb"
 
 /** app 系统默认平台ID */
-#define kPtId @"PT10000"
+#define kPtId @"未设置"
 /** app 系统id */
-#define kSysId @""
+#define kSysId @"未设置"
 
 
 //********************************推送 * 相关设置*********************************
