@@ -1,0 +1,8 @@
+一、框架备忘
+
+1. HYBLoopScrollView 或者 SDWebImage 显示不了图片时，需要将header中的的@“Accept“key 所对应的值
+替换成@"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
+请参考：http://blog.csdn.net/u014063717/article/details/51455198
+
+
+三、开发备忘

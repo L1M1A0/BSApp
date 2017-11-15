@@ -1,0 +1,278 @@
+//
+//  CSAboutVC.m
+//  CloudShop
+//
+//  Created by BaoThink on 15/11/17.
+//  Copyright (c) 2015年 XY. All rights reserved.
+//
+
+#import "CSAboutVC.h"
+#import "ZBCheckUpdateAlertView.h"
+
+@interface CSAboutVC ()<ZBCheckUpdateAlertViewDelegate>
+
+@property (nonatomic,strong) NSString *appUrl;
+@property (nonatomic,assign) NSInteger updateType;
+@property (nonatomic,strong) ZBCheckUpdateAlertView *zbUpdateView;
+
+
+@end
+
+@implementation CSAboutVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self _initView];
+    
+}
+
+
+- (void)_initView{
+    self.title = @"关于";
+    //self.view.y = 64;
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+    //logo
+    //y=5
+    CGFloat y_new = kScreen_Height/3-90;
+    UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(kScreen_Width/2-110, y_new, 220, 90)];
+    //    logoView.backgroundColor = [UIColor redColor];
+    logoView.image = [UIImage imageNamed:@"log_about"];
+    [self.view addSubview:logoView];
+
+    //版本
+    NSString *verStr = [ZBVersionObject _getAppVersion];
+    
+    UILabel *editionLab = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(logoView.frame)+10, kScreen_Width, 20)];
+    editionLab.text = [NSString stringWithFormat:@"%@",verStr];
+    editionLab.font = [UIFont systemFontOfSize:12];
+    editionLab.textAlignment = NSTextAlignmentCenter;
+    if (![ApiBaseUrl isEqualToString:@"http://www.bhdz.com:8090"]){
+        editionLab.text = [NSString stringWithFormat:@"%@(测试 vc:%@)",verStr,VERSION_CODE];
+    }
+    [self.view addSubview:editionLab];
+    
+    
+    //二维码
+    //    UIImageView *QrCode = [[UIImageView alloc]initWithFrame:CGRectMake(kScreen_Width/2-70, 115, 140, 140)];
+    ////    QrCode.backgroundColor = [UIColor redColor];
+    //    QrCode.image = [UIImage imageNamed:@"icon_qr_code.png"];
+    //    [self.view addSubview:QrCode];
+    //
+    //    //二维码描述
+    //    UILabel *detailLab = [[UILabel alloc]initWithFrame:CGRectMake(0, 260, kScreen_Width, 20)];
+    //    detailLab.text = @"扫描二维码,您的朋友也可以下载博汇大宗客户端";
+    //    detailLab.font = [UIFont systemFontOfSize:12];
+    //    detailLab.textAlignment = NSTextAlignmentCenter;
+    //    [self.view addSubview:detailLab];
+    //
+    
+    //[self _createCheckUpdateButton];
+    
+    
+    //editionLab
+    UILabel *copyRightLab = [[UILabel alloc]initWithFrame:CGRectMake(0, kScreen_Height-144, kScreen_Width, 20)];
+    copyRightLab.text = @"Copyright@2014-2016";
+    copyRightLab.font = [UIFont systemFontOfSize:15];
+    copyRightLab.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:copyRightLab];
+    
+    UILabel *companyDetailLab = [[UILabel alloc]initWithFrame:CGRectMake(0, kScreen_Height-114, kScreen_Width, 20)];
+    companyDetailLab.text = @"广州博汇大宗电子商务有限公司版权所有";
+    companyDetailLab.font = [UIFont systemFontOfSize:15];
+    companyDetailLab.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:companyDetailLab];
+    
+}
+
+- (void)_createCheckUpdateButton{
+    for (int i = 0; i<2; i++) {
+        UIView *line1 = [[UIView alloc]initWithFrame:CGRectMake(0, 289+36*i, kScreen_Width, 1)];
+        line1.backgroundColor = [UIColor groupTableViewBackgroundColor];
+        [self.view addSubview:line1];
+    }
+    
+    UIButton *btnCheckUpdate = [UIButton _buttonFrame:CGRectMake(0, 290, kScreen_Width, 35) title:@"检测更新" tColor:[UIColor blackColor] target:self action:@selector(_checkAppUpdate)];
+    //btnCheckUpdate.titleLabel.textAlignment = NSTextAlignmentLeft;
+    //btnCheckUpdate.titleEdgeInsets = UIEdgeInsetsMake(0, -140, 0, 35);
+    [btnCheckUpdate setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
+    [self.view addSubview:btnCheckUpdate];
+    
+}
+
+
+#pragma mark - 版本检测
+
+
+/**
+ *  企业版: APS版上线时将这段代码屏蔽, 预防上线不通过, 发布企业版时需要打开
+ *  版本检测更新
+ */
+//
+- (void)_checkAppUpdate{
+ 
+    NSString *urlStr = [NSString stringWithFormat:@"%@/brs/checkappupdate",ApiBaseUrl];
+    NSString *version_code = VERSION_CODE;
+    NSString *platform_name = @"ios";
+    if ([BundleIdentifierForApp isEqualToString:@"com.JinBo.ZhangShangBoHui"]){
+        platform_name = @"ios_for_appstore";
+    }
+    else{
+        platform_name = @"ios";
+    }
+    
+    
+    NSDictionary *para = @{@"sys_id":kSysId,
+                           @"platform_name":platform_name,
+                           @"version_code":version_code};
+    
+    //,[security _p_getComment]
+    AFHTTPRequestOperationManager *versionManager = [AFHTTPRequestOperationManager manager];
+    versionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    versionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html", nil];
+    
+    [versionManager GET:urlStr parameters:para success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *dic = (NSDictionary  *)responseObject;
+        NSLog(@"jiancegengxinjieguo_%@",dic);
+        self.appUrl = [dic objectForKey:@"updateAddress"];
+        NSString *appMessage = @"";
+        if ([BundleIdentifierForApp isEqualToString:@"com.JinBo.ZhangShangBoHui"]){
+            appMessage = @"\n  新版本已经发布, 是否前往更新?";
+        }
+        else{
+            appMessage = [NSString stringWithFormat:@"%@",[dic valueForKey:@"updateDetail"]];
+            appMessage = [self _message:appMessage];
+        }
+        
+        if ([[dic valueForKey:@"needUpdate"] integerValue]==1) {
+            
+            //强行更新
+            if ([[dic valueForKey:@"forceUpdate"] integerValue]==1) {
+                
+                [self launchDialog:appMessage type:0];
+                
+            }else{
+                //@"发现更新的版本, 更新?"
+                [self launchDialog:appMessage type:1];
+            }
+        }else{
+            ALERT_1(@"当前版本为最新版本");
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"cuowwu_%@",error);
+    }];
+}
+
+
+
+/** 整理更新信息 */
+- (NSString *)_message:(NSString *)string{
+    NSArray *arr = [string componentsSeparatedByString:@"<br>"];
+    NSMutableString *mStr = [NSMutableString string];
+    for (int i = 0; i<arr.count; i++) {
+        NSString *str1 = arr[i];
+        
+        mStr = [NSMutableString stringWithFormat:@"%@\n%@",mStr,str1];
+        
+    }
+    
+    return mStr;
+}
+
+/** actType: 0,强制更新; 1,非强制更新 */
+- (void)launchDialog:(NSString *)message type:(NSInteger)actType{
+    
+    self.updateType = actType;
+    
+    self.zbUpdateView = [[ZBCheckUpdateAlertView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width , kScreen_Height)];
+    self.zbUpdateView.delegate=self;
+    [self.zbUpdateView _alertViewMessage:message];
+    
+    [[UIApplication sharedApplication].keyWindow addSubview:self.zbUpdateView];
+    [self.zbUpdateView show];
+}
+
+- (void)_alertCancel{
+    
+    //判断是否是团体版
+    //    if ([BundleIdentifierForApp isEqualToString:@"com.JinBo.ZhangShangBoHui"]){
+    //
+    //        [self.zbUpdateView dismiss];
+    //    }
+    //    else{
+    if (self.updateType == 0) {
+        [self.zbUpdateView exitApplication];
+    }
+    else{
+        [self.zbUpdateView dismiss];
+    }
+    //    }
+    
+}
+- (void)_alertUpdate{
+    //判断是否是团体版
+    if ([BundleIdentifierForApp isEqualToString:@"com.JinBo.ZhangShangBoHui"]){
+        
+        [self _checkNewVersionFromAppStore];
+        [self.zbUpdateView dismiss];
+        //[CSProgressHudObject _initSVProgressHUDWithString:@"加载中..."];
+    }
+    else{
+        [self.zbUpdateView openAppUpdateUrl:self.appUrl];
+    }
+}
+
+
+- (void)_checkNewVersionFromAppStore{
+    
+    //测试应用链接 982199437
+    //本应用的链接 1114684820
+    NSString *urlStr = @"https://itunes.apple.com/lookup?id=982199437";
+    
+    AFHTTPRequestOperationManager *versionManager = [AFHTTPRequestOperationManager manager];
+    
+    [versionManager POST:urlStr parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        NSDictionary *responseDict = responseObject;
+        NSArray *infoArr = [responseDict objectForKey:@"results"];
+        
+        //[CSProgressHudObject _dismissHUDAfter:0.5];
+        
+        if (infoArr.count > 0) {
+            NSDictionary *infoDict = [infoArr objectAtIndex:0];
+            //已经上线程序的版本号
+            NSString *lastVersion = [infoDict objectForKey:@"version"];
+            //已经上线的程序的地址
+            self.appUrl = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"trackViewUrl"]];
+            NSLog(@"已经上线的版本_%@,地址:_%@",lastVersion,self.appUrl);
+            //NSString *releaseNotes = [NSString stringWithFormat:@"%@",[infoDict objectForKey:@"releaseNotes"]];
+            
+            //取得本地程序的版本号
+            NSDictionary *localPList = [[NSBundle mainBundle] infoDictionary];
+            NSString *localVersion   = [localPList objectForKey:@"CFBundleShortVersionString"];
+            
+            NSLog(@"local_%@,last_%@",localVersion,lastVersion);
+            
+            //线上版本永远不会小于本地版本, 可以相等
+            if (![lastVersion isEqualToString:localVersion]) {
+                [self.zbUpdateView openAppUpdateUrl:self.appUrl];
+            }
+           
+            
+            
+        }
+        
+        
+    
+        
+    } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"团体版检测更新错误_%@",error);
+        
+    }];
+    
+    
+}
+
+
+
+
+@end

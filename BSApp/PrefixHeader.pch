@@ -1,0 +1,46 @@
+//
+//  PrefixHeader.pch
+//  BSApp
+//
+//  Created by 李振彪 on 2017/11/8.
+//  Copyright © 2017年 李振彪. All rights reserved.
+//
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#endif
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "Marco.h"
+#import "NetWorkConfig.h"
+#import "DefaultKeys.h"
+#import "NoticeKeys.h"
+
+#import <MJExtension.h>
+#import <MJRefresh.h>
+#import <Masonry.h>
+#import <AFNetworking.h>
+
+#import "BSHttpTool.h"
+#import "BSLoginManager.h"
+#import "BSSecurityParameters.h"
+
+#import "BSCommomObject.h"
+#import "BSProgressHudObject.h"
+#import "ZBControlCategoryHeader.h"
+
+#import "UIView+CSFrame.h"
+#import "NSString+URLEncodeString.h"
+#import "UIScrollView+EmptyDataSet.h"
+#import "NSString+Common.h"
+#import "UIImage+ResizeMagick.h"
+#endif /* PrefixHeader_pch */
