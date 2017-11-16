@@ -13,7 +13,7 @@
 
 
 #pragma mark - 初始化
-+(UISearchBar *)searchBarFrame:(CGRect)frame placeholder:(NSString *)placeholder isRemoveBarBackgroundView:(BOOL)remove{
++(UISearchBar *)searchBarFrame:(CGRect)frame placeholder:(NSString *)placeholder removeBarBackgroundView:(BOOL)isRemoveBarBackgroundView{
     
     UISearchBar *searchBar = [[UISearchBar alloc]initWithFrame:frame];
 //    searchBar.searchBarStyle = UISearchBarStyleDefault;
@@ -23,7 +23,7 @@
     searchBar.barTintColor = [UIColor redColor];
 
 
-    if (remove == YES) {
+    if (isRemoveBarBackgroundView == YES) {
         [self removeBarBackgroundView:searchBar];
     }
 

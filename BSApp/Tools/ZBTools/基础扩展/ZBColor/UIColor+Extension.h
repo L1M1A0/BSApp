@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-/** 颜色 */
-#define RGB(r, g, b)         [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
-#define RGBAlpha(r, g, b, a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+/** 基础颜色 */
 #define kBlackColor     [UIColor blackColor]      // 0.0 white
 #define kDarkGrayColor  [UIColor darkGrayColor]   // 0.333 white
 #define kLightGrayColor [UIColor lightGrayColor]  // 0.667 white
@@ -28,6 +26,12 @@
 #define kBrownColor     [UIColor brownColor]      // 0.6, 0.4, 0.2 RGB
 #define kClearColor     [UIColor clearColor]      // 0.0 white, 0.0
 #define kGroupTableViewBackgroundColor [UIColor groupTableViewBackgroundColor]
+
+/** 快速RGB */
+#define RGB(r, g, b)         [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:1.0]
+#define RGBAlpha(r, g, b, a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+
+/** 常用颜色 */
 #define kDefaultBlueColor       RGB(0,133,255)
 
 

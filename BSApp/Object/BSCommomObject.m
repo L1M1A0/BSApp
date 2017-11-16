@@ -20,15 +20,6 @@
     return btn;
 }
 
-+(UILabel *)lab:(NSString *)text size:(CGFloat)size view:(UIView *)view{
-    UILabel *lab = [[UILabel alloc]init];
-    lab.text = text;
-    lab.textAlignment = NSTextAlignmentLeft;
-    lab.font = [UIFont systemFontOfSize:size];
-    [view addSubview:lab];
-    return lab;
-}
-
 
 /**
  返回格式 如 "¥ %.2f 元/吨  ¥%.2f "
@@ -122,18 +113,12 @@
     __block NSData *data = [NSData data];
     if (imgId.length>0) {
         NSString * url = [NSString stringWithFormat:@"%@/%@",kBaseFile(@"loadImage"),imgId];
-        NSURL * u = [NSURL URLWithString:url];
-        [imageView sd_setImageWithURL:u placeholderImage:[UIImage imageNamed:placeholderImage] options:SDWebImageRetryFailed completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-            if (error) {
-                data = UIImageJPEGRepresentation([UIImage imageNamed:placeholderImage], 0.1);
-                NSLog(@"下载图片错误——%@",error);
-                block(data);
+      
+        [imageView imageUrl:url placeholderImage:placeholderImage data:^(NSData *imageData) {
+            block(imageData);
 
-            }else{
-                data = UIImageJPEGRepresentation(image, 0.1);
-                block(data);
-            }
         }];
+        
     }else{
         imageView.image = [UIImage imageNamed:placeholderImage];
         data = UIImageJPEGRepresentation([UIImage imageNamed:placeholderImage], 0.1);

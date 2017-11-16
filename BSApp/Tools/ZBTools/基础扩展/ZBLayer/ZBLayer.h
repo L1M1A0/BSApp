@@ -84,7 +84,7 @@
  @param view 目标view
  @param color 投影颜色
  @param opacity 透明度
- @param radius 圆角半径
+ @param radius 半径
  @param offset 偏移量
  */
 +(void)shadow:(UIView *)view color:(UIColor *)color opacity:(float)opacity radius:(CGFloat)radius offset:(CGSize)offset;

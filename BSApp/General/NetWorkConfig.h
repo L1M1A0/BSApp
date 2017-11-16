@@ -24,6 +24,7 @@
 #define KBaseUrl(s)  [@"/" stringByAppendingString:s]
 #define kBaseFile(s) [@"/" stringByAppendingString:s]
 
+/** 正式库地址，仅用于区别服务器环境（正式or测试）*/
 #define kDistributionUrl @"未配置"
 
 //********************************开启 https 模式*********************************
@@ -49,12 +50,12 @@
 /** 版本代码：团体版正式库更新 */
 #define VERSION_CODE @"1"
 
-/** appid：链接到AppStore上面的ID,一经确定后不能需改 */
-#define appIdInAppStore @""
+/** 链接到AppStore上面的ID,一经确定后不能需改 */
+#define kAppStoreId @""
 
 //------------- App 设置------------
 
-/** 团体版AppID */ //（开发版和发布版共用）
+/** 团体版App */ //（开发版和发布版共用）
 #define BundleIdentifierForApp @""
 
 /** 企业版AppID */

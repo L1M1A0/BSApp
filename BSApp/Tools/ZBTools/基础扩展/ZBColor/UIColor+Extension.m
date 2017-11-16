@@ -7,7 +7,6 @@
 //
 
 #import "UIColor+Extension.h"
-#define DEFAULT_VOID_COLOR [UIColor whiteColor]
 
 @implementation UIColor (Extension)
 + (UIColor *)colorWithHexString:(NSString *)stringToConvert
@@ -16,11 +15,11 @@
     
     
     if ([cString length] < 6)
-        return DEFAULT_VOID_COLOR;
+        return kWhiteColor;
     if ([cString hasPrefix:@"#"])
         cString = [cString substringFromIndex:1];
     if ([cString length] != 6)
-        return DEFAULT_VOID_COLOR;
+        return kWhiteColor;
     
     NSRange range;
     range.location = 0;

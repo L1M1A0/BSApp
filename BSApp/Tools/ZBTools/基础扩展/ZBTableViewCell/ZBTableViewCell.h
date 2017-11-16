@@ -1,18 +1,16 @@
 //
-//  BSTableViewCell.h
+//  ZBTableViewCell.h
 //  BSApp
 //
-//  Created by 李振彪 on 2017/8/14.
-//  Copyright © 2017年 BaoThink. All rights reserved.
+//  Created by 李振彪 on 2017/11/16.
+//  Copyright © 2017年 李振彪. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface BSTableViewCell : UITableViewCell
+@interface ZBTableViewCell : UITableViewCell
 
 /** cell所在的tableleView的 section 和 row 位置 */
 @property (nonatomic, strong) NSIndexPath *indexPath;
-
-
 
 @end

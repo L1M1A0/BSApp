@@ -12,6 +12,7 @@
 #import "ZBAlertController.h"
 #import "ZBLinkLabel.h"
 #import "UILabel+ZBCategory.h"
+#import "ZBTableViewCell.h"
 @interface VC_01 ()<UITableViewDelegate,UITableViewDataSource,CustPhoneAlertViewDelegate>{
     
 }
@@ -27,20 +28,23 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
  
-
-    ZBLinkLabel *link = [[ZBLinkLabel alloc]initWithFrame:CGRectMake(100, 250, 100, 100)];
-    [link shadowColor:kRedColor opacity:0.1 radius:5 offset:CGSizeMake(0.0f, 0.0f)];
-    link.text = @"fasf";
-//    link.backgroundColor = kYellowColor;
-    [link setLink:@"sddfas" linkType:ZBLableLinkURL];
+//    UILabel *link = [UILabel label:CGRectMake(100, 100, 50, 50) text:@"124" tColor:kRedColor bColor:kGreenColor];
+    UIImageView *link = [[UIImageView alloc]initWithFrame:CGRectMake(100, 250, 100, 100)];
+    [link shadowColor:kRedColor opacity:1.0 radius:50 offset:CGSizeMake(10.0f, 30.0f)];
+//    link.text = @"fasf";
+//    link.backgroundColor = kWhiteColor;
+//    [link setLink:@"http://www.baidu.com" linkType:ZBLableLinkURL];
+    [link tapGestureRecognizerTarget:self action:@selector(btnaction)];
+    [link imageUrl:@"http://img.zcool.cn/community/014bfd577a0da00000018c1b587a4a.png@900w_1l_2o_100sh.jpg" placeholderImage:@"" data:^(NSData *imageData) {
+        
+    }];
     [self.view addSubview:link];
     
-    UISpringLoadedInteraction *springInteraction = [[UISpringLoadedInteraction alloc] initWithActivationHandler:^(UISpringLoadedInteraction * _Nonnull interaction, id<UISpringLoadedInteractionContext>  _Nonnull context) {
-//        HandleViewActivationBlock block = [weakSelf getHandleViewActivationBlock];
-        // Do something here
-    }];
+    UIButton *btn = [UIButton button:CGRectMake(200, 100, 80, 50) title:@"anniu" tColor:kWhiteColor bColor:kBlueColor];
+    [btn shadowColor:kPurpleColor opacity:0.9 radius:10 offset:CGSizeMake(0, -3)];
+    [btn layerWidth:3 color:kGreenColor masksToBounds:NO cornerRadius:25];
+    [self.view addSubview:btn];
     
-    [link addInteraction:springInteraction];
     
 
     
@@ -48,27 +52,13 @@
 
 
 -(void)btnaction{
-////    self.view.backgroundColor = [UIColor grayColor];
-//    CustPhoneAlertView *ale = [[CustPhoneAlertView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth-100, 300)];
-//    ale.backgroundColor = [UIColor whiteColor];
-//    ale.userInteractionEnabled = YES;
-//    ale.delegate = self;
-////    [self.view addSubview:ale];
-//
-//    NSLog(@"asdghda-pfbj_%f,%f,%f,%f",ale.contentView.width,ale.contentView.height,ale.contentViewRect.width,ale.contentViewRect.height);
-//
-//    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ale.contentViewRect.width, ale.contentViewRect.height) style:UITableViewStylePlain];
-//    self.tableView.delegate = self;
-//    self.tableView.dataSource = self;
-////    ale.contentView = self.tableView;
-//    [ale.contentView addSubview:self.tableView];
-//
-//    self.modalView= [KGModal sharedInstance];
-//    self.modalView.showCloseButton = NO;
-//    [self.modalView showWithContentView:ale andAnimated:YES];
-//
-//
-//
+
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+
+
     
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
@@ -127,16 +117,22 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *idididididiid = @"idijhofsdhfoadoa";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idididididiid];
+    ZBTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:idididididiid];
     if(!cell){
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idididididiid];
+        cell = [[ZBTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:idididididiid];
     }
     cell.textLabel.text = [NSString stringWithFormat:@"dshfaosd_%ld",indexPath.row];
-    
+//    cell.indexPath = 10+indexPath.row;
+    cell.indexPath = indexPath;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    ZBTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
+    NSLog(@"cell.index_%ld",cell.indexPath.row);
+    
+    
     
 }
 

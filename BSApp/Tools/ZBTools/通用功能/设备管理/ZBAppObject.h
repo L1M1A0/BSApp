@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+
 @interface ZBAppObject : NSObject
 
 
-/** 获取程序版本(关于页面调用) */
-+ (NSString *)appVersion;
+/**
+获取自定义 app 版本
 
-/** 获取app当前版本 */
-+ (NSString *)currentVersion;
-
-/** app名字 */
-+ (NSString *)appName;
+@return 如：团体版 1.1.0
+*/
++ (NSString *)customAppVersion1;
++ (NSString *)customAppVersion2;
 
 + (BOOL)isStartAfterLoadNewVersion;
 @end

@@ -1,5 +1,5 @@
 //
-//  UITableView+Category.h
+//  UITableView+ZBCategory.h
 //  BSApp
 //
 //  Created by 李振彪 on 2017/10/17.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITableView (Category)
+@interface UITableView (ZBCategory)
 
 -(void)estimatedInIOS11;
 

@@ -55,15 +55,12 @@
     _linkType = linkType;
 }
 
--(void)setTap:(UIGestureRecognizer *)tap{
+-(void)setTap:(UITapGestureRecognizer *)tap{
     _tap = tap;
 }
 
 -(void)addTapToLable{
-    self.userInteractionEnabled = YES;
-    UIGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
-    [self addGestureRecognizer:tap];
-    self.tap = tap;
+    self.tap =  [self tapGestureRecognizerTarget:self action:@selector(tapAction:)];
 }
 
 
@@ -71,34 +68,17 @@
 -(void)tapAction:(UITapGestureRecognizer *)tap{
     
     if (!self.linkType) {
-//        ALERT(@"无法识别链接类型");
         
-        kAlert(nil, @"无法识别链接类型");//self.window.rootViewController
+        kAlert(nil, @"无法识别链接类型");
         return;
     }
     if(self.linkType != ZBLableLinkSetting){
         if (self.link == nil || [self.link isEqualToString:@""]) {
         kAlert(nil, @"无法链接到网站或者电话号码，因为相关信息为空或不存在");
-//            ALERT(@"无法链接到网站或者电话号码，因为相关信息为空或不存在");
             return;
         }
     }
     [self checkType];
-}
-
-
-- (void)alert{
-    NSString *aTitle = self.alertTitle;
-    if (self.alertTitle == nil || [self.alertTitle isEqualToString:@""]) {
-        aTitle = @"";//提示
-    }
-    NSString *aMessage = self.alertMessage;
-    if (self.alertMessage == nil || [self.alertMessage isEqualToString:@""]) {
-        aMessage = [NSString stringWithFormat:@"您将会连接到：%@，是否继续？",self.link];
-    }
-
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:aTitle message:aMessage delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
-    [alert show];
 }
 
 
@@ -108,7 +88,6 @@
     }
     else if (self.linkType == ZBLableLinkURL){
         //@"https://www.baidu.com"
-//        [self alert];
         [self openURL:[NSString stringWithFormat:@"%@",self.link]];
 
     }
@@ -127,12 +106,7 @@
 
 }
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 1) {
 
-        [self checkType];
-    }
-}
 
 
 

@@ -223,7 +223,7 @@
 - (void)_checkNewVersionFromAppStore{
     
     //本应用的链接 id=1277531091
-    NSString *urlStr = [NSString stringWithFormat:@"https://itunes.apple.com/lookup?id=%@",appIdInAppStore];
+    NSString *urlStr = [NSString stringWithFormat:@"https://itunes.apple.com/lookup?id=%@",kAppStoreId];
     
     AFHTTPRequestOperationManager *versionManager = [AFHTTPRequestOperationManager manager];
     [versionManager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

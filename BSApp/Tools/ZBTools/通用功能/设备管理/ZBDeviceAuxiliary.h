@@ -34,7 +34,7 @@
 #define is_iPhone5_5S_5C ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 #define is_iPhone6_7_8 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 #define is_iPhone6P_7P_8P ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1080, 1920), [[UIScreen mainScreen] currentMode].size) : NO)
-#define is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
 
 /** 设备型号*通过像素点判断 */
@@ -73,12 +73,7 @@
 
 @interface ZBDeviceAuxiliary : NSObject
 
-/**
- 获取自定义 app 版本
- 
- @return 如：团体版 1.1.0
- */
-+ (NSString *)customAppVersion;
+
 
 /**
  获取 app 版本
@@ -86,6 +81,13 @@
  @return 如：1.1.0
  */
 + (NSString *)appVersion;
+
+/**
+ 获取 app 名字
+
+ @return 我的应用
+ */
++ (NSString *)appName;
 
 /**
  获取 app 的bundleIdentifier

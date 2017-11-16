@@ -28,7 +28,7 @@ typedef NS_ENUM(NSInteger, ZBLableLinkType) {
 @property (nonatomic, assign) ZBLableLinkType linkType;
 
 /** <#Description#> */
-@property (nonatomic, strong) UIGestureRecognizer *tap;
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
 
 
 /** <#Description#> */

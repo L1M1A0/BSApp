@@ -7,10 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "DXTimeObject.h"
-//#import "DXObject.h"
-//#import "DXConfigModel.h"
-//#import "DXMesageModel.h"
 
 #import "UIImageView+WebCache.h"
 #import "SDWebImageDownloader.h"
@@ -22,7 +18,6 @@
                   target:(id)target action:(SEL)action;
 
 
-+(UILabel *)lab:(NSString *)text size:(CGFloat)size view:(UIView *)view;
 
 
 

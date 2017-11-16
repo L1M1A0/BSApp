@@ -35,7 +35,7 @@
     [self.view addSubview:logoView];
 
     //版本
-    NSString *verStr = [ZBAppObject appVersion];
+    NSString *verStr = [ZBAppObject customAppVersion1];
     
     UILabel *editionLab = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(logoView.frame)+10, kScreenWidth, 20)];
     editionLab.text = [NSString stringWithFormat:@"%@",verStr];

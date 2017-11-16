@@ -3,3 +3,10 @@
 1. ZBTime，时间工具，重写。未完成。
 2. ZBStringSize，部分方法未验证。未完成。
 3. 登录用户信息数据保存问题，未完成。
+
+
+更新日志
+----20171115
+1.UIButton+ZBCategory 类重写
+2.UIView+ZBCategory 类重写
+

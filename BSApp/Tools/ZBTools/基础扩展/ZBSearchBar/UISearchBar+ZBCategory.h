@@ -13,7 +13,7 @@
 
 #pragma mark - 初始化
 /** 创建搜索框，是否移除边框线（barTintColor将会失效）  */
-+(UISearchBar *)searchBarFrame:(CGRect)frame placeholder:(NSString *)placeholder isRemoveBarBackgroundView:(BOOL)remove;
++(UISearchBar *)searchBarFrame:(CGRect)frame placeholder:(NSString *)placeholder removeBarBackgroundView:(BOOL)isRemoveBarBackgroundView;
 
 
 

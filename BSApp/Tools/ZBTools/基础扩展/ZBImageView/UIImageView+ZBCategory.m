@@ -10,43 +10,28 @@
 
 @implementation UIImageView (ZBCategory)
 
-/**
- *  ZBImageView_是否允许交互
- *
- *  @param frame                  frame
- *  @param image                  图片
- *  @param userInteractionEnabled 是否允许用户交互
- *
- *  @return ZBImageView
- */
-+ (UIImageView *)imageViewWithFrame:(CGRect)frame
-                              image:(UIImage *)image
-             userInteractionEnabled:(BOOL)userInteractionEnabled
-{
-    UIImageView * imageView = [[UIImageView alloc] initWithFrame:frame];
-    imageView.image = image;
-    imageView.userInteractionEnabled = userInteractionEnabled;
-    return imageView;
-}
-
-/**
- *  设置按钮的layer属性
- *
- *  @param width        线圈的宽
- *  @param color        线圈的颜色
- *  @param boolValue    是否圆角
- *  @param cornerRadius 圆角的值
- *
- */
-- (void)layerWidth:(CGFloat)width
-              color:(UIColor *)color
-      masksToBounds:(BOOL)boolValue
-       cornerRadius:(CGFloat)cornerRadius {
+- (void)imageUrl:(NSString *)UrlString placeholderImage:(NSString *)placeholderImage data:(void (^)(NSData *))block{
     
-    [self.layer setBorderWidth:width];
-    [self.layer setBorderColor:color.CGColor];
-    [self.layer setMasksToBounds:boolValue];
-    [self.layer setCornerRadius:cornerRadius];
+    __block NSData *data = [NSData data];
+//    if (imgId.length>0) {
+//        NSString * urlString = [NSString stringWithFormat:@"%@/%@",kBaseFile(@"loadImage"),imgId];
+        NSURL * url = [NSURL URLWithString:UrlString];
+        [self sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:placeholderImage] options:SDWebImageRetryFailed completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (error) {
+                NSLog(@"下载图片失败——%@",error);
+                data = UIImageJPEGRepresentation([UIImage imageNamed:placeholderImage], 0.1);
+                block(data);
+                
+            }else{
+                data = UIImageJPEGRepresentation(image, 0.1);
+                block(data);
+            }
+        }];
+//    }else{
+//        self.image = [UIImage imageNamed:placeholderImage];
+//        data = UIImageJPEGRepresentation([UIImage imageNamed:placeholderImage], 0.1);
+//        block(data);
+//    }
 }
 
 @end

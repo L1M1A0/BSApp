@@ -52,10 +52,6 @@
 
 /**
  对整个control添加方法，点图片和标题位置都能响应相同的事件。
-
- @param tag <#tag description#>
- @param target <#target description#>
- @param action <#action description#>
  */
 - (void)addTag:(NSInteger)tag target:(id)target action:(SEL)action;
 
@@ -67,11 +63,6 @@
  @param action <#action description#>
  */
 -(void)titleLabTarget:(id)target action:(SEL)action;
-
-- (void)layerWidth:(CGFloat)width
-             color:(UIColor *)color
-     masksToBounds:(BOOL)boolValue
-      cornerRadius:(CGFloat)cornerRadius;
 
 //-(instancetype)initWithCustomView:(UIView *)customView isImageOnTheLeft:(BOOL)isImageOnTheLeft;
 @end

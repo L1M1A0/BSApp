@@ -158,13 +158,5 @@
     return _isSelected;
 }
 
--(void)layerWidth:(CGFloat)width color:(UIColor *)color masksToBounds:(BOOL)boolValue cornerRadius:(CGFloat)cornerRadius{
-    [self.layer setMasksToBounds:boolValue];
-    self.layer.cornerRadius = cornerRadius;
-    self.layer.borderWidth = width;
-    self.layer.borderColor = color.CGColor;
-    
-}
-
 
 @end

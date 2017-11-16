@@ -32,17 +32,6 @@
 
 #pragma mark - 属性扩展
 /**
- *  设置layer属性
- *
- *  @param width        线圈的宽
- *  @param color        线圈的颜色
- *  @param boolValue    是否圆角
- *  @param cornerRadius 圆角的值
- *
- */
-- (void)layerWidth:(CGFloat)width color:(UIColor *)color masksToBounds:(BOOL)boolValue cornerRadius:(CGFloat)cornerRadius;
-
-/**
  设置 action
  
  @param tag tag值

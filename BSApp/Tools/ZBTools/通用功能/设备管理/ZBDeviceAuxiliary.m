@@ -17,92 +17,35 @@
 
 
 
-
-/**
- 获取自定义 app 版本
-
- @return 如：团体版 1.1.0
- */
-+ (NSString *)customAppVersion{
-    
-    NSString *appVersion = @"";
-    NSString *version    = [self appVersion];
-    NSString *identifier = [[NSBundle mainBundle] bundleIdentifier];
-    /**
-     *  警告,如果Bundle identifier 发生了改变, 一定要注意这里的变化,否则版本信息就会显示错误
-     */
-
-    if ([kBaseUrl isEqualToString:kDistributionUrl]) {
-        //ku = @"正式库";
-        
-        if ([identifier isEqualToString:BundleIdentifierForApp]) {
-            appVersion = [NSString stringWithFormat:@"团体版  %@",version];//即:团体版
-            
-        }else{
-            appVersion = [NSString stringWithFormat:@"企业版  %@",version];//即:企业版
-        }
-        
-    }
-    else {
-        //@"测试库"
-        if ([identifier isEqualToString:BundleIdentifierForApp]) {
-            appVersion = [NSString stringWithFormat:@"测试版 %@",version];//即:测试用,经常发生改变
-            
-        }else{
-            appVersion = [NSString stringWithFormat:@"其他测试 %@",version];//其他测试, bid没有注册的
-        }
-    }
-    
-    return appVersion;
-}
-
-
-/**
- 获取 app 版本
-
- @return 如：1.1.0
- */
 + (NSString *)appVersion{
     NSString *version    = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     return version;
 }
++ (NSString *)appName{
+    // app名称
+    NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+    return appName;
+}
 
 
-/**
- 获取 app 的bundleIdentifier
-
- @return bundleID
- */
 + (NSString *)bundleIdentifier{
     NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
     return bundleID;
 }
 
-/**
- 获取 设备系统版本
 
- @return 设备系统版本
- */
 + (NSString *)deviceSystemVersion{
     return  [[UIDevice currentDevice] systemVersion];
 }
 
 
-/**
- 获取 设备系统名字
 
- @return 设备系统名字
- */
 + (NSString *)deviceSystemName{
     return [[UIDevice currentDevice] systemName];
 }
 
 
-/**
- 获取设备型号
 
- @return 如iPhone 6
- */
 + (NSString *)deviceModel {
 
     struct utsname systemInfo;

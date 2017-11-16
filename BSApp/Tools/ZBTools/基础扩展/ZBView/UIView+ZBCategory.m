@@ -70,13 +70,14 @@
     return self.frame.origin;
 }
 
-/** 阴影效果 */
+
+
 - (void)shadowColor:(UIColor *)shadowColor opacity:(float)shadowOpacity radius:(float)shadowRadius offset:(CGSize)shadowOffset {
 
     self.layer.shadowColor   = shadowColor.CGColor;
-    self.layer.shadowOpacity = shadowOpacity; //1.0;
-    self.layer.shadowRadius  = shadowRadius;  //20.0;
-    self.layer.shadowOffset  = shadowOffset;  //CGSizeMake(0.0f, 0.0f);
+    self.layer.shadowOpacity = shadowOpacity;
+    self.layer.shadowRadius  = shadowRadius;
+    self.layer.shadowOffset  = shadowOffset;
 }
 
 - (void)layerWidth:(CGFloat)borderWidth color:(UIColor *)borderColor masksToBounds:(BOOL)masksToBounds cornerRadius:(CGFloat)cornerRadius {
@@ -85,6 +86,13 @@
     [self.layer setBorderColor:borderColor.CGColor];
     [self.layer setMasksToBounds:masksToBounds];
     [self.layer setCornerRadius:cornerRadius];
+}
+
+- (UITapGestureRecognizer *)tapGestureRecognizerTarget:(id)target action:(SEL)action{
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:target action:action];
+    [self addGestureRecognizer:tap];
+    return tap;
 }
 
 @end

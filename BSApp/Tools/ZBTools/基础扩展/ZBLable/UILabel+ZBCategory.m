@@ -11,20 +11,8 @@
 
 
 #pragma mark - 公共
-/**
- *  UILanle常用属性设置
- *
- *  @param frame  frame
- *  @param text   标题
- *  @param tColor 标题颜色
- *  @param bColor 背景颜色
- *
- *  @return UILanle常用属性设置
- */
-+ (UILabel *)_labelWithFrame:(CGRect)frame
-                        text:(NSString *)text
-                      tColor:(UIColor *)tColor
-                      bColor:(UIColor *)bColor{
+
++ (UILabel *)label:(CGRect)frame text:(NSString *)text tColor:(UIColor *)tColor bColor:(UIColor *)bColor{
     
     UILabel *label = [[UILabel alloc]initWithFrame:frame];
     label.text = text;
@@ -33,80 +21,12 @@
     return label;
 }
 
-
-
-/**
- *  UILabel的扩展 _02 文本相关设置 _01
- *
- *  @param label         需要设置其他属性的label
- *  @param size          字符大小
- *  @param name          字体类型
- *  @param textAlignment 字符位置
- *  @param boolValue     是否允许交互
- *
- *  @return UILabel的其他设置
- */
-+ (UILabel *)_setLabel:(UILabel *)label
-              fontSize:(CGFloat)size
-              fontName:(NSString *)name
-         textAlignment:(NSTextAlignment)textAlignment
-userInteractionEnabled:(BOOL)boolValue{
-    
-    if ([name isEqualToString:@""]) {
-        label.font = [UIFont systemFontOfSize:size];
-    }else{
-        label.font = [UIFont fontWithName:name size:size];
-
-    }
-    
-    label.textAlignment = textAlignment;
-    label.userInteractionEnabled = boolValue;
-    return label;
-}
-
-#pragma mark - 个例
-
-+ (UILabel *)_initWithFrame:(CGRect)frame text:(NSString *)text{
-    UILabel *label = [[UILabel alloc]initWithFrame:frame];
-    label.text = text;
-    label.textColor = [UIColor blackColor];
-    label.font = [UIFont systemFontOfSize:13];
-    label.textAlignment = NSTextAlignmentCenter;
-    return label;
-}
-
-+ (UILabel *)_creatLabeLtext:(NSString *)text{
-    UILabel *lab = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 55, 35)];
-    lab.text = text;
-    lab.textColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-    lab.textAlignment = NSTextAlignmentRight;
-    lab.font = [UIFont systemFontOfSize:14];
-    //lab.backgroundColor = [UIColor redColor];
++ (UILabel *)label:(CGRect)frame text:(NSString *)text size:(CGFloat)size view:(UIView *)view{
+    UILabel *lab = [self label:frame text:text tColor:kBlackColor bColor:kWhiteColor];
+    lab.font = [UIFont systemFontOfSize:size];
+    [view addSubview:lab];
     return lab;
 }
-+ (UILabel *)_labelWithFrame:(CGRect)frame
-                        text:(NSString *)text
-                    isCenter:(NSInteger)center{
-    
-    UILabel *label = [[UILabel alloc]initWithFrame:frame];
-    label.text = text;
-    if (center == 0){
-        label.textAlignment = NSTextAlignmentLeft;
-        label.font = [UIFont systemFontOfSize:10];
-    }
-    if (center == 1){
-        label.textAlignment = NSTextAlignmentCenter;
-        //label.font = [UIFont systemFontOfSize:13];
-        label.font = [UIFont systemFontOfSize:13 weight:2];
-    }
-    if (center == 2) {
-        label.textAlignment = NSTextAlignmentRight;
-    }
-    label.lineBreakMode = NSLineBreakByWordWrapping;
-    label.numberOfLines = 0;
-    return label;
-}
-
 
 
 

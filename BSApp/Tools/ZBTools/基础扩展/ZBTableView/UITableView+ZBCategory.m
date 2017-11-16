@@ -1,14 +1,14 @@
 //
-//  UITableView+Category.m
+//  UITableView+ZBCategory.m
 //  BSApp
 //
 //  Created by 李振彪 on 2017/10/17.
 //  Copyright © 2017年 BaoThink. All rights reserved.
 //
 
-#import "UITableView+Category.h"
+#import "UITableView+ZBCategory.h"
 
-@implementation UITableView (Category)
+@implementation UITableView (ZBCategory)
 
 -(void)estimatedInIOS11{
     if(isIOS11){

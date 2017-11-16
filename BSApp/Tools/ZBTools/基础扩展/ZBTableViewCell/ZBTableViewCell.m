@@ -1,14 +1,22 @@
 //
-//  BSTableViewCell.m
+//  ZBTableViewCell.m
 //  BSApp
 //
-//  Created by 李振彪 on 2017/8/14.
-//  Copyright © 2017年 BaoThink. All rights reserved.
+//  Created by 李振彪 on 2017/11/16.
+//  Copyright © 2017年 李振彪. All rights reserved.
 //
 
-#import "BSTableViewCell.h"
+#import "ZBTableViewCell.h"
 
-@implementation BSTableViewCell
+@implementation ZBTableViewCell
+
+
+-(void)setIndexPath:(NSIndexPath *)indexPath{
+    _indexPath = indexPath;
+}
+
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -19,11 +27,6 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
-}
-
-
--(void)setIndexPath:(NSIndexPath *)indexPath{
-    _indexPath = indexPath;
 }
 
 @end

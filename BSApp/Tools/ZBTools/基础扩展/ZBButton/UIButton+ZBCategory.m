@@ -49,14 +49,6 @@
 
 
 #pragma mark - 附属设置
-- (void)layerWidth:(CGFloat)width color:(UIColor *)color masksToBounds:(BOOL)boolValue cornerRadius:(CGFloat)cornerRadius {
-    
-    [self.layer setBorderWidth:width];
-    [self.layer setBorderColor:color.CGColor];
-    [self.layer setMasksToBounds:boolValue];
-    [self.layer setCornerRadius:cornerRadius];
-}
-
 - (void)tag:(NSInteger)tag target:(id)target action:(SEL)action{
     [self setTag:tag];
     [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];

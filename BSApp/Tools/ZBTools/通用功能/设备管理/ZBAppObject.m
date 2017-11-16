@@ -7,42 +7,53 @@
 //
 
 #import "ZBAppObject.h"
+#import "ZBDeviceAuxiliary.h"
 
 @implementation ZBAppObject
 
 
 /** 获取程序版本 */
-+ (NSString *)appVersion{
++ (NSString *)customAppVersion1{
    
-    //NSString *identifier = [[NSBundle mainBundle] bundleIdentifier];
     /**
      *  警告,如果Bundle identifier 发生了改变, 一定要注意这里的变化,否则版本信息就会显示错误
      */
     
-    
-    NSString *appVersion = [NSString stringWithFormat:@"%@ V%@",[self appName],[self currentVersion]];
-    //    if ([identifier isEqualToString:BundleIdentifierForAppStore]){
-    //        appVersion = [NSString stringWithFormat:@"App Store版  %@",version];//即:团体版
-    //    }
-    //    if ([identifier isEqualToString:BundleIdentifierForEnterPrise]){
-    //        appVersion = [NSString stringWithFormat:@"企业版  %@",version];//即:企业版
-    //    }
-    //    if ([identifier isEqualToString:BundleIdentifierForDeveloper]){
-    //        appVersion = [NSString stringWithFormat:@"测试版  %@",version];//即:测试用,经常发生改变
-    //    }
+    NSString *appVersion = [NSString stringWithFormat:@"%@ V%@",[ZBDeviceAuxiliary appName],[ZBDeviceAuxiliary appVersion]];
     return appVersion;
 }
 
-+ (NSString *)currentVersion{
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+
++ (NSString *)customAppVersion2{
     
-    return version;
+    NSString *appVersion = @"";
+    NSString *version    = [ZBDeviceAuxiliary appVersion];
+    NSString *identifier = [ZBDeviceAuxiliary bundleIdentifier];
+    /**
+     *  警告,如果Bundle identifier 发生了改变, 一定要注意这里的变化,否则版本信息就会显示错误
+     */
+    
+    if ([kBaseUrl isEqualToString:kDistributionUrl]) {
+        //@"正式库";
+        if ([identifier isEqualToString:BundleIdentifierForApp]) {
+            appVersion = [NSString stringWithFormat:@"团体版 %@",version];
+        }else{
+            appVersion = [NSString stringWithFormat:@"企业版 %@",version];
+        }
+    }
+    else {
+        //@"测试库"
+        if ([identifier isEqualToString:BundleIdentifierForApp]) {
+            appVersion = [NSString stringWithFormat:@"测试版 %@",version];//即:测试用,经常发生改变
+            
+        }else{
+            appVersion = [NSString stringWithFormat:@"其他测试 %@",version];//其他测试, bid没有注册的
+        }
+    }
+    
+    return appVersion;
 }
-+ (NSString *)appName{
-    // app名称
-    NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
-    return appName;
-}
+
 
 
 
@@ -52,10 +63,10 @@
     
     NSString *oldAppVersion = [ZBUserDefault _defaultValueForKey:kDefaultLastLoginVersion];
     //比较新旧版本号
-    if (![oldAppVersion isEqualToString:[self currentVersion]]) {
+    if (![oldAppVersion isEqualToString:[ZBDeviceAuxiliary appVersion]]) {
         isStartAfterLoadNewVersion = YES;
         //将新版本写入本地
-        [ZBUserDefault _defaultValue:[ZBAppObject currentVersion] key:kDefaultLastLoginVersion];
+        [ZBUserDefault _defaultValue:[ZBDeviceAuxiliary appVersion] key:kDefaultLastLoginVersion];
         //NSLog(@"afsdbgrgre_%@",[ZBUserDefault _defaultValueForKey:kDefaultLastLoginVersion]);
     }
     return isStartAfterLoadNewVersion;

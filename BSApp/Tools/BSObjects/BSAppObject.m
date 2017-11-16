@@ -23,7 +23,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain",@"text/json",@"application/json",@"text/javascript",@"text/html", @"application/javascript", nil];
     
     NSString *urlStr = [NSString stringWithFormat:@"%@/brs/appstatistics",kBaseUrl];
-    NSString *versionName = [ZBAppObject currentVersion];
+    NSString *versionName = [ZBDeviceAuxiliary appVersion];
     NSString *versionCode = [NSString stringWithFormat:@"%@",VERSION_CODE];
     
     NSDictionary *para = @{
