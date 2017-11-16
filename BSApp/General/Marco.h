@@ -43,6 +43,7 @@ _Pragma("clang diagnostic pop") \
 } while (0)
 
 
+
 /** app沙盒中，文档或文件夹的路径 documents structure of application  */
 #define APP_DOCUMENT      [NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 #define APP_LIBRARY       [NSSearchPathForDirectoriesInDomains (NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0]

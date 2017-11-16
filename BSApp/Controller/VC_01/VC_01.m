@@ -27,13 +27,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
  
-    UIButton *btn = [UIButton _buttonFrame:CGRectMake(100, 100, 100, 100) title:@"显示弹窗" tColor:kRedColor target:self action:@selector(btnaction)];
-    [self.view addSubview:btn];
 
     ZBLinkLabel *link = [[ZBLinkLabel alloc]initWithFrame:CGRectMake(100, 250, 100, 100)];
+    [link shadowColor:kRedColor opacity:0.1 radius:5 offset:CGSizeMake(0.0f, 0.0f)];
     link.text = @"fasf";
-    link.backgroundColor = kYellowColor;
-    [link setLink:@"sddfas" linkType:nil];
+//    link.backgroundColor = kYellowColor;
+    [link setLink:@"sddfas" linkType:ZBLableLinkURL];
     [self.view addSubview:link];
     
     UISpringLoadedInteraction *springInteraction = [[UISpringLoadedInteraction alloc] initWithActivationHandler:^(UISpringLoadedInteraction * _Nonnull interaction, id<UISpringLoadedInteractionContext>  _Nonnull context) {

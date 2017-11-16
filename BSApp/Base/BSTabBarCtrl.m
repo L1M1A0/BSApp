@@ -37,7 +37,7 @@
         Class vcClass = NSClassFromString(vctrArr[i]);
         UIViewController *vc = [[vcClass alloc]init];
         vc.title = navTitleArr[i];
-        vc.view.backgroundColor = kGreenColor;
+        vc.view.backgroundColor = kWhiteColor;
         vc.tabBarItem = [self tabBarItemImage:imgArr1[i] selectedImage:imgArr2[i] title:tabTitleArr[i]];
         UINavigationController *navigation = [self navAppearance:vc isImage:NO];
         [vcArr addObject:navigation];

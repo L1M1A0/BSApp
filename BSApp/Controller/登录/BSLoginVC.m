@@ -79,8 +79,8 @@
             self.passTF.inputTF.secureTextEntry = YES;
             cell.width = kScreenWidth-gap*2-30;
             
-            UIButton *btn = [UIButton _buttonFrame:CGRectMake(CGRectGetMaxX(cell.frame), CGRectGetMinY(cell.frame), 30, CGRectGetHeight(cell.frame)) title:nil tColor:kClearColor target:self action:@selector(securityBtn:)];
-            btn.backgroundColor = kClearColor;
+            UIButton *btn = [UIButton button:CGRectMake(CGRectGetMaxX(cell.frame), CGRectGetMinY(cell.frame), 30, CGRectGetHeight(cell.frame)) title:nil tColor:kClearColor bColor:kClearColor];
+            [btn tag:0 target:self action:@selector(securityBtn:)];
             [btn setImage:[UIImage imageNamed:@"securityPassword_hide72"] forState:0];
             btn.contentMode = UIViewContentModeScaleAspectFit;
             btn.selected = YES;
@@ -89,7 +89,7 @@
         }
     }
     
-    self.loginBtn = [UIButton _buttonFrame:CGRectMake(gap, CGRectGetMaxY(self.passTF.frame)+30, kScreenWidth-gap*2, 40) title:@"登录" tColor:kWhiteColor target:self action:@selector(loginAction:)];
+    self.loginBtn = [UIButton button:CGRectMake(gap, CGRectGetMaxY(self.passTF.frame)+30, kScreenWidth-gap*2, 40) title:@"登录" tColor:kWhiteColor target:self action:@selector(loginAction:)];
     self.loginBtn.backgroundColor = kGroupTableViewBackgroundColor;
     self.loginBtn.userInteractionEnabled = NO;
     [self.loginBtn.layer setMasksToBounds:YES];
@@ -97,12 +97,12 @@
     [self.view addSubview:self.loginBtn];
     
     
-    UIButton *registBtn = [UIButton _buttonFrame:CGRectMake(gap, CGRectGetMaxY(self.loginBtn.frame)+10, 100, 25) title:@"手机快速注册" tColor:kGrayColor target:self action:@selector(_regerstAction)];
+    UIButton *registBtn = [UIButton button:CGRectMake(gap, CGRectGetMaxY(self.loginBtn.frame)+10, 100, 25) title:@"手机快速注册" tColor:kGrayColor target:self action:@selector(_regerstAction)];
     registBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     registBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:registBtn];
     
-    UIButton *findPassWordBtn = [UIButton _buttonFrame:CGRectMake(kScreenWidth-gap-100, CGRectGetMaxY(self.loginBtn.frame)+10, 100, 25) title:@"忘记密码" tColor:kGrayColor target:self action:@selector(_findPassWord)];
+    UIButton *findPassWordBtn = [UIButton button:CGRectMake(kScreenWidth-gap-100, CGRectGetMaxY(self.loginBtn.frame)+10, 100, 25) title:@"忘记密码" tColor:kGrayColor target:self action:@selector(_findPassWord)];
     findPassWordBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     findPassWordBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     [self.view addSubview:findPassWordBtn];

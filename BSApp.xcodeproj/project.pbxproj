@@ -92,7 +92,6 @@
 		057992371FB2FAA400F1E37C /* ZBDocumentInteractionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991DC1FB2FAA400F1E37C /* ZBDocumentInteractionTool.m */; };
 		057992381FB2FAA400F1E37C /* NSString+URLEncodeString.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991E21FB2FAA400F1E37C /* NSString+URLEncodeString.m */; };
 		057992391FB2FAA400F1E37C /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991E31FB2FAA400F1E37C /* UIScrollView+EmptyDataSet.m */; };
-		0579923A1FB2FAA400F1E37C /* UIView+CSFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991E41FB2FAA400F1E37C /* UIView+CSFrame.m */; };
 		0579923B1FB2FAA400F1E37C /* NSString+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991E61FB2FAA400F1E37C /* NSString+Common.m */; };
 		0579923C1FB2FAA400F1E37C /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991E81FB2FAA400F1E37C /* UIColor+Extension.m */; };
 		0579923D1FB2FAA400F1E37C /* UIImage+ResizeMagick.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991E91FB2FAA400F1E37C /* UIImage+ResizeMagick.m */; };
@@ -289,14 +288,12 @@
 		057991E11FB2FAA400F1E37C /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
 		057991E21FB2FAA400F1E37C /* NSString+URLEncodeString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncodeString.m"; sourceTree = "<group>"; };
 		057991E31FB2FAA400F1E37C /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
-		057991E41FB2FAA400F1E37C /* UIView+CSFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CSFrame.m"; sourceTree = "<group>"; };
 		057991E51FB2FAA400F1E37C /* UIImage+ResizeMagick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizeMagick.h"; sourceTree = "<group>"; };
 		057991E61FB2FAA400F1E37C /* NSString+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Common.m"; sourceTree = "<group>"; };
 		057991E71FB2FAA400F1E37C /* NSString+URLEncodeString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncodeString.h"; sourceTree = "<group>"; };
 		057991E81FB2FAA400F1E37C /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
 		057991E91FB2FAA400F1E37C /* UIImage+ResizeMagick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ResizeMagick.m"; sourceTree = "<group>"; };
 		057991EA1FB2FAA400F1E37C /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
-		057991EB1FB2FAA400F1E37C /* UIView+CSFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CSFrame.h"; sourceTree = "<group>"; };
 		057992401FB2FE1F00F1E37C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		057992421FB2FE5300F1E37C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		057992441FB2FEEB00F1E37C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -886,8 +883,8 @@
 			children = (
 				057991A81FB2FAA400F1E37C /* UIButton+ZBCategory.h */,
 				057991A91FB2FAA400F1E37C /* UIButton+ZBCategory.m */,
-				057991A71FB2FAA400F1E37C /* ZBImageButton.m */,
 				057991AA1FB2FAA400F1E37C /* ZBImageButton.h */,
+				057991A71FB2FAA400F1E37C /* ZBImageButton.m */,
 			);
 			path = ZBButton;
 			sourceTree = "<group>";
@@ -904,10 +901,8 @@
 		057991AE1FB2FAA400F1E37C /* ZBView */ = {
 			isa = PBXGroup;
 			children = (
-				057991EB1FB2FAA400F1E37C /* UIView+CSFrame.h */,
-				057991E41FB2FAA400F1E37C /* UIView+CSFrame.m */,
-				057991AF1FB2FAA400F1E37C /* UIView+ZBCategory.m */,
 				057991B01FB2FAA400F1E37C /* UIView+ZBCategory.h */,
+				057991AF1FB2FAA400F1E37C /* UIView+ZBCategory.m */,
 			);
 			path = ZBView;
 			sourceTree = "<group>";
@@ -987,8 +982,8 @@
 				057991E51FB2FAA400F1E37C /* UIImage+ResizeMagick.h */,
 				057991E91FB2FAA400F1E37C /* UIImage+ResizeMagick.m */,
 				057991CF1FB2FAA400F1E37C /* UIImage+Category.m */,
-				057991D01FB2FAA400F1E37C /* UIImage+DrawRect.h */,
 				057991D11FB2FAA400F1E37C /* UIImage+Category.h */,
+				057991D01FB2FAA400F1E37C /* UIImage+DrawRect.h */,
 				057991D21FB2FAA400F1E37C /* UIImage+DrawRect.m */,
 			);
 			path = ZBImage;
@@ -1313,7 +1308,6 @@
 				057992261FB2FAA400F1E37C /* ZBImagePickerObject.m in Sources */,
 				0579920B1FB2FAA400F1E37C /* BSHttpTool.m in Sources */,
 				057991FA1FB2FAA400F1E37C /* KGModal.m in Sources */,
-				0579923A1FB2FAA400F1E37C /* UIView+CSFrame.m in Sources */,
 				057991EC1FB2FAA400F1E37C /* BSTableViewCell.m in Sources */,
 				057992391FB2FAA400F1E37C /* UIScrollView+EmptyDataSet.m in Sources */,
 				053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */,

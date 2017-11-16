@@ -9,37 +9,82 @@
 #import "UIView+ZBCategory.h"
 
 @implementation UIView (ZBCategory)
-
-/** 邮件表格:
- * y每+1, 起始位置 *30
- */
-+ (UIView *)_createViewSetY:(NSInteger)y subView:(UIView *)subView gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer{
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, y * 35, kScreenWidth, 35)];
-    view.backgroundColor = [UIColor whiteColor];
-    view.userInteractionEnabled = YES;
-    [view.layer setBorderWidth:0.5];
-    [view.layer setBorderColor:[UIColor groupTableViewBackgroundColor].CGColor];
-    [view addSubview:subView];
-    [view addGestureRecognizer:gestureRecognizer];
-    return view;
+- (void)setX:(CGFloat)x {
+    CGRect frame = self.frame;
+    frame.origin.x = x;
+    self.frame = frame;
 }
 
+- (CGFloat)x {
+    return self.frame.origin.x;
+}
+
+- (void)setY:(CGFloat)y {
+    CGRect frame = self.frame;
+    frame.origin.y = y;
+    self.frame = frame;
+}
+
+- (CGFloat)y {
+    return self.frame.origin.y;
+}
+
+- (void)setWidth:(CGFloat)width {
+    CGRect frame = self.frame;
+    frame.size.width = width;
+    self.frame = frame;
+}
+
+- (CGFloat)width {
+    return self.frame.size.width;
+}
+
+- (void)setHeight:(CGFloat)height {
+    CGRect frame = self.frame;
+    frame.size.height = height;
+    self.frame = frame;
+    
+}
+
+- (CGFloat)height {
+    return self.frame.size.height;
+}
+
+- (void)setSize:(CGSize)size {
+    CGRect frame = self.frame;
+    frame.size = size;
+    self.frame = frame;
+}
+
+- (CGSize)size {
+    return self.frame.size;
+}
+
+- (void)setOrigin:(CGPoint)origin {
+    CGRect frame = self.frame;
+    frame.origin = origin;
+    self.frame = frame;
+}
+
+- (CGPoint)origin{
+    return self.frame.origin;
+}
 
 /** 阴影效果 */
-- (UIView *)_shadowView:(UIView *)view frame:(CGRect)frame{
-    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(10, 10, 30, 30)];
-    view1.backgroundColor = [UIColor redColor];
-    view1.layer.cornerRadius = 5.0;
-    view1.layer.masksToBounds = YES;
-    
-    view = [[UIView alloc]initWithFrame:frame];
-    view.backgroundColor = [UIColor yellowColor];
-//    view2.layer.cornerRadius = 5.0;
-    view.layer.shadowColor = [UIColor blueColor].CGColor;
-    view.layer.shadowOpacity = 1.0;
-    view.layer.shadowRadius = 20.0;
-    view.layer.shadowOffset = CGSizeMake(0.0f, 0.0f);
-    [view addSubview:view1];
-    return view;
+- (void)shadowColor:(UIColor *)shadowColor opacity:(float)shadowOpacity radius:(float)shadowRadius offset:(CGSize)shadowOffset {
+
+    self.layer.shadowColor   = shadowColor.CGColor;
+    self.layer.shadowOpacity = shadowOpacity; //1.0;
+    self.layer.shadowRadius  = shadowRadius;  //20.0;
+    self.layer.shadowOffset  = shadowOffset;  //CGSizeMake(0.0f, 0.0f);
 }
+
+- (void)layerWidth:(CGFloat)borderWidth color:(UIColor *)borderColor masksToBounds:(BOOL)masksToBounds cornerRadius:(CGFloat)cornerRadius {
+    
+    [self.layer setBorderWidth:borderWidth];
+    [self.layer setBorderColor:borderColor.CGColor];
+    [self.layer setMasksToBounds:masksToBounds];
+    [self.layer setCornerRadius:cornerRadius];
+}
+
 @end

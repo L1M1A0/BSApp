@@ -28,20 +28,6 @@
                       bColor:(UIColor *)bColor;
 
 
-/**
- *  UILabel的扩展 _01 layer层的设置 _01
- *
- *  @param width        线圈的宽
- *  @param color        线圈的颜色
- *  @param boolValue    YES / NO
- *  @param cornerRadius 圆角值
- *
- *  layer层的基本设置
- */
-- (void)layerWidth:(CGFloat)width
-             color:(UIColor *)color
-     masksToBounds:(BOOL)boolValue
-      cornerRadius:(CGFloat)cornerRadius;
 
 /**
  *  UILabel的扩展 _02 文本相关设置 _01

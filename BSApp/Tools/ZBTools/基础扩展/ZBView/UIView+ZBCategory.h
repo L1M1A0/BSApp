@@ -10,11 +10,15 @@
 
 @interface UIView (ZBCategory)
 
-/** 邮件表格:
- * y每+1, 起始位置 *30
- */
-+ (UIView *)_createViewSetY:(NSInteger)y subView:(UIView *)subView gestureRecognizer:(UIGestureRecognizer*)gestureRecognizer;
+@property(assign, nonatomic) CGFloat x;
+@property(assign, nonatomic) CGFloat y;
+@property(assign, nonatomic) CGFloat width;
+@property(assign, nonatomic) CGFloat height;
+@property(assign, nonatomic) CGSize size;
+@property(assign, nonatomic) CGPoint origin;
 
+/** 阴影效果 */
+- (void)shadowColor:(UIColor *)shadowColor opacity:(float)shadowOpacity radius:(float)shadowRadius offset:(CGSize)shadowOffset;
 
-- (UIView *)_shadowView:(UIView *)view frame:(CGRect)frame;
+- (void)layerWidth:(CGFloat)borderWidth color:(UIColor *)borderColor masksToBounds:(BOOL)masksToBounds cornerRadius:(CGFloat)cornerRadius;
 @end

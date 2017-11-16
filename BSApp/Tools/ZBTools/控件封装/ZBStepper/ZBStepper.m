@@ -45,9 +45,9 @@
     CGFloat btnWidth = frame.size.height-leftGap*2;
     CGFloat textFWidth = frame.size.width - btnWidth * 2 - leftGap * 3;
     
-    self.leftBtn = [UIButton _buttonFrame:CGRectZero title:@"" tColor:kBlackColor target:self action:@selector(btnAction:)];
+    self.leftBtn = [UIButton button:CGRectZero title:@"" tColor:kBlackColor target:self action:@selector(btnAction:)];
     self.leftBtn.backgroundColor = RGB(0, 146, 255);
-    [self.leftBtn _setImage:@"icon_jian"];
+    [self.leftBtn image:@"icon_jian"];
     self.leftBtn.tag = 1;
     [self addSubview:self.leftBtn];
     [self.leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -72,10 +72,10 @@
     }];
     
     
-    self.rightBtn = [UIButton _buttonFrame:CGRectZero title:@"" tColor:kBlackColor target:self action:@selector(btnAction:)];
+    self.rightBtn = [UIButton button:CGRectZero title:@"" tColor:kBlackColor target:self action:@selector(btnAction:)];
     self.rightBtn.tag = 2;
     self.rightBtn.backgroundColor = RGB(0, 146, 255);
-    [self.rightBtn _setImage:@"icon_jia"];
+    [self.rightBtn image:@"icon_jia"];
     [self addSubview:self.rightBtn];
     [self.rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.textField.mas_right).offset(leftGap/2);

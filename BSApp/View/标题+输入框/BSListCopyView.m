@@ -45,8 +45,8 @@
     self.listCell.inputTF.enabled = NO;
     [self addSubview:self.listCell];
     
-    UIButton *btn = [UIButton _buttonFrame:CGRectZero title:@"复制" tColor:kBlackColor target:self action:@selector(btnAction:)];
-    [btn _layerWidth:1 color:RGBAlpha(0, 0, 0, 0.4) masksToBounds:YES cornerRadius:5];
+    UIButton *btn = [UIButton button:CGRectZero title:@"复制" tColor:kBlackColor target:self action:@selector(btnAction:)];
+    [btn layerWidth:1 color:RGBAlpha(0, 0, 0, 0.4) masksToBounds:YES cornerRadius:5];
     btn.titleLabel.font = [UIFont systemFontOfSize:12];
     [self addSubview:btn];
     self.btn = btn;

@@ -9,6 +9,10 @@
 #ifndef ZBControlCategoryHeader_h
 #define ZBControlCategoryHeader_h
 
+#define kImage(name) [UIImage imageNamed:name]
+
+
+
 //UI 扩展
 #import "UILabel+ZBCategory.h"
 #import "UIButton+ZBCategory.h"
@@ -38,7 +42,6 @@
 //#import "ZBReadFileObject.h"
 
 //字符串
-//#import "ZBBase64Object.h"
 //#import "ZBStringSize.h"
 #import "ZBAttributedString.h"
 
