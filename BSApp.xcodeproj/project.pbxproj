@@ -59,7 +59,7 @@
 		057992171FB2FAA400F1E37C /* ZBAppObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991881FB2FAA300F1E37C /* ZBAppObject.m */; };
 		057992181FB2FAA400F1E37C /* ZBTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579918A1FB2FAA300F1E37C /* ZBTime.m */; };
 		057992191FB2FAA400F1E37C /* ZBTimeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579918B1FB2FAA300F1E37C /* ZBTimeObject.m */; };
-		0579921A1FB2FAA400F1E37C /* ZBTimestampObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579918C1FB2FAA300F1E37C /* ZBTimestampObject.m */; };
+		0579921A1FB2FAA400F1E37C /* ZBTimestamp.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579918C1FB2FAA300F1E37C /* ZBTimestamp.m */; };
 		0579921B1FB2FAA400F1E37C /* ZBOpenFileOnOtherAppObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991931FB2FAA300F1E37C /* ZBOpenFileOnOtherAppObject.m */; };
 		0579921C1FB2FAA400F1E37C /* ZBHttpError.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991941FB2FAA300F1E37C /* ZBHttpError.m */; };
 		0579921D1FB2FAA400F1E37C /* ZBConvertStringObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991961FB2FAA300F1E37C /* ZBConvertStringObject.m */; };
@@ -220,10 +220,10 @@
 		057991881FB2FAA300F1E37C /* ZBAppObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBAppObject.m; sourceTree = "<group>"; };
 		0579918A1FB2FAA300F1E37C /* ZBTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBTime.m; sourceTree = "<group>"; };
 		0579918B1FB2FAA300F1E37C /* ZBTimeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBTimeObject.m; sourceTree = "<group>"; };
-		0579918C1FB2FAA300F1E37C /* ZBTimestampObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBTimestampObject.m; sourceTree = "<group>"; };
+		0579918C1FB2FAA300F1E37C /* ZBTimestamp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBTimestamp.m; sourceTree = "<group>"; };
 		0579918D1FB2FAA300F1E37C /* ZBTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBTime.h; sourceTree = "<group>"; };
 		0579918E1FB2FAA300F1E37C /* ZBTimeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBTimeObject.h; sourceTree = "<group>"; };
-		0579918F1FB2FAA300F1E37C /* ZBTimestampObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBTimestampObject.h; sourceTree = "<group>"; };
+		0579918F1FB2FAA300F1E37C /* ZBTimestamp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBTimestamp.h; sourceTree = "<group>"; };
 		057991911FB2FAA300F1E37C /* ZBOpenFileOnOtherAppObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBOpenFileOnOtherAppObject.h; sourceTree = "<group>"; };
 		057991921FB2FAA300F1E37C /* ZBHttpError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBHttpError.h; sourceTree = "<group>"; };
 		057991931FB2FAA300F1E37C /* ZBOpenFileOnOtherAppObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBOpenFileOnOtherAppObject.m; sourceTree = "<group>"; };
@@ -831,10 +831,10 @@
 			children = (
 				0579918D1FB2FAA300F1E37C /* ZBTime.h */,
 				0579918A1FB2FAA300F1E37C /* ZBTime.m */,
+				0579918F1FB2FAA300F1E37C /* ZBTimestamp.h */,
+				0579918C1FB2FAA300F1E37C /* ZBTimestamp.m */,
 				0579918E1FB2FAA300F1E37C /* ZBTimeObject.h */,
 				0579918B1FB2FAA300F1E37C /* ZBTimeObject.m */,
-				0579918F1FB2FAA300F1E37C /* ZBTimestampObject.h */,
-				0579918C1FB2FAA300F1E37C /* ZBTimestampObject.m */,
 			);
 			path = "时间管理";
 			sourceTree = "<group>";
@@ -1372,7 +1372,7 @@
 				0558FFC81FB3F295009D5176 /* BSCommomObject.m in Sources */,
 				0579922E1FB2FAA400F1E37C /* ZBStepper.m in Sources */,
 				057991FE1FB2FAA400F1E37C /* UpdateManager.m in Sources */,
-				0579921A1FB2FAA400F1E37C /* ZBTimestampObject.m in Sources */,
+				0579921A1FB2FAA400F1E37C /* ZBTimestamp.m in Sources */,
 				0579921F1FB2FAA400F1E37C /* ZBPredicateObject.m in Sources */,
 				057992041FB2FAA400F1E37C /* RTLabel.m in Sources */,
 				0579920D1FB2FAA400F1E37C /* BSRegisterTool.m in Sources */,

@@ -12,24 +12,6 @@
 
 #pragma mark - 算日期
 
-/*A* 获取当前时间 */
-+ (NSString *)currentTimeFormatter:(NSString *)dateFormat{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = dateFormat;
-    NSString *str = [formatter stringFromDate:[NSDate date]];
-    return str;
-}
-/*A*
- 将 NSString 转换成 NSDate
- 输入的日期字符串形如：@"1992-05-21 13:08:08"
- */
-+ (NSDate *)dateStingToNSDate:(NSString *)dateString dateFormat:(NSString *)dateFormat{
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:dateFormat];
-    NSDate *destDate = [dateFormatter dateFromString:dateString];
-    return destDate;
-}
 
 
 /** 获取自今天起n天后的日期,如今天:0,明天:1,后天:2,大后天:3,...依此类推 */
@@ -113,57 +95,5 @@
 }
 
 
-
-
-#pragma mark - 农历相关
-/** 获取农历 */
-+ (NSString *)chineseCalendar{
-    //农历 NSCalendarIdentifierChinese
-    NSCalendar *cal = [NSCalendar currentCalendar];
-    //NSLog(@"now is %@",[NSDate new]);
-    NSCalendar *chinese_cal = [[NSCalendar alloc] initWithCalendarIdentifier:
-                               NSCalendarIdentifierChinese];
-    //GMT+8,虽然GMT+8是北京所在的时区,但是这里GMT+16才是正确的时间
-    [chinese_cal setTimeZone:[NSTimeZone timeZoneWithName:@"GMT+16"]];
-    unsigned unitFlags = NSCalendarUnitYear | NSCalendarUnitMonth |  NSCalendarUnitDay |\
-    NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
-    NSDateComponents *comps = [chinese_cal components:unitFlags fromDate:[NSDate new]];
-    NSDate *china_now = [cal dateFromComponents:comps];
-    NSLog(@"china_now = %@",china_now);
-    NSString *str_lunar = [NSString stringWithFormat:@"%@",china_now];
-    return str_lunar;
-}
-
-#pragma mark 农历 中文
-/** 获取农历 返回中文格式 如: 腊月廿九 二月初七 */
-+ (NSString *)lunarTimeForChinese{
-    ZBConvertStringObject *transString = [[ZBConvertStringObject alloc]init];
-    
-    NSString *str_lunar = [self chineseCalendar];
-    NSRange range_yue = NSMakeRange(5, 2);
-    NSRange range_ri  = NSMakeRange(8, 2);
-    
-    NSString *yue = [str_lunar substringWithRange:range_yue];
-    yue = [NSString stringWithFormat:@"%@",[transString _transformArabicNumeralsToChinese_Month:yue]];
-    NSString *ri  = [str_lunar substringWithRange:range_ri];
-    ri  = [NSString stringWithFormat:@"%@",[transString _transformArabicNumeralsToChinese_Day:ri]];
-    str_lunar = [NSString stringWithFormat:@"%@%@",yue,ri];
-    NSLog(@"str_lunar_chinese = %@",str_lunar);
-    return str_lunar;
-}
-
-/** 获取农历 返回数字模式 如:12月29日 */
-+ (NSString *)lunarTimeForNumberStr{
-    
-    NSString *str_lunar = [self chineseCalendar];
-    NSRange range_yue = NSMakeRange(5, 2);
-    NSRange range_ri  = NSMakeRange(8, 2);
-    
-    NSString *yue = [str_lunar substringWithRange:range_yue];
-    NSString *ri  = [str_lunar substringWithRange:range_ri];
-    str_lunar = [NSString stringWithFormat:@"%@月%@日",yue,ri];
-    NSLog(@"str_lunar_number = %@",str_lunar);
-    return str_lunar;
-}
 
 @end

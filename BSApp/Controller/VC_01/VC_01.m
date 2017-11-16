@@ -45,9 +45,15 @@
     [btn layerWidth:3 color:kGreenColor masksToBounds:NO cornerRadius:25];
     [self.view addSubview:btn];
     
-    
+    NSString *time = [ZBTime currentTimeWithDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSLog(@"currentTimeWithDateFormat_%@",time);
+    time = [ZBTimestamp currentTimeStampIs1000:YES];
+    NSLog(@"currentTimeStampIs1000_%@",time);
+    time = [ZBTimestamp timestamp:1510824318 format:@"yyyy-MM-dd HH:mm:ss" isX1000:NO];
+    NSLog(@"timestamp_%@",time);
+    NSLog(@"timestamp_%@",[ZBTimestamp splitCurrentTimeToArray]);
 
-    
+
 }
 
 

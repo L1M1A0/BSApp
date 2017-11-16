@@ -55,6 +55,6 @@
 //时间
 #import "ZBTime.h"
 #import "ZBTimeObject.h"
-#import "ZBTimestampObject.h"
+#import "ZBTimestamp.h"
 
 #endif /* ZBControlCategoryHeader_h */

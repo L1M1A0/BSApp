@@ -43,6 +43,7 @@
 }
 
 
+
 /**
  根据输入的时间字符串以及其格式，将 NSString 转换成 NSDate
  输入的日期字符串形如：@"1992-05-21 13:08:08"
@@ -54,6 +55,8 @@
     NSDate *destDate = [dateFormatter dateFromString:dateString];
     return destDate;
 }
+
+
 
 #pragma mark - timeStamp
 
@@ -101,11 +104,8 @@
     }else{
         
     }
-    
     return dateStr;
 }
-
-
 
 /**
  根据日期，获取星期日数，如：星期一
@@ -198,6 +198,8 @@
 
     return str_lunar;
 }
+
+
 
 /**
  根据日期，获取对应农历汉语日期
