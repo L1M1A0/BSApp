@@ -38,8 +38,5 @@
 #import "BSProgressHudObject.h"
 #import "ZBControlCategoryHeader.h"
 
-#import "NSString+URLEncodeString.h"
-#import "UIScrollView+EmptyDataSet.h"
-#import "NSString+Common.h"
-#import "UIImage+ResizeMagick.h"
+
 #endif /* PrefixHeader_pch */
