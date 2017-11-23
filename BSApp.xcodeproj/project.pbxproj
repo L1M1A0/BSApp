@@ -116,6 +116,7 @@
 		05CF0D191FBA9E3C009335F1 /* ZBTools开发记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */; };
 		05ED6FE81FBD3663001D3D4A /* UITableViewCell+ZBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ED6FE71FBD3663001D3D4A /* UITableViewCell+ZBCategory.m */; };
 		05ED6FEB1FBD71B2001D3D4A /* ZBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ED6FEA1FBD71B2001D3D4A /* ZBTableViewCell.m */; };
+		05F3AA2B1FC6C87800BEF5DF /* ZBStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3AA2A1FC6C87800BEF5DF /* ZBStatusBar.m */; };
 		AEE4D55594B86C96AD394FFA /* libPods-BSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FCEAB718BDC11C65D6F74B /* libPods-BSApp.a */; };
 /* End PBXBuildFile section */
 
@@ -327,6 +328,8 @@
 		05ED6FE71FBD3663001D3D4A /* UITableViewCell+ZBCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ZBCategory.m"; sourceTree = "<group>"; };
 		05ED6FE91FBD71B2001D3D4A /* ZBTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBTableViewCell.h; sourceTree = "<group>"; };
 		05ED6FEA1FBD71B2001D3D4A /* ZBTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBTableViewCell.m; sourceTree = "<group>"; };
+		05F3AA291FC6C87800BEF5DF /* ZBStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBStatusBar.h; sourceTree = "<group>"; };
+		05F3AA2A1FC6C87800BEF5DF /* ZBStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBStatusBar.m; sourceTree = "<group>"; };
 		94FCEAB718BDC11C65D6F74B /* libPods-BSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79762A03F435D93BA1A2A3D /* Pods-BSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSApp/Pods-BSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EBCB78F87915822B11F3F6C5 /* Pods-BSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSApp/Pods-BSApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -397,6 +400,7 @@
 		053E64A41FB54420007027F2 /* 基础扩展 */ = {
 			isa = PBXGroup;
 			children = (
+				05F3AA281FC6C80A00BEF5DF /* ZBStatusBar */,
 				053E64AC1FB582C9007027F2 /* ZBAlertController */,
 				05488EB91FB44DB800837966 /* ZBArray */,
 				057991B71FB2FAA400F1E37C /* ZBLayer */,
@@ -1136,6 +1140,15 @@
 			path = ZBTableViewCell;
 			sourceTree = "<group>";
 		};
+		05F3AA281FC6C80A00BEF5DF /* ZBStatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				05F3AA291FC6C87800BEF5DF /* ZBStatusBar.h */,
+				05F3AA2A1FC6C87800BEF5DF /* ZBStatusBar.m */,
+			);
+			path = ZBStatusBar;
+			sourceTree = "<group>";
+		};
 		0C766BFDF5E80E5742CDAE08 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1386,6 +1399,7 @@
 				057992071FB2FAA400F1E37C /* ZBEncryptionRSA.m in Sources */,
 				057991FF1FB2FAA400F1E37C /* YHWebViewProgress.m in Sources */,
 				05ED6FEB1FBD71B2001D3D4A /* ZBTableViewCell.m in Sources */,
+				05F3AA2B1FC6C87800BEF5DF /* ZBStatusBar.m in Sources */,
 				057992011FB2FAA400F1E37C /* WebVC.m in Sources */,
 				057992231FB2FAA400F1E37C /* ZBSandBoxObject.m in Sources */,
 				057991ED1FB2FAA400F1E37C /* BSTabBarCtrl.m in Sources */,
@@ -1550,7 +1564,7 @@
 					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
 				);
 				INFOPLIST_FILE = BSApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1588,7 +1602,7 @@
 					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
 				);
 				INFOPLIST_FILE = BSApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
