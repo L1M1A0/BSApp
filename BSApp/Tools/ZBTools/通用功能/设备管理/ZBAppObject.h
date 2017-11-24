@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+//最后一次登录成功的用户账号
+#define kLastLoginUserName @"kLastLoginUserName"
 
 @interface ZBAppObject : NSObject
 
@@ -21,4 +22,17 @@
 + (NSString *)customAppVersion2;
 
 + (BOOL)isStartAfterLoadNewVersion;
+
+
+/**
+ 保存登录成功的用户的用户名
+ */
++ (void)saveUserLoginNum;
+
+/**
+ Description
+
+ @return 获取最后一次登录成功的用户名
+ */
++ (NSString *)userLoginNum;
 @end

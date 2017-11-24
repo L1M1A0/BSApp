@@ -121,7 +121,7 @@
     
     //移除当前登陆的用户的信息
     [BSLoginManager removeCurrentUserInfo];
-    [ZBUserDefault _defaultValue:@"" key:@"loginIdVerification"];
+    [ZBUserDefault defaultValue:@"" key:@"loginIdVerification"];
     //管理应用，跳转到登陆页面
     AppDelegate *dele = (AppDelegate *)[[UIApplication sharedApplication] delegate];
 //    [dele _initRootViewController];

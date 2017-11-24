@@ -11,12 +11,12 @@
 @interface ZBUserDefault : NSObject
 
 #pragma mark - 通用
-+ (void)_defaultValue:(id)value key:(NSString *)key;
-+ (void)_defaultObject:(id)Object key:(NSString *)key;
-+ (void)_defaultBool:(BOOL)value key:(NSString *)key;
++ (void)defaultValue:(id)value key:(NSString *)key;
++ (void)defaultObject:(id)Object key:(NSString *)key;
++ (void)defaultBool:(BOOL)value key:(NSString *)key;
 
-+ (id)_defaultValueForKey:(NSString *)key;
-+ (id)_defaultObjectForKey:(NSString *)key;
-+ (BOOL)_defaultBoolForKey:(NSString *)key;
++ (id)defaultValueForKey:(NSString *)key;
++ (id)defaultObjectForKey:(NSString *)key;
++ (BOOL)defaultBoolForKey:(NSString *)key;
 
 @end

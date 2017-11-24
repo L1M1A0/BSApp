@@ -60,17 +60,30 @@
 + (BOOL)isStartAfterLoadNewVersion{
     
     BOOL isStartAfterLoadNewVersion = NO;
-    
-    NSString *oldAppVersion = [ZBUserDefault _defaultValueForKey:kDefaultLastLoginVersion];
+    NSString *oldAppVersion = [ZBUserDefault defaultValueForKey:kDefaultLastLoginVersion];
+
     //比较新旧版本号
     if (![oldAppVersion isEqualToString:[ZBDeviceAuxiliary appVersion]]) {
         isStartAfterLoadNewVersion = YES;
         //将新版本写入本地
-        [ZBUserDefault _defaultValue:[ZBDeviceAuxiliary appVersion] key:kDefaultLastLoginVersion];
+        [ZBUserDefault defaultValue:[ZBDeviceAuxiliary appVersion] key:kDefaultLastLoginVersion];
         //NSLog(@"afsdbgrgre_%@",[ZBUserDefault _defaultValueForKey:kDefaultLastLoginVersion]);
     }
     return isStartAfterLoadNewVersion;
 }
 
+
++ (void)saveUserLoginNum{
+    BSUserModel *user = [BSLoginManager getCurrentUserInfo];
+    [ZBUserDefault defaultValue:user.empCode key:kLastLoginUserName];
+}
++ (NSString *)userLoginNum{
+    NSString *str = [ZBUserDefault defaultValueForKey:kLastLoginUserName];
+    if(str){
+        return str;
+    }else{
+        return @"";
+    }
+}
 
 @end

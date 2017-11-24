@@ -26,7 +26,7 @@ static BOOL isSavedataInDefault = YES;
   
     BSUserModel *model;
     if (isSavedataInDefault == YES) {
-        NSDictionary *dic = [ZBUserDefault _defaultObjectForKey:USER_DIC_KEY];
+        NSDictionary *dic = [ZBUserDefault defaultObjectForKey:USER_DIC_KEY];
         model = [BSUserModel mj_objectWithKeyValues:CONVERTER(dic)];
     }else{
         model = CONVERTER([FHFileManager unarchiverAtPath:kPATH_DOCUMENT fileName:USER_FILE encodeObjectKey:USER_FILE_KEY]);
@@ -54,8 +54,9 @@ static BOOL isSavedataInDefault = YES;
 + (void)removeCurrentUserInfo
 {
     
+    
     if(isSavedataInDefault == YES){
-        [ZBUserDefault _defaultObject:@{} key:USER_DIC_KEY];
+        [ZBUserDefault defaultObject:@{} key:USER_DIC_KEY];
 
     }else{
         [FHFileManager deleteFileAtPath:kPATH_DOCUMENT fileName:USER_FILE];
@@ -88,7 +89,7 @@ static BOOL isSavedataInDefault = YES;
 
  
     if(isSavedataInDefault == YES){
-        NSDictionary *dic = [ZBUserDefault _defaultObjectForKey:USER_DIC_KEY];
+        NSDictionary *dic = [ZBUserDefault defaultObjectForKey:USER_DIC_KEY];
         BSUserModel *user = [BSUserModel mj_objectWithKeyValues:CONVERTER(dic)];
         return user;
 
@@ -101,7 +102,7 @@ static BOOL isSavedataInDefault = YES;
 + (void)saveUserDic:(id)model{
     if ([model isKindOfClass:[NSDictionary class]]) {
         NSDictionary *dic = (NSDictionary *)model;
-        [ZBUserDefault _defaultObject:dic key:USER_DIC_KEY];
+        [ZBUserDefault defaultObject:dic key:USER_DIC_KEY];
     }else if ([model isKindOfClass:[BSUserModel class]]){
         BSUserModel *user = (BSUserModel *)model;
         [FHFileManager archiverAtPath:kPATH_DOCUMENT fileName:USER_FILE object:user encodeObjectKey:USER_FILE_KEY];

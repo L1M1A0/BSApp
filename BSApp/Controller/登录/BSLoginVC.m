@@ -110,7 +110,7 @@
    
     
     //默认显示最后一次登录成功用户的账号
-    self.userTF.inputTF.text = [ZBUserDefault _defaultValueForKey:kDefaultLastLoginUserEmpCode];
+    self.userTF.inputTF.text = [ZBUserDefault defaultValueForKey:kDefaultLastLoginUserEmpCode];
     self.passTF.inputTF.text = @"";
     
     //临时
@@ -184,7 +184,7 @@
         [BSLoginManager saveUserDic:dic];
         
         NSString *empcode = weakSelf.userTF.inputTF.text;//dic[@"empCode"]==nil?@"":dic[@"empCode"];
-        [ZBUserDefault _defaultValue:empcode key:kDefaultLastLoginUserEmpCode];
+        [ZBUserDefault defaultValue:empcode key:kDefaultLastLoginUserEmpCode];
         
         weakSelf.isLoginSuccess = YES;
         if (_loginSuccess) {
