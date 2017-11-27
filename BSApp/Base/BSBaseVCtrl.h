@@ -27,5 +27,4 @@
 -(void)tableViewAutomaticallyAdjustsScrollViewInsets;
 
 -(void)enmptyView:(CGRect)frame;
--(void)checkAppUpdate;
 @end

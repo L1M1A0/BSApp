@@ -9,7 +9,6 @@
 #import "BSJPushSeviceObject.h"
 #import "JPUSHService.h"
 #import "BSLoginManager.h"
-#import "BSSecurityParameters.h"
 
 @implementation BSJPushSeviceObject
 

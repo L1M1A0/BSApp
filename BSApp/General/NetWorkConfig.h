@@ -20,12 +20,12 @@
 
 //********************************数据库 * 正式*********************************
 
-#define kBaseUrl      @""
-#define KBaseUrl(s)  [@"/" stringByAppendingString:s]
-#define kBaseFile(s) [@"/" stringByAppendingString:s]
+#define kBaseUrl      @"http://192.168.18.119:9090/brs"
+#define KBaseUrl(s)  [@"http://192.168.18.119:9090/brs/" stringByAppendingString:s]
+#define kBaseFile(s) [@"http://192.168.18.119:9090/brs/file/" stringByAppendingString:s]
 
 /** 正式库地址，仅用于区别服务器环境（正式or测试）*/
-#define kDistributionUrl @"未配置"
+#define kDistributionUrl kBaseUrl
 
 //********************************开启 https 模式*********************************
 //注：需要在这个类文件中修改 kIsHttpsModel 的值为“YES”或者"NO"就可以了
@@ -51,7 +51,7 @@
 #define VERSION_CODE @"1"
 
 /** 链接到AppStore上面的ID,一经确定后不能需改 */
-#define kAppStoreId @""
+#define kAppStoreId @"1190504948"//临时设置
 
 //------------- App 设置------------
 

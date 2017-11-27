@@ -9,7 +9,6 @@
 #import "BSLoginIdVerificationObject.h"
 //#import "BSHttpTool.h"
 #import "AFHTTPRequestOperationManager.h"
-#import "BSSecurityParameters.h"
 #import "ZBUserDefault.h"
 
 @implementation BSLoginIdVerificationObject
@@ -20,8 +19,7 @@
     BSUserModel *user = [BSLoginManager getCurrentUserInfo];
     
     
-    //BSSecurityParameters *seq = [[BSSecurityParameters alloc]init];
-    NSString *urlStr = [NSString stringWithFormat:@"%@/%@?%@",KBaseUrl(@"loginid/verification"),user.loginId,[BSSecurityParameters parameterStr]];
+    NSString *urlStr = [NSString stringWithFormat:@"%@/%@?%@",KBaseUrl(@"loginid/verification"),user.loginId,[BSSafetyParameter parameterStr]];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     

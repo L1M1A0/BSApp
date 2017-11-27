@@ -168,8 +168,8 @@
     
     
     NSString *urlStr  = [NSString stringWithFormat:@"%@",KBaseUrl(@"login")];
-    password          = [BSSecurityParameters rsaEncryptPassWord:password];
-    NSDictionary *dic = [BSSecurityParameters getLoginSecurityParameters];
+    password          = [BSSafetyParameter rsaEncryptPassWord:password];
+    NSDictionary *dic = [BSSafetyParameter loginSafetyParameters];
     NSMutableDictionary *para = [NSMutableDictionary dictionaryWithDictionary:@{@"password":password,@"BRSS_UserId":userId/*,@"entType":@"2"*/}];
     [para addEntriesFromDictionary:dic];
     

@@ -13,6 +13,7 @@
 #import "ZBLinkLabel.h"
 #import "UILabel+ZBCategory.h"
 #import "ZBTableViewCell.h"
+#import "BSUpdate.h"
 @interface VC_01 ()<UITableViewDelegate,UITableViewDataSource,CustPhoneAlertViewDelegate>{
     
 }
@@ -23,6 +24,12 @@
 @end
 
 @implementation VC_01
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [[[BSUpdate alloc]init]checkAppUpdate];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,6 +60,7 @@
     NSLog(@"timestamp_%@",time);
     NSLog(@"timestamp_%@",[ZBTimestamp splitCurrentTimeToArray]);
 
+
 }
 
 
@@ -63,9 +71,6 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
 
-
-    
-    
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 300, 400)];
     datePicker.datePickerMode = UIDatePickerModeDate;
     

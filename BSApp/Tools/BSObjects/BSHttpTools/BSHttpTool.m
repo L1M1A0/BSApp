@@ -25,7 +25,7 @@
     if(parameters != nil){
         //使用字符串类型安全参数，直接拼接在url后面。
         if([parameters isEqualToDictionary:@{}]){
-            NSString *paraS = [BSSecurityParameters parameterStr];//parameters;
+            NSString *paraS = [BSSafetyParameter parameterStr];//parameters;
             urlStr = [NSString stringWithFormat:@"%@?%@",urlStr,paraS];
 
 
@@ -33,7 +33,7 @@
 
         }
         else{//使用json类型安全参数，写在请求体里面
-            dic = [BSSecurityParameters parameterDic];
+            dic = [BSSafetyParameter parameterDic];
             [dic addEntriesFromDictionary:parameters];
         }
     }

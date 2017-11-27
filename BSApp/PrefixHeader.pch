@@ -32,7 +32,7 @@
 
 #import "BSHttpTool.h"
 #import "BSLoginManager.h"
-#import "BSSecurityParameters.h"
+#import "BSSafetyParameter.h"
 
 #import "BSCommomObject.h"
 #import "BSProgressHudObject.h"

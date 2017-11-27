@@ -11,6 +11,7 @@
 		050253C31FB2F496009735E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 050253C21FB2F496009735E2 /* Assets.xcassets */; };
 		050253C61FB2F496009735E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 050253C41FB2F496009735E2 /* LaunchScreen.storyboard */; };
 		050253C91FB2F496009735E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 050253C81FB2F496009735E2 /* main.m */; };
+		052AACE01FCBE7F600DC098F /* BSUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 052AACDF1FCBE7F600DC098F /* BSUpdate.m */; };
 		053E64A81FB546CF007027F2 /* ZBHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64A71FB546CF007027F2 /* ZBHttpTool.m */; };
 		053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AA1FB54724007027F2 /* ZBHttpResult.m */; };
 		053E64AF1FB582EA007027F2 /* ZBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AE1FB582EA007027F2 /* ZBAlertController.m */; };
@@ -50,7 +51,7 @@
 		0579920D1FB2FAA400F1E37C /* BSRegisterTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579916E1FB2FAA300F1E37C /* BSRegisterTool.m */; };
 		0579920E1FB2FAA400F1E37C /* BSLoginIdVerificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579916F1FB2FAA300F1E37C /* BSLoginIdVerificationObject.m */; };
 		0579920F1FB2FAA400F1E37C /* BSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991701FB2FAA300F1E37C /* BSUserModel.m */; };
-		057992101FB2FAA400F1E37C /* BSSecurityParameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991721FB2FAA300F1E37C /* BSSecurityParameters.m */; };
+		057992101FB2FAA400F1E37C /* BSSafetyParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991721FB2FAA300F1E37C /* BSSafetyParameter.m */; };
 		057992111FB2FAA400F1E37C /* BSJPushSeviceObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991761FB2FAA300F1E37C /* BSJPushSeviceObject.m */; };
 		057992121FB2FAA400F1E37C /* BSAppDelegateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991781FB2FAA300F1E37C /* BSAppDelegateObject.m */; };
 		057992131FB2FAA400F1E37C /* ZBDeviceAuxiliary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579917A1FB2FAA300F1E37C /* ZBDeviceAuxiliary.m */; };
@@ -128,6 +129,8 @@
 		050253C51FB2F496009735E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		050253C71FB2F496009735E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		050253C81FB2F496009735E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		052AACDE1FCBE7F600DC098F /* BSUpdate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUpdate.h; sourceTree = "<group>"; };
+		052AACDF1FCBE7F600DC098F /* BSUpdate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSUpdate.m; sourceTree = "<group>"; };
 		053E64A61FB546CF007027F2 /* ZBHttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBHttpTool.h; sourceTree = "<group>"; };
 		053E64A71FB546CF007027F2 /* ZBHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBHttpTool.m; sourceTree = "<group>"; };
 		053E64A91FB54724007027F2 /* ZBHttpResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBHttpResult.h; sourceTree = "<group>"; };
@@ -199,12 +202,12 @@
 		0579916A1FB2FAA300F1E37C /* BSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserModel.h; sourceTree = "<group>"; };
 		0579916B1FB2FAA300F1E37C /* BSLoginIdVerificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoginIdVerificationObject.h; sourceTree = "<group>"; };
 		0579916C1FB2FAA300F1E37C /* BSLoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginManager.m; sourceTree = "<group>"; };
-		0579916D1FB2FAA300F1E37C /* BSSecurityParameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSecurityParameters.h; sourceTree = "<group>"; };
+		0579916D1FB2FAA300F1E37C /* BSSafetyParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSafetyParameter.h; sourceTree = "<group>"; };
 		0579916E1FB2FAA300F1E37C /* BSRegisterTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRegisterTool.m; sourceTree = "<group>"; };
 		0579916F1FB2FAA300F1E37C /* BSLoginIdVerificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginIdVerificationObject.m; sourceTree = "<group>"; };
 		057991701FB2FAA300F1E37C /* BSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserModel.m; sourceTree = "<group>"; };
 		057991711FB2FAA300F1E37C /* BSRegisterTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRegisterTool.h; sourceTree = "<group>"; };
-		057991721FB2FAA300F1E37C /* BSSecurityParameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSecurityParameters.m; sourceTree = "<group>"; };
+		057991721FB2FAA300F1E37C /* BSSafetyParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSafetyParameter.m; sourceTree = "<group>"; };
 		057991731FB2FAA300F1E37C /* BSLoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoginManager.h; sourceTree = "<group>"; };
 		057991751FB2FAA300F1E37C /* BSAppDelegateObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAppDelegateObject.h; sourceTree = "<group>"; };
 		057991761FB2FAA300F1E37C /* BSJPushSeviceObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSJPushSeviceObject.m; sourceTree = "<group>"; };
@@ -395,6 +398,15 @@
 				050253C81FB2F496009735E2 /* main.m */,
 			);
 			path = BSApp;
+			sourceTree = "<group>";
+		};
+		052AACDD1FCBE7C100DC098F /* BSUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				052AACDE1FCBE7F600DC098F /* BSUpdate.h */,
+				052AACDF1FCBE7F600DC098F /* BSUpdate.m */,
+			);
+			path = BSUpdate;
 			sourceTree = "<group>";
 		};
 		053E64A41FB54420007027F2 /* 基础扩展 */ = {
@@ -703,6 +715,7 @@
 		0579915A1FB2FAA300F1E37C /* BSObjects */ = {
 			isa = PBXGroup;
 			children = (
+				052AACDD1FCBE7C100DC098F /* BSUpdate */,
 				0579917C1FB2FAA300F1E37C /* BSAppObject.h */,
 				057991631FB2FAA300F1E37C /* BSAppObject.m */,
 				057991601FB2FAA300F1E37C /* BSProgressHudManager */,
@@ -746,15 +759,15 @@
 			isa = PBXGroup;
 			children = (
 				0579916A1FB2FAA300F1E37C /* BSUserModel.h */,
-				0579916B1FB2FAA300F1E37C /* BSLoginIdVerificationObject.h */,
-				0579916C1FB2FAA300F1E37C /* BSLoginManager.m */,
-				0579916D1FB2FAA300F1E37C /* BSSecurityParameters.h */,
-				0579916E1FB2FAA300F1E37C /* BSRegisterTool.m */,
-				0579916F1FB2FAA300F1E37C /* BSLoginIdVerificationObject.m */,
 				057991701FB2FAA300F1E37C /* BSUserModel.m */,
-				057991711FB2FAA300F1E37C /* BSRegisterTool.h */,
-				057991721FB2FAA300F1E37C /* BSSecurityParameters.m */,
 				057991731FB2FAA300F1E37C /* BSLoginManager.h */,
+				0579916C1FB2FAA300F1E37C /* BSLoginManager.m */,
+				0579916D1FB2FAA300F1E37C /* BSSafetyParameter.h */,
+				057991721FB2FAA300F1E37C /* BSSafetyParameter.m */,
+				057991711FB2FAA300F1E37C /* BSRegisterTool.h */,
+				0579916E1FB2FAA300F1E37C /* BSRegisterTool.m */,
+				0579916B1FB2FAA300F1E37C /* BSLoginIdVerificationObject.h */,
+				0579916F1FB2FAA300F1E37C /* BSLoginIdVerificationObject.m */,
 			);
 			path = BSLoginManager;
 			sourceTree = "<group>";
@@ -1386,6 +1399,7 @@
 				0579922E1FB2FAA400F1E37C /* ZBStepper.m in Sources */,
 				057991FE1FB2FAA400F1E37C /* UpdateManager.m in Sources */,
 				0579921A1FB2FAA400F1E37C /* ZBTimestamp.m in Sources */,
+				052AACE01FCBE7F600DC098F /* BSUpdate.m in Sources */,
 				0579921F1FB2FAA400F1E37C /* ZBPredicateObject.m in Sources */,
 				057992041FB2FAA400F1E37C /* RTLabel.m in Sources */,
 				0579920D1FB2FAA400F1E37C /* BSRegisterTool.m in Sources */,
@@ -1395,7 +1409,7 @@
 				057992311FB2FAA400F1E37C /* ZBLinkLabel.m in Sources */,
 				057992271FB2FAA400F1E37C /* UIView+ZBCategory.m in Sources */,
 				057992031FB2FAA400F1E37C /* Aspects.m in Sources */,
-				057992101FB2FAA400F1E37C /* BSSecurityParameters.m in Sources */,
+				057992101FB2FAA400F1E37C /* BSSafetyParameter.m in Sources */,
 				057992071FB2FAA400F1E37C /* ZBEncryptionRSA.m in Sources */,
 				057991FF1FB2FAA400F1E37C /* YHWebViewProgress.m in Sources */,
 				05ED6FEB1FBD71B2001D3D4A /* ZBTableViewCell.m in Sources */,

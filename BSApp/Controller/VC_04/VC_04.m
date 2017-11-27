@@ -8,7 +8,6 @@
 
 #import "VC_04.h"
 #import "BSLoginVC.h"
-#import "BSSecurityParameters.h"
 #import "BSLoginManager.h"
 #import "BSJPushSeviceObject.h"
 #import "BSAboutVC.h"

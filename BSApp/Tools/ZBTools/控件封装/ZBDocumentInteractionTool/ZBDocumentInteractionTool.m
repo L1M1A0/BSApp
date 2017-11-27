@@ -7,8 +7,6 @@
 //
 
 #import "ZBDocumentInteractionTool.h"
-#import "BSSecurityParameters.h"
-
 
 
 @implementation BSAttachmentModel
@@ -106,7 +104,7 @@
 //                          @"fileId":model.fileId
                           };
     
-    NSMutableDictionary *para = [BSSecurityParameters parameterDic];
+    NSMutableDictionary *para = [BSSafetyParameter parameterDic];
     [para addEntriesFromDictionary:dic];
     
     ZBOpenFileOnOtherAppObject *zbDown = [[ZBOpenFileOnOtherAppObject alloc]init];

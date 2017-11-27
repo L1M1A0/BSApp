@@ -36,6 +36,7 @@
 }
 
 
+
 /**
  生成系统当前的时间戳
  @return (*1000代表毫秒级)
@@ -45,7 +46,6 @@
     UInt64 recordTime = [[NSDate date] timeIntervalSince1970]*1000;
     return [NSString stringWithFormat:@"%llu",recordTime];
 }
-
 
 /**
  生成UUID
@@ -84,6 +84,8 @@
     NSString *md5Str = [[NSString stringWithFormat:@"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X", result[0], result[1], result[2], result[3], result[4], result[5], result[6], result[7], result[8], result[9], result[10], result[11], result[12], result[13], result[14], result[15] ] lowercaseString];
     return md5Str;
 }
+
+
 
 ////32位MD5加密方式
 //- (NSString *)getMd5_32Bit_String:(NSString *)srcString{

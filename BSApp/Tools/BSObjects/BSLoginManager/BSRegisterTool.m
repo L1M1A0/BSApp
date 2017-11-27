@@ -74,9 +74,9 @@
     AFHTTPRequestOperationManager *mgr = [BSHttpTool httpManager];
     //CSBasicRequest * request=[[CSBasicRequest alloc]init];
     
-    BSSecurityParameters *scq = [[BSSecurityParameters alloc]init];
+    BSSafetyParameter *scq = [[BSSafetyParameter alloc]init];
     
-    NSString * pwd=[scq getBRSS_token:password];
+    NSString * pwd=[scq BRSS_token:password];
     
     NSDictionary * para=@{@"phone":phone,@"userId":userId,@"checkCode":checkCode,@"password":pwd,@"token":token,@"userType":@"20"};
     
@@ -116,7 +116,7 @@
     AFHTTPRequestOperationManager *mgr = [BSHttpTool httpManager];
     
     
-    NSString * pwd = [[[BSSecurityParameters alloc]init] getBRSS_token:password];
+    NSString * pwd = [[[BSSafetyParameter alloc]init] BRSS_token:password];
     
     NSDictionary * para=@{@"phone":phone,@"checkCode":checkCode,@"password":pwd,@"token":token};
     
@@ -164,7 +164,7 @@
     NSDictionary * para=@{@"oldPassword":pwd_old,
                           @"newPassword":pwd_new};
     
-    NSString *parameters =[BSSecurityParameters parameterStr];
+    NSString *parameters =[BSSafetyParameter parameterStr];
     NSString *urlStr = [NSString stringWithFormat:@"%@?%@",KBaseUrl(@"password"),parameters];
 
     [BSHttpTool put:urlStr parameters:para success:^(ZBHttpResult *result) {
