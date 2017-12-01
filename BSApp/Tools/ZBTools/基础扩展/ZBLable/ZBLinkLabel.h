@@ -27,9 +27,11 @@ typedef NS_ENUM(NSInteger, ZBLableLinkType) {
 /** 链接类型 */
 @property (nonatomic, assign) ZBLableLinkType linkType;
 
-/** <#Description#> */
-@property (nonatomic, strong) UITapGestureRecognizer *tap;
-
+///** <#Description#> */
+//@property (nonatomic, strong) UITapGestureRecognizer *tap;
+//
+///** <#Description#> */
+//@property (nonatomic, strong) UILongPressGestureRecognizer *longTap;
 
 /** <#Description#> */
 @property (nonatomic, copy) NSString *alertTitle;
@@ -37,8 +39,6 @@ typedef NS_ENUM(NSInteger, ZBLableLinkType) {
 @property (nonatomic, copy) NSString *alertMessage;
 
 
-
 - (void)setLink:(NSString *)link linkType:(ZBLableLinkType)linkType;
 
--(void)addTapToLable;
 @end

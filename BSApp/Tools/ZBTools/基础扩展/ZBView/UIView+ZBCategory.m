@@ -70,6 +70,13 @@
     return self.frame.origin;
 }
 
++ (UIView *)viewFrame:(CGRect)frame bgColor:(UIColor *)color superView:(UIView *)superView{
+   
+    UIView *view = [[UIView alloc]initWithFrame:frame];
+    view.backgroundColor = color;
+    [superView addSubview:view];
+    return view;
+}
 
 
 - (void)shadowColor:(UIColor *)shadowColor opacity:(float)shadowOpacity radius:(float)shadowRadius offset:(CGSize)shadowOffset {
@@ -93,6 +100,17 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:target action:action];
     [self addGestureRecognizer:tap];
     return tap;
+}
+
+- (UILongPressGestureRecognizer *)longPressGestureRecognizerTaget:(id)target action:(SEL)action duration:(CFTimeInterval)duration{
+    self.userInteractionEnabled = YES;
+    UILongPressGestureRecognizer *longTap = [[UILongPressGestureRecognizer alloc]initWithTarget:target action:action];
+    longTap.numberOfTapsRequired = 0;//按下手势之前需要的完整点击次数
+    longTap.numberOfTouchesRequired = 1;//手势识别时必须按住的手指数
+    longTap.minimumPressDuration = duration?duration:0.5;//按压时长
+    longTap.allowableMovement = 10;//允许移动范围
+    [self addGestureRecognizer:longTap];
+    return longTap;
 }
 
 @end

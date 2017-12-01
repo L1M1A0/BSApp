@@ -7,9 +7,22 @@
 
 更新日志
 ----20171115
-1.UIButton+ZBCategory 类重写
-2.UIView+ZBCategory 类重写
+1. UIButton+ZBCategory 类重写
+2. UIView+ZBCategory 类重写
 
 ----20171116
-1.基础扩展，除ZBImage栏目之外，其他都初步整理完成
-2.通用功能，时间管理栏目粗整理
+1. 基础扩展，除ZBImage栏目之外，其他都初步整理完成
+2. 通用功能，时间管理栏目粗整理
+
+----20171123
+1. 新增ZBStatusBar，状态栏常用方法
+
+----20171127
+1. 新增BSUpdate，检测更新功能
+
+----20171128
+1. 新增ZBHud，基于MBProgressHud的进度指示器，封装常用方法。
+
+----20171130
+1. 新增ZBPasteboard，用于管理剪贴板。
+2. UIView及其子类添加长按方法。

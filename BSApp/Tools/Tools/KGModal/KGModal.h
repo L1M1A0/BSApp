@@ -73,7 +73,7 @@ typedef NS_ENUM(NSUInteger, KGModalCloseButtonLocation){
 
 // Hide the modal with animations,
 // run the completion after the modal is hidden
-- (void)hideWithCompletionBlock:(void(^)())completion;
+- (void)hideWithCompletionBlock:(void(^)(void))completion;
 
 // Hide the modal and whether the modal should animate away
 - (void)hideAnimated:(BOOL)animated;

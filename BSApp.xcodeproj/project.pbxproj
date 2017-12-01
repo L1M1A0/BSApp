@@ -12,6 +12,8 @@
 		050253C61FB2F496009735E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 050253C41FB2F496009735E2 /* LaunchScreen.storyboard */; };
 		050253C91FB2F496009735E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 050253C81FB2F496009735E2 /* main.m */; };
 		052AACE01FCBE7F600DC098F /* BSUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 052AACDF1FCBE7F600DC098F /* BSUpdate.m */; };
+		053858081FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 053858071FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.m */; };
+		0538D7C31FCD083400405BD9 /* ZBHud.m in Sources */ = {isa = PBXBuildFile; fileRef = 0538D7C21FCD083400405BD9 /* ZBHud.m */; };
 		053E64A81FB546CF007027F2 /* ZBHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64A71FB546CF007027F2 /* ZBHttpTool.m */; };
 		053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AA1FB54724007027F2 /* ZBHttpResult.m */; };
 		053E64AF1FB582EA007027F2 /* ZBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AE1FB582EA007027F2 /* ZBAlertController.m */; };
@@ -44,7 +46,6 @@
 		057992051FB2FAA400F1E37C /* FHFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991591FB2FAA300F1E37C /* FHFileManager.m */; };
 		057992061FB2FAA400F1E37C /* ZBEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579915C1FB2FAA300F1E37C /* ZBEncryption.m */; };
 		057992071FB2FAA400F1E37C /* ZBEncryptionRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579915D1FB2FAA300F1E37C /* ZBEncryptionRSA.m */; };
-		057992081FB2FAA400F1E37C /* BSProgressHudObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991621FB2FAA300F1E37C /* BSProgressHudObject.m */; };
 		057992091FB2FAA400F1E37C /* BSAppObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991631FB2FAA300F1E37C /* BSAppObject.m */; };
 		0579920B1FB2FAA400F1E37C /* BSHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991681FB2FAA300F1E37C /* BSHttpTool.m */; };
 		0579920C1FB2FAA400F1E37C /* BSLoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579916C1FB2FAA300F1E37C /* BSLoginManager.m */; };
@@ -131,6 +132,10 @@
 		050253C81FB2F496009735E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		052AACDE1FCBE7F600DC098F /* BSUpdate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSUpdate.h; sourceTree = "<group>"; };
 		052AACDF1FCBE7F600DC098F /* BSUpdate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSUpdate.m; sourceTree = "<group>"; };
+		053858061FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIPasteboard+ZBPasteboard.h"; sourceTree = "<group>"; };
+		053858071FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIPasteboard+ZBPasteboard.m"; sourceTree = "<group>"; };
+		0538D7C11FCD083400405BD9 /* ZBHud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBHud.h; sourceTree = "<group>"; };
+		0538D7C21FCD083400405BD9 /* ZBHud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBHud.m; sourceTree = "<group>"; };
 		053E64A61FB546CF007027F2 /* ZBHttpTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBHttpTool.h; sourceTree = "<group>"; };
 		053E64A71FB546CF007027F2 /* ZBHttpTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBHttpTool.m; sourceTree = "<group>"; };
 		053E64A91FB54724007027F2 /* ZBHttpResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBHttpResult.h; sourceTree = "<group>"; };
@@ -194,8 +199,6 @@
 		0579915D1FB2FAA300F1E37C /* ZBEncryptionRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZBEncryptionRSA.m; sourceTree = "<group>"; };
 		0579915E1FB2FAA300F1E37C /* ZBEncryptionRSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBEncryptionRSA.h; sourceTree = "<group>"; };
 		0579915F1FB2FAA300F1E37C /* ZBEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZBEncryption.h; sourceTree = "<group>"; };
-		057991611FB2FAA300F1E37C /* BSProgressHudObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSProgressHudObject.h; sourceTree = "<group>"; };
-		057991621FB2FAA300F1E37C /* BSProgressHudObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSProgressHudObject.m; sourceTree = "<group>"; };
 		057991631FB2FAA300F1E37C /* BSAppObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSAppObject.m; sourceTree = "<group>"; };
 		057991661FB2FAA300F1E37C /* BSHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHttpTool.h; sourceTree = "<group>"; };
 		057991681FB2FAA300F1E37C /* BSHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSHttpTool.m; sourceTree = "<group>"; };
@@ -409,9 +412,28 @@
 			path = BSUpdate;
 			sourceTree = "<group>";
 		};
+		053858051FCFEC0800C65796 /* ZBPasteboard */ = {
+			isa = PBXGroup;
+			children = (
+				053858061FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.h */,
+				053858071FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.m */,
+			);
+			path = ZBPasteboard;
+			sourceTree = "<group>";
+		};
+		0538D7BD1FCD018200405BD9 /* ZBHub */ = {
+			isa = PBXGroup;
+			children = (
+				0538D7C11FCD083400405BD9 /* ZBHud.h */,
+				0538D7C21FCD083400405BD9 /* ZBHud.m */,
+			);
+			path = ZBHub;
+			sourceTree = "<group>";
+		};
 		053E64A41FB54420007027F2 /* 基础扩展 */ = {
 			isa = PBXGroup;
 			children = (
+				053858051FCFEC0800C65796 /* ZBPasteboard */,
 				05F3AA281FC6C80A00BEF5DF /* ZBStatusBar */,
 				053E64AC1FB582C9007027F2 /* ZBAlertController */,
 				05488EB91FB44DB800837966 /* ZBArray */,
@@ -435,6 +457,7 @@
 			children = (
 				057991911FB2FAA300F1E37C /* ZBOpenFileOnOtherAppObject.h */,
 				057991931FB2FAA300F1E37C /* ZBOpenFileOnOtherAppObject.m */,
+				0538D7BD1FCD018200405BD9 /* ZBHub */,
 				057991DA1FB2FAA400F1E37C /* ZBDocumentInteractionTool */,
 				057991AB1FB2FAA400F1E37C /* ZBImagePickerObject */,
 				057991D61FB2FAA400F1E37C /* ZBBarButtonItemObject */,
@@ -718,7 +741,6 @@
 				052AACDD1FCBE7C100DC098F /* BSUpdate */,
 				0579917C1FB2FAA300F1E37C /* BSAppObject.h */,
 				057991631FB2FAA300F1E37C /* BSAppObject.m */,
-				057991601FB2FAA300F1E37C /* BSProgressHudManager */,
 				057991641FB2FAA300F1E37C /* BSHttpTools */,
 				057991691FB2FAA300F1E37C /* BSLoginManager */,
 				057991741FB2FAA300F1E37C /* BSAppDelegateObject */,
@@ -735,15 +757,6 @@
 				0579915D1FB2FAA300F1E37C /* ZBEncryptionRSA.m */,
 			);
 			path = "安全加密";
-			sourceTree = "<group>";
-		};
-		057991601FB2FAA300F1E37C /* BSProgressHudManager */ = {
-			isa = PBXGroup;
-			children = (
-				057991611FB2FAA300F1E37C /* BSProgressHudObject.h */,
-				057991621FB2FAA300F1E37C /* BSProgressHudObject.m */,
-			);
-			path = BSProgressHudManager;
 			sourceTree = "<group>";
 		};
 		057991641FB2FAA300F1E37C /* BSHttpTools */ = {
@@ -1348,6 +1361,7 @@
 				0579920B1FB2FAA400F1E37C /* BSHttpTool.m in Sources */,
 				057991FA1FB2FAA400F1E37C /* KGModal.m in Sources */,
 				057992391FB2FAA400F1E37C /* UIScrollView+EmptyDataSet.m in Sources */,
+				0538D7C31FCD083400405BD9 /* ZBHud.m in Sources */,
 				053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */,
 				057992021FB2FAA400F1E37C /* XTSegmentControl.m in Sources */,
 				057992351FB2FAA400F1E37C /* ZBBarButtonItemObject.m in Sources */,
@@ -1358,7 +1372,6 @@
 				0579923B1FB2FAA400F1E37C /* NSString+Common.m in Sources */,
 				057992111FB2FAA400F1E37C /* BSJPushSeviceObject.m in Sources */,
 				05B4D5611FB41F1800819CF8 /* VC_01.m in Sources */,
-				057992081FB2FAA400F1E37C /* BSProgressHudObject.m in Sources */,
 				057992171FB2FAA400F1E37C /* ZBAppObject.m in Sources */,
 				0579921D1FB2FAA400F1E37C /* ZBConvertStringObject.m in Sources */,
 				057992091FB2FAA400F1E37C /* BSAppObject.m in Sources */,
@@ -1375,6 +1388,7 @@
 				0579921E1FB2FAA400F1E37C /* ZBRegularExpressionObject.m in Sources */,
 				057992131FB2FAA400F1E37C /* ZBDeviceAuxiliary.m in Sources */,
 				0579921C1FB2FAA400F1E37C /* ZBHttpError.m in Sources */,
+				053858081FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.m in Sources */,
 				057992211FB2FAA400F1E37C /* ZBUserDefault.m in Sources */,
 				057992331FB2FAA400F1E37C /* UIImage+DrawRect.m in Sources */,
 				05B4D5641FB41F1800819CF8 /* VC_03.m in Sources */,

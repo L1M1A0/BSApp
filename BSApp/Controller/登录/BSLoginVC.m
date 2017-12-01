@@ -163,8 +163,8 @@
         return;
     }
     
-    MBProgressHUD *hud = [[MBProgressHUD alloc]init];
-    [BSProgressHudObject _initHUD:hud str:@"" view:self.view];
+    
+    ZBHud *hud = [[ZBHud alloc]initWithStr:@"" view:self.view];
     
     
     NSString *urlStr  = [NSString stringWithFormat:@"%@",KBaseUrl(@"login")];
@@ -193,12 +193,12 @@
         
         AppDelegate *delegare = (AppDelegate *)[UIApplication sharedApplication].delegate;
         [delegare.jPushObject setupJpushAlias];
-        [BSProgressHudObject _hideHUD:hud str:@"登录成功!" After:1.0];
+        [hud hideWithStr:@"登录成功!" after:1.0];
         [weakSelf.navigationController popViewControllerAnimated:YES];
     } failure:^(ZBHttpResult *result) {
         
         kAlert(@"登录失败", result.message);
-        [BSProgressHudObject _hideHUD:hud str:@"" After:0];
+        [hud hideWithStr:@"" after:0];
         //NSLog(@"登录失败_%@",result.message);
         
     }];

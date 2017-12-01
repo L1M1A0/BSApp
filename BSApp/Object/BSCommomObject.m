@@ -73,7 +73,7 @@
 
 +(void)openQQ:(NSString *)str{
     if(str.length == 0){
-        [BSProgressHudObject _initHUDWithStr:@"QQ号码不存在！"  view:[UIApplication sharedApplication].keyWindow hideAfter:1.0];
+        [ZBHud initWithStr:@"QQ号码不存在！" hideAfter:1.0 view:[UIApplication sharedApplication].keyWindow];
     }else{
         NSString *url = [NSString stringWithFormat:@"mqq://im/chat?chat_type=wpa&uin=%@&version=1&src_type=web",str];
         UIApplication *app = [UIApplication sharedApplication];
@@ -84,7 +84,7 @@
 }
 +(void)openPhone:(NSString*)str{
     if(str.length == 0){
-        [BSProgressHudObject _initHUDWithStr:@"电话号码不存在！"  view:[UIApplication sharedApplication].keyWindow hideAfter:1.0];
+        [ZBHud initWithStr:@"电话号码不存在！"  hideAfter:1.0 view:[UIApplication sharedApplication].keyWindow];
     }else{
         NSString *url = [NSString stringWithFormat:@"tel://%@",str];
         UIApplication *app = [UIApplication sharedApplication];
@@ -95,7 +95,7 @@
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = str;
     NSString *st = [NSString stringWithFormat:@"复制完成：%@",pasteboard.string];
-    [BSProgressHudObject _initHUDWithStr:st view:[UIApplication sharedApplication].keyWindow hideAfter:0.5];
+    [ZBHud initWithStr:st hideAfter:0.5 view:[UIApplication sharedApplication].keyWindow];
 }
 
 

@@ -26,15 +26,15 @@
 }
 */
 
+
 -(instancetype)initWithFrame:(CGRect)frame{
     
     if (self = [super initWithFrame:frame]) {
-        //self = [[ZBLinkLabel alloc]initWithFrame:frame];
-        
         [self addTapToLable];
     }
     return self;
 }
+
 
 
 -(void)setLink:(NSString *)link{
@@ -55,14 +55,18 @@
     _linkType = linkType;
 }
 
--(void)setTap:(UITapGestureRecognizer *)tap{
-    _tap = tap;
-}
+//-(void)setTap:(UITapGestureRecognizer *)tap{
+//    _tap = tap;
+//}
+//
+//-(void)setLongTap:(UILongPressGestureRecognizer *)longTap{
+//    _longTap = longTap;
+//}
+
 
 -(void)addTapToLable{
-    self.tap =  [self tapGestureRecognizerTarget:self action:@selector(tapAction:)];
+    [self tapGestureRecognizerTarget:self action:@selector(tapAction:)];
 }
-
 
 
 -(void)tapAction:(UITapGestureRecognizer *)tap{
@@ -106,10 +110,6 @@
 
 }
 
-
-
-
-
 - (void)openURL:(NSString *)urlStr{
 
     NSURL *url = [NSURL URLWithString:urlStr];
@@ -121,24 +121,20 @@
     //iOS 10 以后
     //NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];//YES：失败;NO:成功
 
-
     if (isIOS10 || isAfterIOS10) {
-
-
-        [[UIApplication sharedApplication]openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@NO} completionHandler:^(BOOL success) {
-            NSLog(@"链接或媒体跳转成功");
-        }];
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication]openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly:@NO} completionHandler:^(BOOL success) {
+                NSLog(@"链接或媒体跳转成功");
+            }];
+        } else {
+            // Fallback on earlier versions
+        }
     }else{
-
-        //        if ([[UIApplication sharedApplication] canOpenURL:url])
-        //        {
-        //            [[UIApplication sharedApplication] openURL:url];
-        //        }
         [[UIApplication sharedApplication]openURL:url];
     }
 
-
 }
+
 
 
 

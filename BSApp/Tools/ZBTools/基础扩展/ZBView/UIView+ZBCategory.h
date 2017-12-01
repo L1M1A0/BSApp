@@ -17,6 +17,8 @@
 @property(assign, nonatomic) CGSize  size;
 @property(assign, nonatomic) CGPoint origin;
 
+
++ (UIView *)viewFrame:(CGRect)frame bgColor:(UIColor *)color superView:(UIView *)superView;
 /**
  阴影效果
 
@@ -49,6 +51,18 @@
 
  @param target 目标
  @param action 动作
+ @return 点击
  */
 - (UITapGestureRecognizer *)tapGestureRecognizerTarget:(id)target action:(SEL)action;
+
+
+/**
+ 添加长按事件
+
+ @param target 目标
+ @param action 动作
+ @param duration 延续时间
+ @return 长按
+ */
+- (UILongPressGestureRecognizer *)longPressGestureRecognizerTaget:(id)target action:(SEL)action duration:(CFTimeInterval)duration;
 @end

@@ -6,6 +6,8 @@
 //
 
 #import "UILabel+ZBCategory.h"
+#import "UIPasteboard+ZBPasteboard.h"
+
 
 @implementation UILabel (ZBCategory)
 
@@ -27,6 +29,21 @@
     [view addSubview:lab];
     return lab;
 }
+
+
+#pragma mark - 扩展方法
+
+#pragma mark 复制文字到剪贴板
+- (void)copyTextToPasteboardWhenLongTouch:(CFTimeInterval)duration{
+    [self longPressGestureRecognizerTaget:self action:@selector(longPressAction:) duration:duration];
+}
+
+-(void)longPressAction:(UILongPressGestureRecognizer *)longPress{
+    if (longPress.state == UIGestureRecognizerStateBegan) {
+        [UIPasteboard copyString:self.text];
+    }
+}
+
 
 
 
