@@ -18,6 +18,9 @@
 		053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AA1FB54724007027F2 /* ZBHttpResult.m */; };
 		053E64AF1FB582EA007027F2 /* ZBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AE1FB582EA007027F2 /* ZBAlertController.m */; };
 		05488EB71FB4485800837966 /* UITableView+ZBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05488EB61FB4485800837966 /* UITableView+ZBCategory.m */; };
+		0552322C1FDA26D400C55711 /* BSFMDBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552322B1FDA26D400C55711 /* BSFMDBVC.m */; };
+		0552322F1FDA282A00C55711 /* BSControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552322E1FDA282A00C55711 /* BSControlVC.m */; };
+		055232321FDA287D00C55711 /* BSTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 055232311FDA287D00C55711 /* BSTimeVC.m */; };
 		0558FFC81FB3F295009D5176 /* BSCommomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0558FFC71FB3F294009D5176 /* BSCommomObject.m */; };
 		057991ED1FB2FAA400F1E37C /* BSTabBarCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991161FB2FAA100F1E37C /* BSTabBarCtrl.m */; };
 		057991EE1FB2FAA400F1E37C /* BSBaseVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991171FB2FAA100F1E37C /* BSBaseVCtrl.m */; };
@@ -144,6 +147,12 @@
 		053E64AE1FB582EA007027F2 /* ZBAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBAlertController.m; sourceTree = "<group>"; };
 		05488EB51FB4485800837966 /* UITableView+ZBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ZBCategory.h"; sourceTree = "<group>"; };
 		05488EB61FB4485800837966 /* UITableView+ZBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ZBCategory.m"; sourceTree = "<group>"; };
+		0552322A1FDA26D400C55711 /* BSFMDBVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSFMDBVC.h; sourceTree = "<group>"; };
+		0552322B1FDA26D400C55711 /* BSFMDBVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSFMDBVC.m; sourceTree = "<group>"; };
+		0552322D1FDA282A00C55711 /* BSControlVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSControlVC.h; sourceTree = "<group>"; };
+		0552322E1FDA282A00C55711 /* BSControlVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSControlVC.m; sourceTree = "<group>"; };
+		055232301FDA287D00C55711 /* BSTimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTimeVC.h; sourceTree = "<group>"; };
+		055232311FDA287D00C55711 /* BSTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSTimeVC.m; sourceTree = "<group>"; };
 		0558FFC61FB3F294009D5176 /* BSCommomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCommomObject.h; sourceTree = "<group>"; };
 		0558FFC71FB3F294009D5176 /* BSCommomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCommomObject.m; sourceTree = "<group>"; };
 		057991121FB2FAA100F1E37C /* BSTabBarCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTabBarCtrl.h; sourceTree = "<group>"; };
@@ -1080,6 +1089,12 @@
 				05B4D5461FB41F1700819CF8 /* VC_01.m */,
 				05B4D5471FB41F1700819CF8 /* Model */,
 				05B4D5481FB41F1700819CF8 /* View */,
+				0552322D1FDA282A00C55711 /* BSControlVC.h */,
+				0552322E1FDA282A00C55711 /* BSControlVC.m */,
+				0552322A1FDA26D400C55711 /* BSFMDBVC.h */,
+				0552322B1FDA26D400C55711 /* BSFMDBVC.m */,
+				055232301FDA287D00C55711 /* BSTimeVC.h */,
+				055232311FDA287D00C55711 /* BSTimeVC.m */,
 			);
 			path = VC_01;
 			sourceTree = "<group>";
@@ -1349,6 +1364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0552322C1FDA26D400C55711 /* BSFMDBVC.m in Sources */,
 				057992321FB2FAA400F1E37C /* UIImage+Category.m in Sources */,
 				057992301FB2FAA400F1E37C /* UILabel+ZBCategory.m in Sources */,
 				057992201FB2FAA400F1E37C /* ZBDataDetector.m in Sources */,
@@ -1365,6 +1381,7 @@
 				053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */,
 				057992021FB2FAA400F1E37C /* XTSegmentControl.m in Sources */,
 				057992351FB2FAA400F1E37C /* ZBBarButtonItemObject.m in Sources */,
+				0552322F1FDA282A00C55711 /* BSControlVC.m in Sources */,
 				057992221FB2FAA400F1E37C /* ZBReadFileObject.m in Sources */,
 				057992281FB2FAA400F1E37C /* UIImageView+ZBCategory.m in Sources */,
 				057991EF1FB2FAA400F1E37C /* BSDataEmptyView.m in Sources */,
@@ -1375,6 +1392,7 @@
 				057992171FB2FAA400F1E37C /* ZBAppObject.m in Sources */,
 				0579921D1FB2FAA400F1E37C /* ZBConvertStringObject.m in Sources */,
 				057992091FB2FAA400F1E37C /* BSAppObject.m in Sources */,
+				055232321FDA287D00C55711 /* BSTimeVC.m in Sources */,
 				057991F41FB2FAA400F1E37C /* BSAlertView.m in Sources */,
 				0579923D1FB2FAA400F1E37C /* UIImage+ResizeMagick.m in Sources */,
 				057991EE1FB2FAA400F1E37C /* BSBaseVCtrl.m in Sources */,

@@ -44,7 +44,7 @@
 + (NSString *)parameterStr
 {
     
-    BSSafetyParameter * tool=[[BSSafetyParameter alloc]init];
+//    BSSafetyParameter * tool=[[BSSafetyParameter alloc]init];
     BSUserModel * model = [BSLoginManager getCurrentUserInfo];
     
     NSString *versionNum      = [NSString stringWithFormat:@"%@",[[[NSBundle mainBundle]infoDictionary]objectForKey:@"CFBundleVersion"]];//1.0
