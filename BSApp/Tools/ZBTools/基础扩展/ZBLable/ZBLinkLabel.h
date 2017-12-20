@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, ZBLableLinkType) {
 @interface ZBLinkLabel : UILabel
 
 /** 链接地址 */
-@property (nonatomic, copy) NSString *link;
+@property (nonatomic, copy) NSString *urlStr;
 
 /** 链接类型 */
 @property (nonatomic, assign) ZBLableLinkType linkType;
@@ -39,6 +39,6 @@ typedef NS_ENUM(NSInteger, ZBLableLinkType) {
 @property (nonatomic, copy) NSString *alertMessage;
 
 
-- (void)setLink:(NSString *)link linkType:(ZBLableLinkType)linkType;
+- (void)urlStr:(NSString *)urlStr linkType:(ZBLableLinkType)linkType;
 
 @end

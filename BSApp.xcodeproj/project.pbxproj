@@ -102,6 +102,7 @@
 		057992411FB2FE3000F1E37C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992401FB2FE1F00F1E37C /* QuartzCore.framework */; };
 		057992431FB2FE5C00F1E37C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992421FB2FE5300F1E37C /* Foundation.framework */; };
 		057992451FB2FEF800F1E37C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992441FB2FEEB00F1E37C /* UIKit.framework */; };
+		058BEA1D1FE7724300C49393 /* BSGuPiaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */; };
 		05B4D52A1FB3F91B00819CF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D5291FB3F91400819CF8 /* CFNetwork.framework */; };
 		05B4D52C1FB3F93100819CF8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D52B1FB3F92B00819CF8 /* CoreFoundation.framework */; };
 		05B4D52E1FB3F94200819CF8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D52D1FB3F93B00819CF8 /* CoreTelephony.framework */; };
@@ -312,6 +313,8 @@
 		057992401FB2FE1F00F1E37C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		057992421FB2FE5300F1E37C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		057992441FB2FEEB00F1E37C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		058BEA1B1FE7724300C49393 /* BSGuPiaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSGuPiaoVC.h; sourceTree = "<group>"; };
+		058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSGuPiaoVC.m; sourceTree = "<group>"; };
 		05B2F8371FB30A9A00C7B893 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		05B4D5291FB3F91400819CF8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		05B4D52B1FB3F92B00819CF8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -1122,6 +1125,8 @@
 				05B4D54D1FB41F1800819CF8 /* VC_02.m */,
 				05B4D54E1FB41F1800819CF8 /* Model */,
 				05B4D54F1FB41F1800819CF8 /* View */,
+				058BEA1B1FE7724300C49393 /* BSGuPiaoVC.h */,
+				058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */,
 			);
 			path = VC_02;
 			sourceTree = "<group>";
@@ -1393,6 +1398,7 @@
 				0579921D1FB2FAA400F1E37C /* ZBConvertStringObject.m in Sources */,
 				057992091FB2FAA400F1E37C /* BSAppObject.m in Sources */,
 				055232321FDA287D00C55711 /* BSTimeVC.m in Sources */,
+				058BEA1D1FE7724300C49393 /* BSGuPiaoVC.m in Sources */,
 				057991F41FB2FAA400F1E37C /* BSAlertView.m in Sources */,
 				0579923D1FB2FAA400F1E37C /* UIImage+ResizeMagick.m in Sources */,
 				057991EE1FB2FAA400F1E37C /* BSBaseVCtrl.m in Sources */,

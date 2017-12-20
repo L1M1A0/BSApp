@@ -24,7 +24,7 @@
     [link shadowColor:kRedColor opacity:1.0 radius:50 offset:CGSizeMake(10.0f, 30.0f)];
     link.text = @"链接";
     link.backgroundColor = kGreenColor;
-    [link setLink:@"http://www.baidu.com" linkType:ZBLableLinkURL];
+    [link urlStr:@"http://index.baidu.com/" linkType:ZBLableLinkURL];
     [self.view addSubview:link];
     
     UILabel *lab = [UILabel label:CGRectMake(120, 100, 50, 50) text:@"copy" tColor:kRedColor bColor:kGreenColor];
@@ -35,7 +35,7 @@
     UIImageView *imgv = [[UIImageView alloc]initWithFrame:CGRectMake(20, 180, 130, 60)];
     [imgv shadowColor:kRedColor opacity:1.0 radius:50 offset:CGSizeMake(10.0f, 30.0f)];
     [imgv tapGestureRecognizerTarget:self action:@selector(labAction)];
-    [imgv imageUrl:@"http://img.zcool.cn/community/014bfd577a0da00000018c1b587a4a.png@900w_1l_2o_100sh.jpg" placeholderImage:@"" data:^(NSData *imageData) {
+    [imgv imageUrl:@"http://img.zcool.cn/community/014bfd577a0da00000018c1b587a4a.png@900w_1l_2o_100sh.jpg" placeholderImage:@"head.png" data:^(NSData *imageData) {
 
     }];
     [self.view addSubview:imgv];
@@ -56,6 +56,10 @@
 -(void)labAction{
     ZBHud *hud = [[ZBHud alloc] initWithStr:@"hud1" view:self.view];
     //    [hud hideWithStr:@"fasd" after:1.0];
+//    hud.hud.mode = MBProgressHUDModeText;
+    hud.hud.color = kRedColor;
+//    hud.hud.xOffset = 100;
+//    hud.hud.yOffset = kScreenHeight-64;
     [hud hideWithArray:@[] dataSource:[NSMutableArray arrayWithArray:@[@"",@""]]  after:1.0];
     
 }
@@ -64,14 +68,12 @@
 -(void)btnaction{
     //[ZBHud initWithStr:@"afshifh" hideAfter:1.0 view:self.view];
     //[ZBHud initWithArray:@[@""] dataSource:[NSMutableArray arrayWithArray:@[@"",@""]] after:1.0 view:self.view];
-    
 
     ZBAlertController *aler = [ZBAlertController alert:@"弹窗" messge:@"傻逼吗？" action1:@"不是" handler1:^(UIAlertAction *action) {
 
         NSLog(@"aler1");
     } action2:@"是" handler2:^(UIAlertAction *action) {
         NSLog(@"aler2");
-
     }];
 
     [aler alertShow:^{

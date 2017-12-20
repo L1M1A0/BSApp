@@ -37,8 +37,8 @@
 
 
 
--(void)setLink:(NSString *)link{
-    _link = link;
+-(void)setUrlStr:(NSString *)urlStr{
+    _urlStr = urlStr;
 }
 -(void)setLinkType:(ZBLableLinkType)linkType{
     _linkType = linkType;
@@ -50,10 +50,11 @@
     _alertMessage = alertMessage;
 }
 
--(void)setLink:(NSString *)link linkType:(ZBLableLinkType)linkType{
-    _link = link;
+-(void)urlStr:(NSString *)urlStr linkType:(ZBLableLinkType)linkType{
+    _urlStr = urlStr;
     _linkType = linkType;
 }
+
 
 //-(void)setTap:(UITapGestureRecognizer *)tap{
 //    _tap = tap;
@@ -77,7 +78,7 @@
         return;
     }
     if(self.linkType != ZBLableLinkSetting){
-        if (self.link == nil || [self.link isEqualToString:@""]) {
+        if (self.urlStr == nil || [self.urlStr isEqualToString:@""]) {
         kAlert(nil, @"无法链接到网站或者电话号码，因为相关信息为空或不存在");
             return;
         }
@@ -88,11 +89,11 @@
 
 -(void)checkType{
     if (self.linkType == ZBLableLinkPhone) {
-        [self openURL:[NSString stringWithFormat:@"tel://%@",self.link]];
+        [self openURL:[NSString stringWithFormat:@"tel://%@",self.urlStr]];
     }
     else if (self.linkType == ZBLableLinkURL){
         //@"https://www.baidu.com"
-        [self openURL:[NSString stringWithFormat:@"%@",self.link]];
+        [self openURL:[NSString stringWithFormat:@"%@",self.urlStr]];
 
     }
     else if (self.linkType == ZBLableLinkSetting){

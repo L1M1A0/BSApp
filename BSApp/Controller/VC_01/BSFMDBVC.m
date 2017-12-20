@@ -7,6 +7,7 @@
 //
 
 #import "BSFMDBVC.h"
+#import <FMDB.h>
 
 @interface BSFMDBVC ()
 
@@ -17,7 +18,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self createDB];
 }
+
+
+-(void)createDB{
+
+    
+}
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

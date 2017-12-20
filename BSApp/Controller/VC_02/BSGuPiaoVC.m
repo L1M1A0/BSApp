@@ -1,48 +1,53 @@
 //
-//  VC_02.m
+//  BSGuPiaoVC.m
 //  BSApp
 //
-//  Created by BaoThink on 16/8/18.
-//  Copyright © 2016年 BaoThink. All rights reserved.
+//  Created by 李振彪 on 2017/12/18.
+//  Copyright © 2017年 李振彪. All rights reserved.
 //
 
-#import "VC_02.h"
 #import "BSGuPiaoVC.h"
-
-@interface VC_02 ()<UITableViewDataSource,UITableViewDelegate>{
+@interface BSGuPiaoVC ()<UITableViewDelegate,UITableViewDataSource>{
     NSArray *titles;
     NSArray *vctrls;
 }
-@property (nonatomic, strong) UITableView *tableView;
+
 
 
 @end
 
-@implementation VC_02
-
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
-}
-//-(void)viewDidAppear:(BOOL)animated{
-//    [super viewDidAppear:animated];
-//    self.tabBarController.tabBar.hidden = NO;
-//}
+@implementation BSGuPiaoVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     titles = @[@"股票计算"];
-    vctrls = @[@"BSGuPiaoVC"];
+    vctrls = @[];
     
-    
-   
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
     [self.view addSubview:self.tableView];
-    
+    [self.tableView.mj_header beginRefreshing];
+   
 }
+-(void)refreshData{
+    self.pageNo = 1;
+    [self loadMoreData];
+}
+-(void)loadMoreData{
+    NSString *urlStr = [NSString stringWithFormat:@"%@",KBaseUrl(@"")];
+    NSDictionary *para = @{};
+    
+    [BSHttpTool get:urlStr parameters:para success:^(ZBHttpResult *result) {
+        
+    } failure:^(ZBHttpResult *result) {
+        
+    }];
+}
+
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
@@ -61,11 +66,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.hidesBottomBarWhenPushed = YES;
-    self.tabBarController.tabBar.hidden = YES;
-    Class vcclass = NSClassFromString(vctrls[indexPath.row]);
-    UIViewController *vc = [[vcclass alloc]init];
-    [self.navigationController pushViewController:vc animated:NO];
+//    Class vc = NSClassFromString(vctrls[indexPath.row]);
+//    UIViewController *vc = [[vc alloc]init];
+    
     
 }
 
