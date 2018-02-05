@@ -17,6 +17,7 @@
 		053E64A81FB546CF007027F2 /* ZBHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64A71FB546CF007027F2 /* ZBHttpTool.m */; };
 		053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AA1FB54724007027F2 /* ZBHttpResult.m */; };
 		053E64AF1FB582EA007027F2 /* ZBAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 053E64AE1FB582EA007027F2 /* ZBAlertController.m */; };
+		05435AF11FF5E7E100A9A5FA /* ZBStock.m in Sources */ = {isa = PBXBuildFile; fileRef = 05435AF01FF5E7E100A9A5FA /* ZBStock.m */; };
 		05488EB71FB4485800837966 /* UITableView+ZBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05488EB61FB4485800837966 /* UITableView+ZBCategory.m */; };
 		0552322C1FDA26D400C55711 /* BSFMDBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552322B1FDA26D400C55711 /* BSFMDBVC.m */; };
 		0552322F1FDA282A00C55711 /* BSControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552322E1FDA282A00C55711 /* BSControlVC.m */; };
@@ -103,6 +104,7 @@
 		057992431FB2FE5C00F1E37C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992421FB2FE5300F1E37C /* Foundation.framework */; };
 		057992451FB2FEF800F1E37C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992441FB2FEEB00F1E37C /* UIKit.framework */; };
 		058BEA1D1FE7724300C49393 /* BSGuPiaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */; };
+		059AC98F2022B7CE00E66F7C /* 常用代码块.m in Sources */ = {isa = PBXBuildFile; fileRef = 059AC98E2022B7CE00E66F7C /* 常用代码块.m */; };
 		05B4D52A1FB3F91B00819CF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D5291FB3F91400819CF8 /* CFNetwork.framework */; };
 		05B4D52C1FB3F93100819CF8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D52B1FB3F92B00819CF8 /* CoreFoundation.framework */; };
 		05B4D52E1FB3F94200819CF8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D52D1FB3F93B00819CF8 /* CoreTelephony.framework */; };
@@ -120,6 +122,7 @@
 		05B4D5671FB41F1800819CF8 /* BSSetupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D5581FB41F1800819CF8 /* BSSetupVC.m */; };
 		05B4D5681FB41F1800819CF8 /* VC_04.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D55D1FB41F1800819CF8 /* VC_04.m */; };
 		05CF0D191FBA9E3C009335F1 /* ZBTools开发记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */; };
+		05CF347A20085B0300B873C6 /* ZBTimeLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CF347920085B0300B873C6 /* ZBTimeLunarCalendar.m */; };
 		05ED6FE81FBD3663001D3D4A /* UITableViewCell+ZBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ED6FE71FBD3663001D3D4A /* UITableViewCell+ZBCategory.m */; };
 		05ED6FEB1FBD71B2001D3D4A /* ZBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ED6FEA1FBD71B2001D3D4A /* ZBTableViewCell.m */; };
 		05F3AA2B1FC6C87800BEF5DF /* ZBStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3AA2A1FC6C87800BEF5DF /* ZBStatusBar.m */; };
@@ -146,6 +149,8 @@
 		053E64AA1FB54724007027F2 /* ZBHttpResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBHttpResult.m; sourceTree = "<group>"; };
 		053E64AD1FB582EA007027F2 /* ZBAlertController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBAlertController.h; sourceTree = "<group>"; };
 		053E64AE1FB582EA007027F2 /* ZBAlertController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBAlertController.m; sourceTree = "<group>"; };
+		05435AEF1FF5E7E100A9A5FA /* ZBStock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBStock.h; sourceTree = "<group>"; };
+		05435AF01FF5E7E100A9A5FA /* ZBStock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBStock.m; sourceTree = "<group>"; };
 		05488EB51FB4485800837966 /* UITableView+ZBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+ZBCategory.h"; sourceTree = "<group>"; };
 		05488EB61FB4485800837966 /* UITableView+ZBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ZBCategory.m"; sourceTree = "<group>"; };
 		0552322A1FDA26D400C55711 /* BSFMDBVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSFMDBVC.h; sourceTree = "<group>"; };
@@ -315,6 +320,7 @@
 		057992441FB2FEEB00F1E37C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		058BEA1B1FE7724300C49393 /* BSGuPiaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSGuPiaoVC.h; sourceTree = "<group>"; };
 		058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSGuPiaoVC.m; sourceTree = "<group>"; };
+		059AC98E2022B7CE00E66F7C /* 常用代码块.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "常用代码块.m"; sourceTree = "<group>"; };
 		05B2F8371FB30A9A00C7B893 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		05B4D5291FB3F91400819CF8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		05B4D52B1FB3F92B00819CF8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -342,6 +348,8 @@
 		05B4D55C1FB41F1800819CF8 /* VC_04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_04.h; sourceTree = "<group>"; };
 		05B4D55D1FB41F1800819CF8 /* VC_04.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_04.m; sourceTree = "<group>"; };
 		05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ZBTools开发记录.txt"; sourceTree = "<group>"; };
+		05CF347820085B0300B873C6 /* ZBTimeLunarCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBTimeLunarCalendar.h; sourceTree = "<group>"; };
+		05CF347920085B0300B873C6 /* ZBTimeLunarCalendar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBTimeLunarCalendar.m; sourceTree = "<group>"; };
 		05ED6FE61FBD3663001D3D4A /* UITableViewCell+ZBCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+ZBCategory.h"; sourceTree = "<group>"; };
 		05ED6FE71FBD3663001D3D4A /* UITableViewCell+ZBCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+ZBCategory.m"; sourceTree = "<group>"; };
 		05ED6FE91FBD71B2001D3D4A /* ZBTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBTableViewCell.h; sourceTree = "<group>"; };
@@ -442,6 +450,13 @@
 			path = ZBHub;
 			sourceTree = "<group>";
 		};
+		053C257B1FF3675A009F5249 /* object */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = object;
+			sourceTree = "<group>";
+		};
 		053E64A41FB54420007027F2 /* 基础扩展 */ = {
 			isa = PBXGroup;
 			children = (
@@ -487,6 +502,23 @@
 				053E64AE1FB582EA007027F2 /* ZBAlertController.m */,
 			);
 			path = ZBAlertController;
+			sourceTree = "<group>";
+		};
+		05435AED1FF5E74C00A9A5FA /* 金融股票 */ = {
+			isa = PBXGroup;
+			children = (
+				05435AEF1FF5E7E100A9A5FA /* ZBStock.h */,
+				05435AF01FF5E7E100A9A5FA /* ZBStock.m */,
+			);
+			path = "金融股票";
+			sourceTree = "<group>";
+		};
+		05435AEE1FF5E76300A9A5FA /* 专有功能 */ = {
+			isa = PBXGroup;
+			children = (
+				05435AED1FF5E74C00A9A5FA /* 金融股票 */,
+			);
+			path = "专有功能";
 			sourceTree = "<group>";
 		};
 		05488EB41FB4484000837966 /* ZBTableView */ = {
@@ -822,11 +854,13 @@
 		0579917D1FB2FAA300F1E37C /* ZBTools */ = {
 			isa = PBXGroup;
 			children = (
+				05435AEE1FF5E76300A9A5FA /* 专有功能 */,
 				057991DD1FB2FAA400F1E37C /* ZBControlCategoryHeader.h */,
 				05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */,
 				053E64A51FB54420007027F2 /* 控件封装 */,
 				053E64A41FB54420007027F2 /* 基础扩展 */,
 				0579917E1FB2FAA300F1E37C /* 通用功能 */,
+				059AC98E2022B7CE00E66F7C /* 常用代码块.m */,
 			);
 			path = ZBTools;
 			sourceTree = "<group>";
@@ -877,6 +911,8 @@
 				0579918C1FB2FAA300F1E37C /* ZBTimestamp.m */,
 				0579918E1FB2FAA300F1E37C /* ZBTimeObject.h */,
 				0579918B1FB2FAA300F1E37C /* ZBTimeObject.m */,
+				05CF347820085B0300B873C6 /* ZBTimeLunarCalendar.h */,
+				05CF347920085B0300B873C6 /* ZBTimeLunarCalendar.m */,
 			);
 			path = "时间管理";
 			sourceTree = "<group>";
@@ -1121,6 +1157,7 @@
 		05B4D54C1FB41F1800819CF8 /* VC_02 */ = {
 			isa = PBXGroup;
 			children = (
+				053C257B1FF3675A009F5249 /* object */,
 				05B4D5501FB41F1800819CF8 /* VC_02.h */,
 				05B4D54D1FB41F1800819CF8 /* VC_02.m */,
 				05B4D54E1FB41F1800819CF8 /* Model */,
@@ -1397,7 +1434,9 @@
 				057992171FB2FAA400F1E37C /* ZBAppObject.m in Sources */,
 				0579921D1FB2FAA400F1E37C /* ZBConvertStringObject.m in Sources */,
 				057992091FB2FAA400F1E37C /* BSAppObject.m in Sources */,
+				05435AF11FF5E7E100A9A5FA /* ZBStock.m in Sources */,
 				055232321FDA287D00C55711 /* BSTimeVC.m in Sources */,
+				05CF347A20085B0300B873C6 /* ZBTimeLunarCalendar.m in Sources */,
 				058BEA1D1FE7724300C49393 /* BSGuPiaoVC.m in Sources */,
 				057991F41FB2FAA400F1E37C /* BSAlertView.m in Sources */,
 				0579923D1FB2FAA400F1E37C /* UIImage+ResizeMagick.m in Sources */,
@@ -1444,6 +1483,7 @@
 				0579923C1FB2FAA400F1E37C /* UIColor+Extension.m in Sources */,
 				057992371FB2FAA400F1E37C /* ZBDocumentInteractionTool.m in Sources */,
 				050253C91FB2F496009735E2 /* main.m in Sources */,
+				059AC98F2022B7CE00E66F7C /* 常用代码块.m in Sources */,
 				057992311FB2FAA400F1E37C /* ZBLinkLabel.m in Sources */,
 				057992271FB2FAA400F1E37C /* UIView+ZBCategory.m in Sources */,
 				057992031FB2FAA400F1E37C /* Aspects.m in Sources */,
@@ -1624,7 +1664,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bao.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = developer_0517;
+				PROVISIONING_PROFILE = "0657e1f5-6cc8-4896-9c55-5ed43303ec88";
+				PROVISIONING_PROFILE_SPECIFIER = ceshi_dev_180126;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1662,7 +1703,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bao.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = developer_0517;
+				PROVISIONING_PROFILE = "0657e1f5-6cc8-4896-9c55-5ed43303ec88";
+				PROVISIONING_PROFILE_SPECIFIER = ceshi_dev_180126;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

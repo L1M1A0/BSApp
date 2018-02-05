@@ -21,4 +21,5 @@
 -(void)alertShow:(void (^ __nullable)(void))completion;
 
 +(ZBAlertController *)alert:(NSString *)title message:(NSString *)messge;
+
 @end

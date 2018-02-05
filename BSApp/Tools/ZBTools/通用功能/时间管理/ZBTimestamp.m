@@ -102,9 +102,9 @@
 
 /** 获取当前的时间,拆分成每个单独元素，组成数组*/
 + (NSArray *)splitCurrentTimeToArray{
+  
     NSString *timeStr = [ZBTime currentTimeWithDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     NSArray  *timeArr = [self splitTimeStringToArray:timeStr];
-    
     return timeArr;
 }
 
@@ -117,17 +117,20 @@
  */
 + (NSArray *)splitTimeStringToArray:(NSString *)dateString{
 
-    NSArray *arr_1 = [dateString componentsSeparatedByString:@" "];
-    NSString *str_Year   = [arr_1[0] componentsSeparatedByString:@"-"][0];
-    NSString *str_Month  = [arr_1[0] componentsSeparatedByString:@"-"][1];
-    NSString *str_Date   = [arr_1[0] componentsSeparatedByString:@"-"][2];
-    NSString *str_Hour   = [arr_1[1] componentsSeparatedByString:@":"][0];
-    NSString *str_Minute = [arr_1[1] componentsSeparatedByString:@":"][1];
-    NSString *str_second = @"00";
-    if([[arr_1[1] componentsSeparatedByString:@":"] count] == 3){
-        str_second = [arr_1[1] componentsSeparatedByString:@":"][2];
+    NSArray *arr = [dateString componentsSeparatedByString:@" "];
+    NSArray *date = [arr[0] componentsSeparatedByString:@"-"];
+    NSArray *time = [arr[0] componentsSeparatedByString:@":"];
+
+//    NSString *year   = date[0];
+//    NSString *month  = date[1];
+//    NSString *day    = date[2];
+//    NSString *hour   = time[0];
+//    NSString *minute = time[1];
+    NSString *second = @"00";
+    if([time count] == 3){
+        second = time[2];
     }
-    NSArray * timeArr = @[str_Year,str_Month,str_Date,str_Hour,str_Minute,str_second];
+    NSArray * timeArr = @[date[0],date[1],date[2],time[0],time[1],second];
     return timeArr;
 }
 

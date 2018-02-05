@@ -79,4 +79,6 @@
  @return 格式化后的数字
  */
 + (NSString *)positiveFormat:(NSString *)string;
+
++ (NSString *)str1:(NSString *)str1 str2:(NSString *)str2;
 @end

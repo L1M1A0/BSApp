@@ -18,4 +18,18 @@
     }
 }
 
+- (UITableView *)tableView:(CGRect)frame style:(UITableViewStyle)style delegate:(id)delegate{
+    UITableView *tab = [[UITableView alloc]initWithFrame:frame style:style];
+    tab.delegate   = delegate;
+    tab.dataSource = delegate;
+    return tab;
+}
+
+- (void)headerRefreshAction:(void (^)(void))action{
+    self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:action];
+}
+- (void)footerLoadMoreAction:(void (^)(void))action{
+    self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:action];
+}
+
 @end

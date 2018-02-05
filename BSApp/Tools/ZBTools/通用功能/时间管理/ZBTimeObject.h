@@ -23,13 +23,6 @@
  */
 + (NSString*)weekTimesFromDate:(NSDate *)inputDate;
 
-/**
- *  根据传入的时间, 获取某指定范围的时间域
- *  type取值: 一周范围
- *
- *  @return 时间域
- */
-+ (NSDictionary *)weekRangeBeginAndEnd:(NSDate *)newDate;
 
 
 

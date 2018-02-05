@@ -40,7 +40,7 @@
 + (NSString*)weekTimesFromDate:(NSDate *)inputDate {
     
     NSArray *weekdays = [NSArray arrayWithObjects: [NSNull null], @"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
     [calendar setTimeZone: timeZone];
     NSCalendarUnit calendarUnit = NSWeekdayCalendarUnit;
@@ -50,12 +50,40 @@
 
 
 /**
- *  根据传入的时间, 获取某指定范围的时间域
+ 根据日期，获取星期日数，如：星期一
+ 
+ @param date 指定日期
+ @param key  日期前缀，如@"星期"、@"周"
+ @return grg
+ */
++ (NSString*)weekDayWithDate:(NSDate *)date key:(NSString *)key{
+    
+    NSArray *weekDays = [NSArray arrayWithObjects:[NSNull null],
+                         [NSString str1:key str2:@"日"],
+                         [NSString str1:key str2:@"一"],
+                         [NSString str1:key str2:@"二"],
+                         [NSString str1:key str2:@"三"],
+                         [NSString str1:key str2:@"四"],
+                         [NSString str1:key str2:@"五"],
+                         [NSString str1:key str2:@"六"],nil];
+    
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    NSTimeZone *timeZone = [[NSTimeZone alloc] initWithName:@"Asia/Shanghai"];
+    [calendar setTimeZone: timeZone];
+    NSCalendarUnit calendarUnit = NSCalendarUnitWeekday;
+    NSDateComponents *theComponents = [calendar components:calendarUnit fromDate:date];
+    return [weekDays objectAtIndex:theComponents.weekday];
+}
+
+
+
+/**(未完成)
+ *  根据传入的时间,获取某指定范围的时间域
  *  type取值: 一周范围
  *
  *  @return 时间域
  */
-+ (NSDictionary *)weekRangeBeginAndEnd:(NSDate *)newDate{
++ (NSDictionary *)weekRangeWithDate:(NSDate *)newDate firstWeekday:(NSInteger)firstWeekday{
     if (newDate == nil) {
         newDate = [NSDate date];
     }
@@ -63,22 +91,12 @@
     double interval = 0;
     NSDate *beginDate = nil;
     NSDate *endDate = nil;
-    
     NSCalendar *calendar = [NSCalendar currentCalendar];
     //设定周一为周首日
-    [calendar setFirstWeekday:1];
+    [calendar setFirstWeekday:firstWeekday];//1
     //分别修改range为 NSMonthCalendarUnit NSDayCalendarUnit NSWeekCalendarUnit NSYearCalendarUnit
     BOOL ok = [calendar rangeOfUnit:NSWeekCalendarUnit startDate:&beginDate interval:&interval forDate:newDate];
     
-    //    if (ok) {
-    //        endDate = [beginDate dateByAddingTimeInterval:interval-1];
-    //    }else {
-    //        return;
-    //    }
-    //    NSDateFormatter *myDateFormatter = [[NSDateFormatter alloc] init];
-    //    [myDateFormatter setDateFormat:@"yyyy-MM-dd"];
-    //    NSString *beginString = [myDateFormatter stringFromDate:beginDate];
-    //    NSString *endString = [myDateFormatter stringFromDate:endDate];
     
     if (ok) {
         endDate = [beginDate dateByAddingTimeInterval:interval-1];
@@ -93,7 +111,6 @@
     }
     return dic;
 }
-
 
 
 @end

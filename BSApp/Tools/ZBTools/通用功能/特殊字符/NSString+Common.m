@@ -271,5 +271,8 @@
     }
     return @"";
 }
++ (NSString *)str1:(NSString *)str1 str2:(NSString *)str2{
+    return [NSString stringWithFormat:@"%@%@",str1,str2];
+}
 
 @end

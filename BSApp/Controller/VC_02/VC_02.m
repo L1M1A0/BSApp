@@ -40,6 +40,20 @@
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView headerRefreshAction:^{
+        NSLog(@"刷新开始");
+        [self.tableView.mj_header beginRefreshing];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSLog(@"刷新完成");
+            [self.tableView.mj_header endRefreshing];
+        });
+    }];
+    
+    [self.tableView footerLoadMoreAction:^{
+        
+    }];
+    
+    
     [self.view addSubview:self.tableView];
     
 }

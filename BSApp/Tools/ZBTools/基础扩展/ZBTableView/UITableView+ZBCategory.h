@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+
 @interface UITableView (ZBCategory)
 
 -(void)estimatedInIOS11;
+
+
+- (void)headerRefreshAction:(void (^)(void))action;
+- (void)footerLoadMoreAction:(void (^)(void))action;
 
 @end

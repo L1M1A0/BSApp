@@ -55,11 +55,7 @@
             UIAlertAction *OKAction = [UIAlertAction actionWithTitle:actionTitle2 style:UIAlertActionStyleDefault handler:handler2];
             [alertController addAction:OKAction];
         }
-        
     }
-
-
-    
 //    [self presentViewController:alertController animated:YES completion:nil];
     
     return alertController;
@@ -72,8 +68,6 @@
 }
 
 +(ZBAlertController *)alert:(NSString *)title message:(NSString *)messge{
-  
-    
     ZBAlertController *alert = [self alert:title messge:messge action1:@"关闭" handler1:nil action2:nil handler2:nil];
     [alert alertShow:nil];
     return alert;
