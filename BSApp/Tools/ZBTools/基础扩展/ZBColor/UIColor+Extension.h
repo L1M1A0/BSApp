@@ -37,6 +37,24 @@
 
 
 @interface UIColor (Extension)
-+ (UIColor *)colorWithHexString:(NSString *)stringToConvert;
+
+/**
+ 根据十六进制颜色码，转换成RGB UIColor
+ 
+ @param hexColor 十六进制颜色码 如：#F0F0F0
+ @return RGB颜色
+ */
++ (UIColor *)RGBWithHexColor:(NSString *)hexColor;
+
+/**
+ 渐变色
+ 
+ 更多渐变色的内容：https://www.cnblogs.com/zhouxihi/p/6295624.html
+ 
+ @param colors 渐变颜色数组
+ @param frame 渐变范围
+ @return 渐变色
+ */
++ (CAGradientLayer *)gradientLayer:(NSArray *)colors frame:(CGRect)frame;
 
 @end

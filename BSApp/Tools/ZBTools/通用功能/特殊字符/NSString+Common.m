@@ -271,6 +271,51 @@
     }
     return @"";
 }
+
+/**
+ 格式化数字，小数长度最多3位
+ 
+ @param text 原字符串
+ @param count 小数长度，最长3位
+ @return 格式化后的数字
+ */
++ (NSString *)positiveFormat:(NSString *)text point:(NSInteger)count{
+    NSString *str = @"";
+    
+    if(!text || [text floatValue] == 0){
+        switch (count) {
+            case 0: str = @"0";
+                break;
+            case 1: str = @"0.0";
+                break;
+            case 2: str = @"0.00";
+                break;
+            case 3: str = @"0.000";
+                break;
+            default: str = @"0.00";
+                break;
+        }
+        return str;
+    }else{
+        NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+        switch (count) {
+            case 0:{ [numberFormatter setPositiveFormat:@",###;"]; }
+                break;
+            case 1:{ [numberFormatter setPositiveFormat:@",###.0;"]; }
+                break;
+            case 2:{ [numberFormatter setPositiveFormat:@",###.00;"]; }
+                break;
+            case 3:{ [numberFormatter setPositiveFormat:@",###.000;"]; }
+                break;
+            default:{ [numberFormatter setPositiveFormat:@",###.00;"]; }
+                break;
+        }
+        
+        return [numberFormatter stringFromNumber:[NSNumber numberWithDouble:[text doubleValue]]];
+    }
+    return @"";
+}
+
 + (NSString *)str1:(NSString *)str1 str2:(NSString *)str2{
     return [NSString stringWithFormat:@"%@%@",str1,str2];
 }

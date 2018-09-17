@@ -80,5 +80,22 @@
  */
 + (NSString *)positiveFormat:(NSString *)string;
 
+/**
+ 格式化数字，小数长度最多3位
+ 
+ @param text 原字符串
+ @param count 小数长度，最长3位
+ @return 格式化后的数字
+ */
++ (NSString *)positiveFormat:(NSString *)text point:(NSInteger)count;
+
+
+/**
+ 拼接两个字符串
+
+ @param str1 str1
+ @param str2 str2
+ @return str
+ */
 + (NSString *)str1:(NSString *)str1 str2:(NSString *)str2;
 @end

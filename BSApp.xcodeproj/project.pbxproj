@@ -23,6 +23,7 @@
 		0552322F1FDA282A00C55711 /* BSControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552322E1FDA282A00C55711 /* BSControlVC.m */; };
 		055232321FDA287D00C55711 /* BSTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 055232311FDA287D00C55711 /* BSTimeVC.m */; };
 		0558FFC81FB3F295009D5176 /* BSCommomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0558FFC71FB3F294009D5176 /* BSCommomObject.m */; };
+		056FCDCD20FF392A00468DA6 /* BSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 056FCDCB20FF392A00468DA6 /* BSNavigationController.m */; };
 		057991ED1FB2FAA400F1E37C /* BSTabBarCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991161FB2FAA100F1E37C /* BSTabBarCtrl.m */; };
 		057991EE1FB2FAA400F1E37C /* BSBaseVCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991171FB2FAA100F1E37C /* BSBaseVCtrl.m */; };
 		057991EF1FB2FAA400F1E37C /* BSDataEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0579911C1FB2FAA200F1E37C /* BSDataEmptyView.m */; };
@@ -161,6 +162,8 @@
 		055232311FDA287D00C55711 /* BSTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSTimeVC.m; sourceTree = "<group>"; };
 		0558FFC61FB3F294009D5176 /* BSCommomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCommomObject.h; sourceTree = "<group>"; };
 		0558FFC71FB3F294009D5176 /* BSCommomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCommomObject.m; sourceTree = "<group>"; };
+		056FCDCB20FF392A00468DA6 /* BSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNavigationController.m; sourceTree = "<group>"; };
+		056FCDCC20FF392A00468DA6 /* BSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNavigationController.h; sourceTree = "<group>"; };
 		057991121FB2FAA100F1E37C /* BSTabBarCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSTabBarCtrl.h; sourceTree = "<group>"; };
 		057991141FB2FAA100F1E37C /* BSBaseVCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBaseVCtrl.h; sourceTree = "<group>"; };
 		057991161FB2FAA100F1E37C /* BSTabBarCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSTabBarCtrl.m; sourceTree = "<group>"; };
@@ -551,6 +554,8 @@
 		057991111FB2FAA100F1E37C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				056FCDCC20FF392A00468DA6 /* BSNavigationController.h */,
+				056FCDCB20FF392A00468DA6 /* BSNavigationController.m */,
 				057991121FB2FAA100F1E37C /* BSTabBarCtrl.h */,
 				057991161FB2FAA100F1E37C /* BSTabBarCtrl.m */,
 				057991141FB2FAA100F1E37C /* BSBaseVCtrl.h */,
@@ -1419,6 +1424,7 @@
 				0579920B1FB2FAA400F1E37C /* BSHttpTool.m in Sources */,
 				057991FA1FB2FAA400F1E37C /* KGModal.m in Sources */,
 				057992391FB2FAA400F1E37C /* UIScrollView+EmptyDataSet.m in Sources */,
+				056FCDCD20FF392A00468DA6 /* BSNavigationController.m in Sources */,
 				0538D7C31FCD083400405BD9 /* ZBHud.m in Sources */,
 				053E64AB1FB54724007027F2 /* ZBHttpResult.m in Sources */,
 				057992021FB2FAA400F1E37C /* XTSegmentControl.m in Sources */,

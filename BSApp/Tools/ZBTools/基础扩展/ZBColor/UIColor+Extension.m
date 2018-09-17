@@ -9,17 +9,13 @@
 #import "UIColor+Extension.h"
 
 @implementation UIColor (Extension)
-+ (UIColor *)colorWithHexString:(NSString *)stringToConvert
-{
-    NSString *cString = [[stringToConvert stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
++ (UIColor *)RGBWithHexColor:(NSString *)hexColor{
     
+    NSString *cString = [[hexColor stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
     
-    if ([cString length] < 6)
-        return kWhiteColor;
-    if ([cString hasPrefix:@"#"])
-        cString = [cString substringFromIndex:1];
-    if ([cString length] != 6)
-        return kWhiteColor;
+    if ([cString length] < 6)     return kWhiteColor;
+    if ([cString hasPrefix:@"#"]) cString = [cString substringFromIndex:1];
+    if ([cString length] != 6)    return kWhiteColor;
     
     NSRange range;
     range.location = 0;
@@ -44,4 +40,35 @@
                            alpha:1.0f];
     
 }
+
+
+
+/**
+ 渐变色
+ 
+ 更多渐变色的内容：https://www.cnblogs.com/zhouxihi/p/6295624.html
+ 
+ @param colors 渐变颜色数组
+ @param frame 渐变范围
+ @return 渐变色
+ */
++ (CAGradientLayer *)gradientLayer:(NSArray *)colors frame:(CGRect)frame{
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    NSMutableArray *cl = [NSMutableArray array];
+    for (int i = 0; i < colors.count; i++) {
+        UIColor *col = colors[i];
+        [cl addObject:(__bridge id)col.CGColor];
+    }
+    //    colors = [cl mutableCopy];
+    gradientLayer.colors = colors;//@[(__bridge id)color1.CGColor, (__bridge id)color2.CGColor];//
+    gradientLayer.locations = @[@0.0, @1.0];
+    gradientLayer.startPoint = CGPointMake(0, 0);
+    gradientLayer.endPoint = CGPointMake(1.0, 0);
+    gradientLayer.frame = frame;//CGRectMake(0, -20, kScreenWidth, 64);
+    //    [view.layer insertSublayer:gradientLayer atIndex:0];//渐变
+    return gradientLayer;
+}
+
+
+
 @end
