@@ -22,6 +22,7 @@
 		0552322C1FDA26D400C55711 /* BSFMDBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552322B1FDA26D400C55711 /* BSFMDBVC.m */; };
 		0552322F1FDA282A00C55711 /* BSControlVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0552322E1FDA282A00C55711 /* BSControlVC.m */; };
 		055232321FDA287D00C55711 /* BSTimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 055232311FDA287D00C55711 /* BSTimeVC.m */; };
+		05566DDA2151011B009563EC /* ZBFMDBObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 05566DD92151011B009563EC /* ZBFMDBObject.m */; };
 		0558FFC81FB3F295009D5176 /* BSCommomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0558FFC71FB3F294009D5176 /* BSCommomObject.m */; };
 		056FCDCD20FF392A00468DA6 /* BSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 056FCDCB20FF392A00468DA6 /* BSNavigationController.m */; };
 		057991ED1FB2FAA400F1E37C /* BSTabBarCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 057991161FB2FAA100F1E37C /* BSTabBarCtrl.m */; };
@@ -106,6 +107,7 @@
 		057992451FB2FEF800F1E37C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992441FB2FEEB00F1E37C /* UIKit.framework */; };
 		058BEA1D1FE7724300C49393 /* BSGuPiaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */; };
 		059AC98F2022B7CE00E66F7C /* 常用代码块.m in Sources */ = {isa = PBXBuildFile; fileRef = 059AC98E2022B7CE00E66F7C /* 常用代码块.m */; };
+		05B29E16214F871E00A9993B /* BSFMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29E15214F871E00A9993B /* BSFMDBModel.m */; };
 		05B4D52A1FB3F91B00819CF8 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D5291FB3F91400819CF8 /* CFNetwork.framework */; };
 		05B4D52C1FB3F93100819CF8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D52B1FB3F92B00819CF8 /* CoreFoundation.framework */; };
 		05B4D52E1FB3F94200819CF8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05B4D52D1FB3F93B00819CF8 /* CoreTelephony.framework */; };
@@ -160,6 +162,8 @@
 		0552322E1FDA282A00C55711 /* BSControlVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSControlVC.m; sourceTree = "<group>"; };
 		055232301FDA287D00C55711 /* BSTimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSTimeVC.h; sourceTree = "<group>"; };
 		055232311FDA287D00C55711 /* BSTimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSTimeVC.m; sourceTree = "<group>"; };
+		05566DD82151011B009563EC /* ZBFMDBObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBFMDBObject.h; sourceTree = "<group>"; };
+		05566DD92151011B009563EC /* ZBFMDBObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBFMDBObject.m; sourceTree = "<group>"; };
 		0558FFC61FB3F294009D5176 /* BSCommomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSCommomObject.h; sourceTree = "<group>"; };
 		0558FFC71FB3F294009D5176 /* BSCommomObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSCommomObject.m; sourceTree = "<group>"; };
 		056FCDCB20FF392A00468DA6 /* BSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNavigationController.m; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 		058BEA1B1FE7724300C49393 /* BSGuPiaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSGuPiaoVC.h; sourceTree = "<group>"; };
 		058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSGuPiaoVC.m; sourceTree = "<group>"; };
 		059AC98E2022B7CE00E66F7C /* 常用代码块.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "常用代码块.m"; sourceTree = "<group>"; };
+		05B29E14214F871E00A9993B /* BSFMDBModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSFMDBModel.h; sourceTree = "<group>"; };
+		05B29E15214F871E00A9993B /* BSFMDBModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSFMDBModel.m; sourceTree = "<group>"; };
 		05B2F8371FB30A9A00C7B893 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		05B4D5291FB3F91400819CF8 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		05B4D52B1FB3F92B00819CF8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -959,6 +965,8 @@
 				057991A31FB2FAA400F1E37C /* ZBReadFileObject.m */,
 				057991A11FB2FAA400F1E37C /* ZBSandBoxObject.h */,
 				057991A41FB2FAA400F1E37C /* ZBSandBoxObject.m */,
+				05566DD82151011B009563EC /* ZBFMDBObject.h */,
+				05566DD92151011B009563EC /* ZBFMDBObject.m */,
 			);
 			path = "沙盒读写";
 			sourceTree = "<group>";
@@ -1101,6 +1109,17 @@
 			path = ZBDocumentInteractionTool;
 			sourceTree = "<group>";
 		};
+		05B29E13214F86F900A9993B /* 数据库 */ = {
+			isa = PBXGroup;
+			children = (
+				0552322A1FDA26D400C55711 /* BSFMDBVC.h */,
+				0552322B1FDA26D400C55711 /* BSFMDBVC.m */,
+				05B29E14214F871E00A9993B /* BSFMDBModel.h */,
+				05B29E15214F871E00A9993B /* BSFMDBModel.m */,
+			);
+			path = "数据库";
+			sourceTree = "<group>";
+		};
 		05B4D53C1FB41F1700819CF8 /* 登录 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1131,23 +1150,14 @@
 			children = (
 				05B4D54B1FB41F1700819CF8 /* VC_01.h */,
 				05B4D5461FB41F1700819CF8 /* VC_01.m */,
-				05B4D5471FB41F1700819CF8 /* Model */,
-				05B4D5481FB41F1700819CF8 /* View */,
 				0552322D1FDA282A00C55711 /* BSControlVC.h */,
 				0552322E1FDA282A00C55711 /* BSControlVC.m */,
-				0552322A1FDA26D400C55711 /* BSFMDBVC.h */,
-				0552322B1FDA26D400C55711 /* BSFMDBVC.m */,
 				055232301FDA287D00C55711 /* BSTimeVC.h */,
 				055232311FDA287D00C55711 /* BSTimeVC.m */,
+				05B29E13214F86F900A9993B /* 数据库 */,
+				05B4D5481FB41F1700819CF8 /* View */,
 			);
 			path = VC_01;
-			sourceTree = "<group>";
-		};
-		05B4D5471FB41F1700819CF8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		05B4D5481FB41F1700819CF8 /* View */ = {
@@ -1418,6 +1428,7 @@
 				0579922A1FB2FAA400F1E37C /* ZBLayer.m in Sources */,
 				057991F21FB2FAA400F1E37C /* BSCheckBoxView.m in Sources */,
 				057992341FB2FAA400F1E37C /* ZBTextView.m in Sources */,
+				05B29E16214F871E00A9993B /* BSFMDBModel.m in Sources */,
 				057992121FB2FAA400F1E37C /* BSAppDelegateObject.m in Sources */,
 				057991F01FB2FAA400F1E37C /* BSListCell.m in Sources */,
 				057992261FB2FAA400F1E37C /* ZBImagePickerObject.m in Sources */,
@@ -1458,6 +1469,7 @@
 				057992131FB2FAA400F1E37C /* ZBDeviceAuxiliary.m in Sources */,
 				0579921C1FB2FAA400F1E37C /* ZBHttpError.m in Sources */,
 				053858081FCFEC6A00C65796 /* UIPasteboard+ZBPasteboard.m in Sources */,
+				05566DDA2151011B009563EC /* ZBFMDBObject.m in Sources */,
 				057992211FB2FAA400F1E37C /* ZBUserDefault.m in Sources */,
 				057992331FB2FAA400F1E37C /* UIImage+DrawRect.m in Sources */,
 				05B4D5641FB41F1800819CF8 /* VC_03.m in Sources */,

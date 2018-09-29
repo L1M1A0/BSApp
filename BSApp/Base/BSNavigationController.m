@@ -30,7 +30,7 @@
     gradientLayer.locations = @[@0.0, @1.0];
     gradientLayer.startPoint = CGPointMake(0, 0);
     gradientLayer.endPoint = CGPointMake(1.0, 0);
-    gradientLayer.frame = CGRectMake(0, -20, KScreenWidth, 64);
+    gradientLayer.frame = CGRectMake(0, -20, kScreenWidth, 64);
     //    [self.navigationController.navigationBar.layer insertSublayer:gradientLayer below:self.navigationController.navigationBar.superview.layer];
     [navCtrl.navigationBar.layer insertSublayer:gradientLayer atIndex:0];//渐变
 }

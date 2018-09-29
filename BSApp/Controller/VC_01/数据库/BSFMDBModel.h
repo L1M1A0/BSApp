@@ -1,19 +1,17 @@
 //
-//  BSControlVC.h
+//  BSFMDBModel.h
 //  BSApp
 //
-//  Created by 李振彪 on 2017/12/8.
-//  Copyright © 2017年 李振彪. All rights reserved.
+//  Created by LZBiao on 2018/9/17.
+//  Copyright © 2018年 李振彪. All rights reserved.
 //
 
-#import "BSBaseVCtrl.h"
+#import <Foundation/Foundation.h>
 
-@interface BSControlVC : BSBaseVCtrl
-
+@interface BSFMDBModel : NSObject
 @property (nonatomic, assign) int ID;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *phone;
 @property (nonatomic, assign) int score;
-
 
 @end

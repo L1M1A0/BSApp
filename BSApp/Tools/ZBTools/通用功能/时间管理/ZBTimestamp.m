@@ -119,7 +119,7 @@
 
     NSArray *arr = [dateString componentsSeparatedByString:@" "];
     NSArray *date = [arr[0] componentsSeparatedByString:@"-"];
-    NSArray *time = [arr[0] componentsSeparatedByString:@":"];
+    NSArray *time = [arr[1] componentsSeparatedByString:@":"];
 
 //    NSString *year   = date[0];
 //    NSString *month  = date[1];
