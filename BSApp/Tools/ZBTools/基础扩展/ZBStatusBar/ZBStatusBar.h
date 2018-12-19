@@ -1,15 +1,14 @@
 //
 //  ZBStatusBar.h
-//  BSApp
+//  giseGnmGkapp
 //
-//  Created by 李振彪 on 2017/11/23.
-//  Copyright © 2017年 李振彪. All rights reserved.
+//  Created by LZBiao on 2018/8/23.
+//  Copyright © 2018年 baothink. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface ZBStatusBar : NSObject
-
 
 
 /**
@@ -21,6 +20,14 @@
  渐变图层
  */
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
+
+
+/**
+ 隐藏状态栏：YES or NO
+ */
+@property (nonatomic, assign) BOOL statusBarHidden;
+
+
 
 
 /**
@@ -36,6 +43,7 @@
  @param color 背景颜色
  */
 + (void)backgroundColor:(UIColor *)color;
+- (void)backgroundColor:(UIColor *)color;
 
 /**
  设置状态栏的颜色为渐变色（layer）
@@ -46,5 +54,12 @@
 - (void)gradientLayer:(NSArray *)colors;
 
 
+/**
+ 隐藏状态栏
+ 
+ @param isHidden YES or NO
+ */
++(void)statusBarHidden:(BOOL)isHidden;
++(void)statusbarHideWithUIApplication:(BOOL)isHidden;
 
 @end

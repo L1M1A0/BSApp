@@ -35,6 +35,14 @@
 #define is_iPhone6_7_8 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 #define is_iPhone6P_7P_8P ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1080, 1920), [[UIScreen mainScreen] currentMode].size) : NO)
 #define is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhoneXr ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(828, 1792), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhoneXs ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhoneXs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
+
+//iPhoneX系列
+#define kStatusBarHeight ((is_iPhoneX==YES || is_iPhoneXr ==YES || is_iPhoneXs== YES || is_iPhoneXs_Max== YES) ? 44.0 : 20.0)
+#define kNavBarHeight    ((is_iPhoneX==YES || is_iPhoneXr ==YES || is_iPhoneXs== YES || is_iPhoneXs_Max== YES) ? 88.0 : 64.0)
+#define kTabBarHeight    ((is_iPhoneX==YES || is_iPhoneXr ==YES || is_iPhoneXs== YES || is_iPhoneXs_Max== YES) ? 83.0 : 49.0)
 
 
 /** 设备型号*通过像素点判断 */

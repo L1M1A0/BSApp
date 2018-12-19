@@ -1,16 +1,16 @@
 //
 //  ZBStatusBar.m
-//  BSApp
+//  giseGnmGkapp
 //
-//  Created by 李振彪 on 2017/11/23.
-//  Copyright © 2017年 李振彪. All rights reserved.
+//  Created by LZBiao on 2018/8/23.
+//  Copyright © 2018年 baothink. All rights reserved.
 //
-
-//参考链接http://www.jianshu.com/p/25e9c1a864be
 
 #import "ZBStatusBar.h"
 
 @implementation ZBStatusBar
+
+
 
 -(UIView *)statusBar{
     if (!_statusBar) {
@@ -19,15 +19,29 @@
     return _statusBar;
 }
 
--(CAGradientLayer *)gradientLayer{
-    if (!_gradientLayer) {
-        _gradientLayer = [CAGradientLayer layer];
-        _gradientLayer.locations = @[@0.0, @1.0];
-        _gradientLayer.startPoint = CGPointMake(0, 0);
-        _gradientLayer.endPoint = CGPointMake(1.0, 0);
-        _gradientLayer.frame = CGRectMake(0, 0, kScreenWidth, 20);
+
+#pragma mark - 状态栏 显示状态：显示：NO，隐藏：YES
+-(void)setStatusBarHidden:(BOOL)statusBarHidden{
+    _statusBar.hidden = statusBarHidden;
+}
+
++(void)statusBarHidden:(BOOL)isHidden{
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setHidden:)]) {
+        statusBar.hidden = isHidden;
     }
-    return _gradientLayer;
+}
++(void)statusbarHideWithUIApplication:(BOOL)isHidden{
+    [[UIApplication sharedApplication] setStatusBarHidden:isHidden withAnimation:UIStatusBarAnimationNone];
+}
+
+
+
+
+
+#pragma mark - 状态栏 背景颜色
+- (void)backgroundColor:(UIColor *)color;{
+    [ZBStatusBar backgroundColor:color];
 }
 
 + (void)backgroundColor:(UIColor *)color {
@@ -37,8 +51,16 @@
     }
 }
 
-+ (void)statusBarStyle:(UIStatusBarStyle)statusBarStyle{
-    [[UIApplication sharedApplication] setStatusBarStyle:statusBarStyle];
+#pragma mark - 状态栏 渐变颜色 图层
+-(CAGradientLayer *)gradientLayer{
+    if (!_gradientLayer) {
+        _gradientLayer = [CAGradientLayer layer];
+        _gradientLayer.locations = @[@0.0, @1.0];
+        _gradientLayer.startPoint = CGPointMake(0, 0);
+        _gradientLayer.endPoint = CGPointMake(1.0, 0);
+        _gradientLayer.frame = CGRectMake(0, 0,kScreenWidth , kStatusBarHeight);
+    }
+    return _gradientLayer;
 }
 
 - (void)gradientLayer:(NSArray *)colors{
@@ -60,6 +82,15 @@
     //    }
     [self.statusBar.layer insertSublayer:self.gradientLayer atIndex:0];
 }
+
+
+#pragma mark - 状态栏 style
++ (void)statusBarStyle:(UIStatusBarStyle)statusBarStyle{
+    [[UIApplication sharedApplication] setStatusBarStyle:statusBarStyle];
+}
+
+
+
 
 
 
