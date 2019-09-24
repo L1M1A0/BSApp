@@ -18,7 +18,7 @@
 #import "BSControlVC.h"
 #import "BSFMDBVC.h"
 #import "BSTimeVC.h"
-
+#import "BSStatusVC.h"
 
 
 @interface VC_01 ()<UITableViewDelegate,UITableViewDataSource,CustPhoneAlertViewDelegate>{
@@ -42,8 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    vctrs = @[@"BSControlVC",@"BSFMDBVC",@"BSTimeVC"];
-    texts = @[@"控件页面",@"FMDB数据库",@"时间管理"];
+    vctrs = @[@"BSControlVC",@"BSFMDBVC",@"BSTimeVC",@"BSStatusVC"];
+    texts = @[@"控件页面",@"FMDB数据库",@"时间管理",@"状态栏与横屏"];
 
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
     self.tableView.delegate = self;

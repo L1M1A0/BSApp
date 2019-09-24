@@ -57,24 +57,24 @@
 
 /** 设备系统 */
 //原样式，如： #define isIOS5 ([[[UIDevice currentDevice] systemVersion] intValue]==5)
-#define iOSVersion ([[[UIDevice currentDevice] systemVersion] floatValue])
-#define currentDeviceSystemVersion [[[UIDevice currentDevice] systemVersion] intValue]
-#define isIOS4  currentDeviceSystemVersion == 4
-#define isIOS5  currentDeviceSystemVersion == 5
-#define isIOS6  currentDeviceSystemVersion == 6
-#define isIOS7  currentDeviceSystemVersion == 7
-#define isIOS8  currentDeviceSystemVersion == 8
-#define isIOS9  currentDeviceSystemVersion == 9
-#define isIOS10 currentDeviceSystemVersion == 10
+#define systemVersionFloat ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define systemVersionInt [[[UIDevice currentDevice] systemVersion] intValue]
+#define isIOS4  systemVersionInt == 4
+#define isIOS5  systemVersionInt == 5
+#define isIOS6  systemVersionInt == 6
+#define isIOS7  systemVersionInt == 7
+#define isIOS8  systemVersionInt == 8
+#define isIOS9  systemVersionInt == 9
+#define isIOS10 systemVersionInt == 10
 #define isIOS11 @available(iOS 11.0, *)
-#define isAfterIOS4 currentDeviceSystemVersion > 4
-#define isAfterIOS5 currentDeviceSystemVersion > 5
-#define isAfterIOS6 currentDeviceSystemVersion > 6
-#define isAfterIOS7 currentDeviceSystemVersion > 7
-#define isAfterIOS8 currentDeviceSystemVersion > 8
-#define isAfterIOS9 currentDeviceSystemVersion > 9
-#define isAfterIOS10 currentDeviceSystemVersion > 10
-#define isAfterIOS11 currentDeviceSystemVersion > 11
+#define isAfterIOS4 systemVersionInt > 4
+#define isAfterIOS5 systemVersionInt > 5
+#define isAfterIOS6 systemVersionInt > 6
+#define isAfterIOS7 systemVersionInt > 7
+#define isAfterIOS8 systemVersionInt > 8
+#define isAfterIOS9 systemVersionInt > 9
+#define isAfterIOS10 systemVersionInt > 10
+#define isAfterIOS11 systemVersionInt > 11
 
 
 

@@ -19,11 +19,11 @@
     // Do any additional setup after loading the view.
     
 //    for (int i = 0; i < 3; i++) {
-//        
+//
 //        UIButton *btn = [UIButton _buttonFrame:CGRectMake(20, 20+40*i+5*i, 70, 40) title:@"dfd" tColor:kRedColor target:self action:@selector(btnaction:)];
 //        btn.tag = i;
 //        [alertController.view addSubview:btn];
-//        
+//
 //    }
    
     
@@ -62,8 +62,11 @@
 }
 
 -(void)alertShow:(void (^)(void))completion{
-    
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [self alertShow:viewController completion:completion];
+}
+
+-(void)alertShow:(UIViewController *)viewController completion:(void (^)(void))completion{
     [viewController presentViewController:self animated:YES completion:completion];
 }
 
@@ -74,6 +77,11 @@
     
 }
 
++(ZBAlertController *)alert:(NSString *)title message:(NSString *)messge viewController:(UIViewController *)viewController{
+    ZBAlertController *alert = [self alert:title messge:messge action1:@"关闭" handler1:nil action2:nil handler2:nil];
+    [alert alertShow:viewController completion:nil];
+    return alert;
+}
 
 
 

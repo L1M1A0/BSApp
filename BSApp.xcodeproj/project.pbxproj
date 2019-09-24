@@ -124,6 +124,7 @@
 		05B4D5651FB41F1800819CF8 /* BSAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D5561FB41F1800819CF8 /* BSAboutVC.m */; };
 		05B4D5671FB41F1800819CF8 /* BSSetupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D5581FB41F1800819CF8 /* BSSetupVC.m */; };
 		05B4D5681FB41F1800819CF8 /* VC_04.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D55D1FB41F1800819CF8 /* VC_04.m */; };
+		05CA6F59233715B400A4D3BC /* BSStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CA6F58233715B400A4D3BC /* BSStatusVC.m */; };
 		05CF0D191FBA9E3C009335F1 /* ZBTools开发记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */; };
 		05CF347A20085B0300B873C6 /* ZBTimeLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CF347920085B0300B873C6 /* ZBTimeLunarCalendar.m */; };
 		05ED6FE81FBD3663001D3D4A /* UITableViewCell+ZBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ED6FE71FBD3663001D3D4A /* UITableViewCell+ZBCategory.m */; };
@@ -356,6 +357,8 @@
 		05B4D55B1FB41F1800819CF8 /* BSSetupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSetupVC.h; sourceTree = "<group>"; };
 		05B4D55C1FB41F1800819CF8 /* VC_04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_04.h; sourceTree = "<group>"; };
 		05B4D55D1FB41F1800819CF8 /* VC_04.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_04.m; sourceTree = "<group>"; };
+		05CA6F57233715B400A4D3BC /* BSStatusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSStatusVC.h; sourceTree = "<group>"; };
+		05CA6F58233715B400A4D3BC /* BSStatusVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSStatusVC.m; sourceTree = "<group>"; };
 		05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ZBTools开发记录.txt"; sourceTree = "<group>"; };
 		05CF347820085B0300B873C6 /* ZBTimeLunarCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBTimeLunarCalendar.h; sourceTree = "<group>"; };
 		05CF347920085B0300B873C6 /* ZBTimeLunarCalendar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBTimeLunarCalendar.m; sourceTree = "<group>"; };
@@ -1154,6 +1157,8 @@
 				0552322E1FDA282A00C55711 /* BSControlVC.m */,
 				055232301FDA287D00C55711 /* BSTimeVC.h */,
 				055232311FDA287D00C55711 /* BSTimeVC.m */,
+				05CA6F57233715B400A4D3BC /* BSStatusVC.h */,
+				05CA6F58233715B400A4D3BC /* BSStatusVC.m */,
 				05B29E13214F86F900A9993B /* 数据库 */,
 				05B4D5481FB41F1700819CF8 /* View */,
 			);
@@ -1460,6 +1465,7 @@
 				057991EE1FB2FAA400F1E37C /* BSBaseVCtrl.m in Sources */,
 				0579921B1FB2FAA400F1E37C /* ZBOpenFileOnOtherAppObject.m in Sources */,
 				05B4D5601FB41F1800819CF8 /* BSLoginVC.m in Sources */,
+				05CA6F59233715B400A4D3BC /* BSStatusVC.m in Sources */,
 				0579920C1FB2FAA400F1E37C /* BSLoginManager.m in Sources */,
 				057992381FB2FAA400F1E37C /* NSString+URLEncodeString.m in Sources */,
 				05488EB71FB4485800837966 /* UITableView+ZBCategory.m in Sources */,
@@ -1683,7 +1689,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bao.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0657e1f5-6cc8-4896-9c55-5ed43303ec88";
-				PROVISIONING_PROFILE_SPECIFIER = ceshi_dev_181126;
+				PROVISIONING_PROFILE_SPECIFIER = dev_0318;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1722,7 +1728,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bao.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0657e1f5-6cc8-4896-9c55-5ed43303ec88";
-				PROVISIONING_PROFILE_SPECIFIER = ceshi_dev_181126;
+				PROVISIONING_PROFILE_SPECIFIER = dev_0318;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

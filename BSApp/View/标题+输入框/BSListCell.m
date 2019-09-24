@@ -63,8 +63,11 @@
 //    self.inputTF.secureTextEntry = YES;
     self.inputTF.backgroundColor = RGB(252, 252, 252);
     //[textV setValue:[UIColor redColor] forKeyPath:@"_placeholderLabel.textColor"];
-    [self.inputTF setValue:[UIFont boldSystemFontOfSize:fontSize] forKeyPath:@"_placeholderLabel.font"];
-
+    if (systemVersionInt < 13) {
+        [self.inputTF setValue:[UIFont boldSystemFontOfSize:fontSize] forKeyPath:@"_placeholderLabel.font"];
+    }else{
+        self.inputTF.font = [UIFont systemFontOfSize:fontSize];
+    }
     //self.inputTF = [self _tfFrame:CGRectZero title:title placeholder:placeholder];
     [self addSubview:self.inputTF];
 

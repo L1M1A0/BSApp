@@ -46,11 +46,19 @@
     [btn tag:0 target:self action:@selector(btnaction)];
     [self.view addSubview:btn];
   
-    UISearchBar *search = [UISearchBar searchBarFrame:CGRectMake(170, 180, 150, 50) placeholder:@"fasdgew" removeBarBackgroundView:YES];
-    [self.view addSubview:search];
     
-    UIView *tem = [UIView viewFrame:CGRectMake(CGRectGetMaxX(search.frame), 180, 50, 50) bgColor:kYellowColor superView:self.view];
-    [tem shadowColor:kGrayColor opacity:1 radius:10 offset:CGSizeMake(0, -5)];
+    if(systemVersionInt >= 13){
+        
+        UIView *tem = [UIView viewFrame:CGRectMake(CGRectGetMaxX(btn.frame), 180, 50, 50) bgColor:kYellowColor superView:self.view];
+        [tem shadowColor:kGrayColor opacity:1 radius:10 offset:CGSizeMake(0, -5)];
+    }else{
+        UISearchBar *search = [UISearchBar searchBarFrame:CGRectMake(170, 180, 150, 50) placeholder:@"fasdgew" removeBarBackgroundView:YES];
+        [self.view addSubview:search];
+        
+        UIView *tem = [UIView viewFrame:CGRectMake(CGRectGetMaxX(search.frame), 180, 50, 50) bgColor:kYellowColor superView:self.view];
+        [tem shadowColor:kGrayColor opacity:1 radius:10 offset:CGSizeMake(0, -5)];
+    }
+
     
 }
 -(void)labAction{

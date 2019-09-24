@@ -10,11 +10,37 @@
 
 @implementation ZBStatusBar
 
-
-
 -(UIView *)statusBar{
+    
+    
     if (!_statusBar) {
-        _statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+        NSLog(@"systemVersion2_%f,%d",systemVersionFloat,systemVersionInt);
+        
+        if(systemVersionInt < 13){
+            _statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+
+        }else{
+            
+            UIView *_localStatusBar = [[UIApplication sharedApplication].keyWindow.windowScene.statusBarManager performSelector:@selector(createLocalStatusBar)];
+            _statusBar = [_localStatusBar performSelector:@selector(statusBar)];
+            
+            UIStatusBarManager *statusBarManager = [UIApplication sharedApplication].keyWindow.windowScene.statusBarManager;
+            id _statusBar = nil;
+            if ([statusBarManager respondsToSelector:@selector(createLocalStatusBar)]) {
+                UIView *_localStatusBar = [statusBarManager performSelector:@selector(createLocalStatusBar)];
+//                for( id vv in _localStatusBar.subviews){
+//                    if ([vv isKindOfClass:[UIView class]]){
+//                        UIView *fff = (UIView *)vv;
+//                        fff.backgroundColor = [UIColor greenColor];
+//                    }
+//                }
+               if ([_localStatusBar respondsToSelector:@selector(statusBar)]) {
+                   _statusBar = [_localStatusBar performSelector:@selector(statusBar)];
+               }
+           }
+            
+        }
+
     }
     return _statusBar;
 }
@@ -26,7 +52,7 @@
 }
 
 +(void)statusBarHidden:(BOOL)isHidden{
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    UIView *statusBar = [[[ZBStatusBar alloc]init] statusBar];//[[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
     if ([statusBar respondsToSelector:@selector(setHidden:)]) {
         statusBar.hidden = isHidden;
     }
@@ -45,10 +71,21 @@
 }
 
 + (void)backgroundColor:(UIColor *)color {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = color;
-    }
+    UIView *statusBar = [[[ZBStatusBar alloc]init] statusBar];//[[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if (systemVersionInt < 13) {
+         if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+             statusBar.backgroundColor = color;
+         }
+     }else{
+         if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+             statusBar.backgroundColor = color;
+         }
+         
+         if (statusBar) {
+             statusBar.backgroundColor = color;
+         }
+     }
+ 
 }
 
 #pragma mark - 状态栏 渐变颜色 图层
@@ -58,7 +95,7 @@
         _gradientLayer.locations = @[@0.0, @1.0];
         _gradientLayer.startPoint = CGPointMake(0, 0);
         _gradientLayer.endPoint = CGPointMake(1.0, 0);
-        _gradientLayer.frame = CGRectMake(0, 0,kScreenWidth , kStatusBarHeight);
+        _gradientLayer.frame = CGRectMake(0, 0,kScreenWidth, kStatusBarHeight);
     }
     return _gradientLayer;
 }
@@ -73,13 +110,13 @@
     colors = [cl mutableCopy];
     self.gradientLayer.colors = colors;
     
-    //    for (__strong id lay in statusBar.layer.sublayers) {
-    //        if ([lay isKindOfClass:[CAGradientLayer class]]){
-    //            //            [lay removeFromSuperlayer];
-    //            lay = (CAGradientLayer *)self.gradientLayer;
-    //            lay = self.gradientLayer;
-    //        }
-    //    }
+//    for (__strong id lay in statusBar.layer.sublayers) {
+//        if ([lay isKindOfClass:[CAGradientLayer class]]){
+//            //            [lay removeFromSuperlayer];
+//            lay = (CAGradientLayer *)self.gradientLayer;
+//            lay = self.gradientLayer;
+//        }
+//    }
     [self.statusBar.layer insertSublayer:self.gradientLayer atIndex:0];
 }
 
@@ -88,10 +125,6 @@
 + (void)statusBarStyle:(UIStatusBarStyle)statusBarStyle{
     [[UIApplication sharedApplication] setStatusBarStyle:statusBarStyle];
 }
-
-
-
-
 
 
 @end
