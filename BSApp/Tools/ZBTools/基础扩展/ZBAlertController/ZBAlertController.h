@@ -2,8 +2,8 @@
 //  ZBAlertController.h
 //  BSApp
 //
-//  Created by 李振彪 on 2017/11/10.
-//  Copyright © 2017年 李振彪. All rights reserved.
+//  Created by lizb on 2017/11/10.
+//  Copyright © 2017年 lizb. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -12,20 +12,82 @@
 //#define ALERT_1(msg) [[[UIAlertView alloc] initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil] show]
 //#define ALERT_2(title,msg) [[[UIAlertView alloc] initWithTitle:title message:msg delegate:nil cancelButtonTitle:@"确认" otherButtonTitles:nil] show]
 
-/** title，message */
+
+/** 标题，详细信息  ~注：参考快速初始化部分*/
 #define kAlert(title,msg) [ZBAlertController alert:title message:msg]
-/** title，message，viewController */
-#define kAlertSelf(title,msg,vc) [ZBAlertController alert:title message:msg viewController:vc];
+/** 标题，详细信息 ，按钮标题（单个），viewController  ~ 注：参考快速初始化部分 */
+#define kAlertSelf(title,msg,btn,vc) [ZBAlertController alert:title message:msg btnTitle:btn viewController:vc];
+
+
 
 @interface ZBAlertController : UIAlertController
 
 
-+(ZBAlertController *)alert:(NSString *)title messge:(NSString *)message action1:(NSString *)actionTitle1 handler1:(void (^ __nullable)(UIAlertAction *action))handler1 action2:(NSString *)actionTitle2 handler2:(void (^ __nullable)(UIAlertAction *action))handler2;
 
+#pragma mark - 基本初始化 ZBAlertController ，可随意增加action
+/// 初始化  创建一个 action 的 ZBAlertController
+/// @param title 标题
+/// @param message  信息
+/// @param actionTitle  action按钮标题
+/// @param handler  点击action按钮的方法回调
++(ZBAlertController *)alert:(NSString *)title messge:(NSString *)message action:(NSString *)action handler:(void (^ _Nullable)(UIAlertAction *action))handler;
+
+
+/// 初始化，创建多个 actions 的 ZBAlertController
+/// @param title 标题
+/// @param message 信息
+/// @param actions action标题数组，回调中通过action.title区别
+/// @param handler 回调
++(ZBAlertController *)alert:(NSString *)title messge:(NSString *)message actions:(NSArray *)actions handler:(void (^ _Nullable)(UIAlertAction *action))handler;
+
+/// 初始化 包含两个 action  的 ZBAlertController 推荐使用批量创建
+/// @param title 标题
+/// @param message  信息
+/// @param actionTitle1  左标题
+/// @param handler1  点击左标题的方法回调
+/// @param actionTitle2 右标题
+/// @param handler2 点击右标题的方法回调
++(ZBAlertController *)alert:(NSString *)title messge:(NSString *)message action1:(NSString *)action1 handler1:(void (^ _Nullable)(UIAlertAction *action))handler1 action2:(NSString *)action2 handler2:(void (^ _Nullable)(UIAlertAction *action))handler2;
+
+#pragma mark - 快速初始化 ZBAlertController 不支持添加action，否则会奔溃，如果需要，请使用其他基本初始化方式
+/// 快速初始化 ZBAlertController 指定标题和内容
+/// @param title 标题
+/// @param messge 信息
++(void)alert:(NSString *)title message:(NSString *)messge;
+
+/// 快速初始化 ZBAlertController 快速初始化 ZBAlertController 指定title、messge、viewController，一个按钮标题
+/// @param title 标题
+/// @param messge 信息
+/// @param btnTitle 按钮标题 ，允许为nil，会默认设置为 @“关闭”
+/// @param viewController 当前显示的viewController 允许为nil。会默认显示在[UIApplication sharedApplication].keyWindow.rootViewController;
++(void)alert:(NSString *)title message:(NSString *)messge btnTitle:(NSString *)btnTitle viewController:(UIViewController *)viewController;
+
+
+#pragma mark - 显示窗口
+/// 显示窗口，不指定显示viewController，在当前keyWindow中显示
+/// @param completion 显示完成后回调
 -(void)alertShow:(void (^ __nullable)(void))completion;
--(void)alertShow:(UIViewController *)viewController completion:(void (^ __nullable)(void))completion;
 
-+(ZBAlertController *)alert:(NSString *)title message:(NSString *)messge;
-+(ZBAlertController *)alert:(NSString *)title message:(NSString *)messge viewController:(UIViewController *)viewController;
+/// 显示窗口，并指定显示viewController
+/// @param viewController 指定显示viewController
+/// @param completion 显示完成后回调
+-(void)alertShow:(UIViewController *)viewController completion:(void (^ _Nullable)(void))completion;
+
+
+
+#pragma mark - action
+
+/// 给alertController 增加一个action
+/// @param title <#title description#>
+/// @param handler <#handler description#>
+-(UIAlertAction *)addAction:(NSString *)title handler:(void (^ _Nullable)(UIAlertAction *action))handler;
+
+
+/// 批量创建action，根据action标题来区分，原则上是不支持titles里面的元素重复出现
+/// @param titles 标题数组
+/// @param handler 回吊
+-(void)addActions:(NSArray * _Nonnull)titles handler:(void (^ _Nullable)(UIAlertAction *action))handler;
+
+
 @end
  

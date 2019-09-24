@@ -77,16 +77,39 @@
     //[ZBHud initWithStr:@"afshifh" hideAfter:1.0 view:self.view];
     //[ZBHud initWithArray:@[@""] dataSource:[NSMutableArray arrayWithArray:@[@"",@""]] after:1.0 view:self.view];
 
-    ZBAlertController *aler = [ZBAlertController alert:@"弹窗" messge:@"傻逼吗？" action1:@"不是" handler1:^(UIAlertAction *action) {
+    
+    //    kAlert(@"sdfa", @"ddd");
+    //    [ZBAlertController alert:@"fdf" message:@"dsd"];
+    //    kAlertSelf(@"承fasfa", @"",@"我知道了", self);
+    //    [ZBAlertController alert:@"ddad" message:@"dfas" btnTitle:@"aaa" viewController:self];
+        
+    //    ZBAlertController *ac = [ZBAlertController alert:@"fasf" messge:@"afsdfhoahf" action1:@"1111" handler1:^(UIAlertAction *action) {
+    //        NSLog(@"111");
+    //    } action2:@"222" handler2:^(UIAlertAction *action) {
+    //        NSLog(@"222");
+    //    }];
+        
+    //    ZBAlertController *ac = [ZBAlertController alert:@"fasdfa" messge:@"fasdhofash" action:@"111" handler:^(UIAlertAction *action) {
+    //        NSLog(@"%@",action.title);
+    //    }];
+    ZBAlertController *ac = [ZBAlertController alert:@"biati" messge:@"沙发背诵" actions:@[@"11",@"22"] handler:^(UIAlertAction *action) {
+       NSLog(@"%@",action.title);
 
-        NSLog(@"aler1");
-    } action2:@"是" handler2:^(UIAlertAction *action) {
-        NSLog(@"aler2");
+    }];
+    [ac addAction:@"4444" handler:^(UIAlertAction *action) {
+        NSLog(@"4444");
+    }];
+    [ac addActions:@[@"5555",@"6666"] handler:^(UIAlertAction *action) {
+       NSLog(@"%@",action.title);
     }];
 
-    [aler alertShow:^{
-        NSLog(@"弹窗打开完成");
+    [ac alertShow:self completion:^{
+       NSLog(@"弹窗打开完成");
     }];
+    
+//    [ac alertShow:^{
+//        NSLog(@"弹窗打开完成");
+//    }];
 
 }
 - (void)didReceiveMemoryWarning {
