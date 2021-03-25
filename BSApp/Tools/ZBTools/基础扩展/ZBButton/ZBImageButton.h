@@ -2,7 +2,7 @@
 //  ZBImageButton.h
 //  BSApp
 //
-//  Created by 李振彪 on 2016/12/22.
+//  Created by lizb on 2016/12/22.
 //  Copyright © 2016年 BaoThink. All rights reserved.
 //
 

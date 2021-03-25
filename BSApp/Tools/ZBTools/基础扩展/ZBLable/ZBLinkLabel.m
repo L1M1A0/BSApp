@@ -2,7 +2,7 @@
 //  ZBLinkLabel.m
 //  BSApp
 //
-//  Created by 李振彪 on 2017/8/8.
+//  Created by lizb on 2017/8/8.
 //  Copyright © 2017年 BaoThink. All rights reserved.
 //
 
@@ -79,7 +79,7 @@
     }
     if(self.linkType != ZBLableLinkSetting){
         if (self.urlStr == nil || [self.urlStr isEqualToString:@""]) {
-        kAlert(nil, @"无法链接到网站或者电话号码，因为相关信息为空或不存在");
+            kAlert(nil, @"无法链接到网站或者电话号码，因为相关信息为空或不存在");
             return;
         }
     }

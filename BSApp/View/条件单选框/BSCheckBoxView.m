@@ -2,8 +2,8 @@
 //  BSCheckBoxView.m
 //  BSApp
 //
-//  Created by 李振彪 on 2016/11/15.
-//  Copyright © 2016年 BaoThink. All rights reserved.
+//  Created by lizb on 2016/11/15.
+//  Copyright © 2016年 lizb. All rights reserved.
 //
 
 #import "BSCheckBoxView.h"

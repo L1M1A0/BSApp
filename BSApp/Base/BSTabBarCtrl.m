@@ -63,9 +63,8 @@
 //    self.tabBar.bounds.size.height
     
     CGFloat tabbarItemHeight = self.tabBar.bounds.size.height;
-    if (is_iPhoneX == 1) {
-        tabbarItemHeight = 83;
-    }
+    tabbarItemHeight = kTabBarHeight;
+    
     
     CGSize indicatorItemSize = CGSizeMake(self.tabBar.bounds.size.width/[vctrArr count],tabbarItemHeight);
     self.tabBar.selectionIndicatorImage = [self tabBarItemColorAndSize:indicatorItemSize];

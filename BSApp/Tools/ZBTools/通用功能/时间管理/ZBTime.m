@@ -2,7 +2,7 @@
 //  ZBTime.m
 //  BSApp
 //
-//  Created by 李振彪 on 2017/8/31.
+//  Created by lizb on 2017/8/31.
 //  Copyright © 2017年 BaoThink. All rights reserved.
 //
 

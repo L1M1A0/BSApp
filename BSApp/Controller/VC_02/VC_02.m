@@ -32,8 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    titles = @[@"股票计算"];
-    vctrls = @[@"BSGuPiaoVC"];
+    titles = @[@"股票计算",@"html"];
+    vctrls = @[@"BSGuPiaoVC",@""];
     
     
    

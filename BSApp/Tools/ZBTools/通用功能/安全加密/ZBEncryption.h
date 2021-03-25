@@ -2,7 +2,7 @@
 //  ZBEncryption.h
 //  BSApp
 //
-//  Created by 李振彪 on 2017/6/10.
+//  Created by lizb on 2017/6/10.
 //  Copyright © 2017年 BaoThink. All rights reserved.
 //
 

@@ -46,6 +46,10 @@
  */
 + (UIColor *)RGBWithHexColor:(NSString *)hexColor;
 
+/// Description
+/// @param stringToConvert 十六进制颜色码 如：#F0F0F0
++(UIColor *) colorWithHexString: (NSString *) stringToConvert;
++(UIColor *) colorWithHexString: (NSString *) stringToConvert alpha:(CGFloat)alpha;
 /**
  渐变色
  

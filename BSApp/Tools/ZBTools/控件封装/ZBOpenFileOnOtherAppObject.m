@@ -2,7 +2,7 @@
 //  ZBOpenFileOnOtherAppObject.m
 //  Marketing
 //
-//  Created by 李振彪 on 16/3/29.
+//  Created by lizb on 16/3/29.
 //  Copyright © 2016年 forr. All rights reserved.
 //
 

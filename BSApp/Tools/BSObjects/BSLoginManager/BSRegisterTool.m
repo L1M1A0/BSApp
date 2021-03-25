@@ -2,7 +2,7 @@
 //  BSRegisterTool.m
 //  BSApp
 //
-//  Created by 李振彪 on 16/8/17.
+//  Created by lizb on 16/8/17.
 //  Copyright © 2016年 BaoThink. All rights reserved.
 //
 

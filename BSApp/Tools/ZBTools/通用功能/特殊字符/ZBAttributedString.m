@@ -2,7 +2,7 @@
 //  ZBAttributedString.m
 //  CloudShop
 //
-//  Created by 李振彪 on 16/6/11.
+//  Created by lizb on 16/6/11.
 //  Copyright © 2016年 XY. All rights reserved.
 //
 

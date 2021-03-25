@@ -124,6 +124,7 @@
 		05B4D5651FB41F1800819CF8 /* BSAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D5561FB41F1800819CF8 /* BSAboutVC.m */; };
 		05B4D5671FB41F1800819CF8 /* BSSetupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D5581FB41F1800819CF8 /* BSSetupVC.m */; };
 		05B4D5681FB41F1800819CF8 /* VC_04.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4D55D1FB41F1800819CF8 /* VC_04.m */; };
+		05C07D5D23540EC700A49EB4 /* UIView+BorderLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 05C07D5C23540EC700A49EB4 /* UIView+BorderLine.m */; };
 		05CA6F59233715B400A4D3BC /* BSStatusVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CA6F58233715B400A4D3BC /* BSStatusVC.m */; };
 		05CF0D191FBA9E3C009335F1 /* ZBTools开发记录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */; };
 		05CF347A20085B0300B873C6 /* ZBTimeLunarCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CF347920085B0300B873C6 /* ZBTimeLunarCalendar.m */; };
@@ -357,6 +358,8 @@
 		05B4D55B1FB41F1800819CF8 /* BSSetupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSetupVC.h; sourceTree = "<group>"; };
 		05B4D55C1FB41F1800819CF8 /* VC_04.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VC_04.h; sourceTree = "<group>"; };
 		05B4D55D1FB41F1800819CF8 /* VC_04.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VC_04.m; sourceTree = "<group>"; };
+		05C07D5B23540EC700A49EB4 /* UIView+BorderLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BorderLine.h"; sourceTree = "<group>"; };
+		05C07D5C23540EC700A49EB4 /* UIView+BorderLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BorderLine.m"; sourceTree = "<group>"; };
 		05CA6F57233715B400A4D3BC /* BSStatusVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSStatusVC.h; sourceTree = "<group>"; };
 		05CA6F58233715B400A4D3BC /* BSStatusVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSStatusVC.m; sourceTree = "<group>"; };
 		05CF0D181FBA9E3B009335F1 /* ZBTools开发记录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ZBTools开发记录.txt"; sourceTree = "<group>"; };
@@ -472,6 +475,8 @@
 		053E64A41FB54420007027F2 /* 基础扩展 */ = {
 			isa = PBXGroup;
 			children = (
+				05C07D5B23540EC700A49EB4 /* UIView+BorderLine.h */,
+				05C07D5C23540EC700A49EB4 /* UIView+BorderLine.m */,
 				053858051FCFEC0800C65796 /* ZBPasteboard */,
 				05F3AA281FC6C80A00BEF5DF /* ZBStatusBar */,
 				053E64AC1FB582C9007027F2 /* ZBAlertController */,
@@ -1478,6 +1483,7 @@
 				05566DDA2151011B009563EC /* ZBFMDBObject.m in Sources */,
 				057992211FB2FAA400F1E37C /* ZBUserDefault.m in Sources */,
 				057992331FB2FAA400F1E37C /* UIImage+DrawRect.m in Sources */,
+				05C07D5D23540EC700A49EB4 /* UIView+BorderLine.m in Sources */,
 				05B4D5641FB41F1800819CF8 /* VC_03.m in Sources */,
 				0579920F1FB2FAA400F1E37C /* BSUserModel.m in Sources */,
 				0579922B1FB2FAA400F1E37C /* ZBSegmentCtrl.m in Sources */,
@@ -1661,7 +1667,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BSApp/BSApp.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chen Guo (C3JWKMXY4C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ZTUDS9T23N;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1689,7 +1695,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bao.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0657e1f5-6cc8-4896-9c55-5ed43303ec88";
-				PROVISIONING_PROFILE_SPECIFIER = dev_0318;
+				PROVISIONING_PROFILE_SPECIFIER = dev_0322;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1700,7 +1707,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BSApp/BSApp.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chen Guo (C3JWKMXY4C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = ZTUDS9T23N;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
@@ -1728,7 +1735,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bao.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0657e1f5-6cc8-4896-9c55-5ed43303ec88";
-				PROVISIONING_PROFILE_SPECIFIER = dev_0318;
+				PROVISIONING_PROFILE_SPECIFIER = dev_0322;
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

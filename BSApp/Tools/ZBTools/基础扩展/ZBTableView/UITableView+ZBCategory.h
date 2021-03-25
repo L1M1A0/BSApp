@@ -2,7 +2,7 @@
 //  UITableView+ZBCategory.h
 //  BSApp
 //
-//  Created by 李振彪 on 2017/10/17.
+//  Created by lizb on 2017/10/17.
 //  Copyright © 2017年 BaoThink. All rights reserved.
 //
 

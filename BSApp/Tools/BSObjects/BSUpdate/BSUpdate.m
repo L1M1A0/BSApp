@@ -2,8 +2,8 @@
 //  BSUpdate.m
 //  BSApp
 //
-//  Created by 李振彪 on 2017/11/27.
-//  Copyright © 2017年 李振彪. All rights reserved.
+//  Created by lizb on 2017/11/27.
+//  Copyright © 2017年 lizb. All rights reserved.
 //
 
 #import "BSUpdate.h"

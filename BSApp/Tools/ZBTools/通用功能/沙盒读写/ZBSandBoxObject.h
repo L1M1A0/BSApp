@@ -2,7 +2,7 @@
 //  ZBSandBoxObject.h
 //  CloudShop
 //
-//  Created by 李振彪 on 16/4/3.
+//  Created by lizb on 16/4/3.
 //  Copyright © 2016年 XY. All rights reserved.
 //
 

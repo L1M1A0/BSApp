@@ -2,8 +2,8 @@
 //  BSListCopyView.h
 //  BSApp
 //
-//  Created by 李振彪 on 2017/8/21.
-//  Copyright © 2017年 BaoThink. All rights reserved.
+//  Created by lizb on 2017/8/21.
+//  Copyright © 2017年 lizb. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

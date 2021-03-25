@@ -2,8 +2,8 @@
 //  ZBTimeLunarCalendar.m
 //  BSApp
 //
-//  Created by 李振彪 on 2018/1/12.
-//  Copyright © 2018年 李振彪. All rights reserved.
+//  Created by lizb on 2018/1/12.
+//  Copyright © 2018年 lizb. All rights reserved.
 //
 
 #import "ZBTimeLunarCalendar.h"

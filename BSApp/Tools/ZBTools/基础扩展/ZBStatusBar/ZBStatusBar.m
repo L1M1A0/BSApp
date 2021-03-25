@@ -2,7 +2,7 @@
 //  ZBStatusBar.m
 //  giseGnmGkapp
 //
-//  Created by LZBiao on 2018/8/23.
+//  Created by lizb on 2018/8/23.
 //  Copyright © 2018年 baothink. All rights reserved.
 //
 

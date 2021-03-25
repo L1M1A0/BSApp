@@ -2,7 +2,7 @@
 //  ZBTimeObject
 //  Marketing
 //
-//  Created by 李振彪 on 15/12/24.
+//  Created by lizb on 15/12/24.
 //  Copyright © 2015年 forr. All rights reserved.
 //
 

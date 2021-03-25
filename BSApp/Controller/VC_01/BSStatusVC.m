@@ -2,8 +2,8 @@
 //  BSStatusVC.m
 //  BSApp
 //
-//  Created by LZBiao on 2019/9/22.
-//  Copyright © 2019 李振彪. All rights reserved.
+//  Created by lizb on 2019/9/22.
+//  Copyright © 2019 lizb. All rights reserved.
 //
 
 #import "BSStatusVC.h"

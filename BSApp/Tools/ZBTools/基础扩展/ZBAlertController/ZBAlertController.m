@@ -21,24 +21,24 @@
 }
 
 
-#pragma mark - 初始化 ZBAlertController
+#pragma mark - 初始化 alert ZBAlertController
 /// 初始化  创建一个 action 的 ZBAlertController
-+(ZBAlertController *)alert:(NSString *)title messge:(NSString *)message action:(NSString *)action handler:(void (^ _Nullable)(UIAlertAction *))handler{
-    
-    ZBAlertController *alertController = [ZBAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
++(instancetype)alert:(NSString *)title messge:(NSString *)message action:(NSString *)action handler:(void (^)(UIAlertAction * _Nonnull))handler{
+
+    ZBAlertController *alertController = [ZBAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];//UIAlertControllerStyleActionSheet
     [alertController addAction:action handler:handler];
     return alertController;
 }
 
 /// 初始化，创建多个 actions 的 ZBAlertController
-+(ZBAlertController *)alert:(NSString *)title messge:(NSString *)message actions:(NSArray *)actions handler:(void (^)(UIAlertAction *))handler{
-    ZBAlertController *alertController = [ZBAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
++(instancetype)alert:(NSString *)title messge:(NSString *)message actions:(NSArray *)actions handler:(void (^)(UIAlertAction *))handler{
+    ZBAlertController *alertController = [ZBAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];//UIAlertControllerStyleActionSheet
     [alertController addActions:actions handler:handler];
     return alertController;
 }
 
 /// 初始化 包含两个 action  的 ZBAlertController 推荐使用批量创建
-+(ZBAlertController *)alert:(NSString *)title messge:(NSString *)message action1:(NSString *)action1 handler1:(void (^)(UIAlertAction *))handler1 action2:(NSString *)action2 handler2:(void (^)(UIAlertAction *))handler2{
++(instancetype)alert:(NSString *)title messge:(NSString *)message action1:(NSString *)action1 handler1:(void (^)(UIAlertAction *))handler1 action2:(NSString *)action2 handler2:(void (^)(UIAlertAction *))handler2{
     
     ZBAlertController *alertController = [ZBAlertController alert:title messge:message action:action1 handler:handler1];
     
@@ -49,18 +49,27 @@
     return alertController;
 }
 
+#pragma mark - 初始化 sheet ZBAlertController
++(instancetype)sheet:(NSString *)title messge:(NSString *)message actions:(NSArray *)actions handler:(void (^)(UIAlertAction *))handler{
+    //UIAlertControllerStyleActionSheet
+    ZBAlertController *alertController = [ZBAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+    [alertController addActions:actions handler:handler];
+    return alertController;
+}
+
+
 
 #pragma mark - 快速初始化 ZBAlertController
 /// 快速初始化 ZBAlertController 指定标题和内容
 +(void)alert:(NSString *)title message:(NSString *)messge{
-   [self alert:title message:messge btnTitle:nil viewController:nil];
+   [self alert:title message:messge action:nil viewController:nil];
 }
 
 /// 快速初始化 ZBAlertController 快速初始化 ZBAlertController 指定title、messge、viewController，一个按钮标题
-+(void)alert:(NSString *)title message:(NSString *)messge btnTitle:(NSString *)btnTitle viewController:(UIViewController *)viewController{
++(void)alert:(NSString *)title message:(NSString *)messge action:(NSString *)action viewController:(UIViewController *)viewController{
     
-    btnTitle = btnTitle.length == 0 || btnTitle == nil ? @"关闭" : btnTitle;
-    ZBAlertController *alert = [self alert:title messge:messge action:btnTitle handler:nil];
+    action = action.length == 0 || action == nil ? @"关闭" : action;
+    ZBAlertController *alert = [self alert:title messge:messge action:action handler:nil];
 
     if(viewController == nil){
         [alert alertShow:nil];
@@ -84,7 +93,7 @@
 
 #pragma mark - action
 /// 给alertController 增加一个action
--(UIAlertAction *)addAction:(NSString *)title handler:(void (^ _Nullable)(UIAlertAction *))handler{
+-(UIAlertAction *)addAction:(NSString *)title handler:(void (^)(UIAlertAction *))handler{
     UIAlertAction *action = [UIAlertAction actionWithTitle:title style:UIAlertActionStyleDefault handler:handler];
     [self addAction:action];
     return action;
@@ -92,10 +101,11 @@
 }
 
 /// 批量创建action，根据action标题来区分，原则上是不支持titles里面的元素重复出现
--(void)addActions:(NSArray *)titles handler:(void (^ _Nullable)(UIAlertAction *))handler{
+-(void)addActions:(NSArray *)titles handler:(void (^)(UIAlertAction *))handler{
     for (NSInteger i = 0; i < titles.count; i++) {
-        UIAlertAction *action = [UIAlertAction actionWithTitle:titles[i] style:UIAlertActionStyleDefault handler:handler];
-        [self addAction:action];
+//        UIAlertAction *action = [UIAlertAction actionWithTitle:titles[i] style:UIAlertActionStyleDefault handler:handler];
+//        [self addAction:action];
+        [self addAction:titles[i] handler:handler];
     }
 }
 

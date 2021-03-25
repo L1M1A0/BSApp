@@ -2,7 +2,7 @@
 //  BSLoginIdVerificationObject.m
 //  BSApp
 //
-//  Created by 李振彪 on 16/9/6.
+//  Created by lizb on 16/9/6.
 //  Copyright © 2016年 BaoThink. All rights reserved.
 //
 

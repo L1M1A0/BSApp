@@ -2,7 +2,7 @@
 //  UIImage+Category.m
 //  BSApp
 //
-//  Created by 李振彪 on 2016/12/29.
+//  Created by lizb on 2016/12/29.
 //  Copyright © 2016年 BaoThink. All rights reserved.
 //
 

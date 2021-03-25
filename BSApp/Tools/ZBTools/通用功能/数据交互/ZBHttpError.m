@@ -3,7 +3,7 @@
 //  ZBHttpError.m
 //  BSApp
 //
-//  Created by 李振彪 on 16/8/16.
+//  Created by lizb on 16/8/16.
 //  Copyright © 2016年 BaoThink. All rights reserved.
 //
 

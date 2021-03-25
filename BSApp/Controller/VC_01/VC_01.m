@@ -37,18 +37,21 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [[[BSUpdate alloc]init]checkAppUpdate];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    vctrs = @[@"BSControlVC",@"BSFMDBVC",@"BSTimeVC",@"BSStatusVC"];
-    texts = @[@"控件页面",@"FMDB数据库",@"时间管理",@"状态栏与横屏"];
+    vctrs = @[@"BSControlVC",@"BSFMDBVC",@"BSTimeVC",@"BSStatusVC",@"双色球"];
+    texts = @[@"控件页面",@"FMDB数据库",@"时间管理",@"状态栏与横屏",@"双色球"];
 
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavBarHeight) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
+    
+    [self doubleColorBall];
 
 }
 
@@ -98,17 +101,48 @@
     
     ZBTableViewCell *cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]];
     NSLog(@"cell.index_%ld",cell.indexPath.row);
+    if(indexPath.row == 4){
+        [self doubleColorBall];
+    }else{
+
+        Class vcName = NSClassFromString(vctrs[indexPath.row]);
+        UIViewController * vc = [[vcName alloc]init];
+        vc.title = texts[indexPath.row];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.view.backgroundColor = kWhiteColor;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
     
-    Class vcName = NSClassFromString(vctrs[indexPath.row]);
-    UIViewController * vc = [[vcName alloc]init];
-    vc.title = texts[indexPath.row];
-    vc.hidesBottomBarWhenPushed = YES;
-    vc.view.backgroundColor = kWhiteColor;
-    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
 
+//双色球
+-(void)doubleColorBall{
+    NSMutableArray *temp = [NSMutableArray array];
+    int count = 0;
+    NSArray *arr = [NSArray array];
+    for (int i = 0; count < 6; i++) {
+        NSUInteger r = arc4random_uniform(33) + 1;
+        NSString *s = r < 10 ? [NSString stringWithFormat:@"0%ld",r] : [NSString stringWithFormat:@"%ld",r];
+        [temp addObject:s];
+        NSSet *ser = [NSSet setWithArray:temp];
+        if (ser.count == 6) {
+            count = 6;
+            arr = [ser allObjects];
+        }
+    }
+//    NSLog(@"redBalls1_%@",arr);
+  
+    NSArray *reds = [arr sortedArrayUsingSelector:@selector(localizedStandardCompare:)];
+    NSUInteger blue = arc4random_uniform(16) + 1;
+    NSString *blueStr = blue < 10 ? [NSString stringWithFormat:@"0%ld",blue] : [NSString stringWithFormat:@"%ld",blue];
+    NSString *mess = [NSString stringWithFormat:@"%@，%@",[reds componentsJoinedByString:@" "],blueStr];
+    kAlert(mess,@"");
+//    NSLog(@"Balls_%@",mess);
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
