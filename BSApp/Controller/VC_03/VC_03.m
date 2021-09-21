@@ -8,7 +8,10 @@
 
 #import "VC_03.h"
 
-@interface VC_03 ()
+@interface VC_03 ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (strong, nonatomic) UITableView *tableView;
+@property (strong, nonatomic) NSArray *dataSource;
 
 @end
 
@@ -17,11 +20,57 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.dataSource = @[
+    @{@"title":@"UICollectionView",@"vctr":@"CollectionVCtr"}];
+
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,kNavBarHeight, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    self.tableView.tableFooterView = [UIView new];
+    [self.view addSubview:self.tableView];
 }
+
+
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return  1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return  self.dataSource.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    static NSString *IDE = @"cellinv3";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:IDE];
+    if(!cell){
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:IDE];
+    }
+    cell.textLabel.text = [self.dataSource[indexPath.row] valueForKey:@"title"];
+    return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    self.hidesBottomBarWhenPushed = YES;
+    
+    Class vc = NSClassFromString([self.dataSource[indexPath.row] valueForKey:@"vctr"]);
+    UIViewController *vctr = [[vc alloc]init];
+    [self.navigationController pushViewController:vctr animated:YES];
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
+ 
+    
 }
 
 /*

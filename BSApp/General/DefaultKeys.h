@@ -27,6 +27,7 @@
 #define kHudMessage_loadFailure @"数据加载失败！"
 #define kHudMessage_noMoreData  @"没有更多数据了！"
 
+
 #define kHudMessage_deleteData    @"正在删除数据..."
 #define kHudMessage_deleteSuccess @"数据删除成功！"
 #define kHudMessage_deleteFailure @"数据删除失败！"

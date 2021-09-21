@@ -105,6 +105,9 @@
 		057992411FB2FE3000F1E37C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992401FB2FE1F00F1E37C /* QuartzCore.framework */; };
 		057992431FB2FE5C00F1E37C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992421FB2FE5300F1E37C /* Foundation.framework */; };
 		057992451FB2FEF800F1E37C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057992441FB2FEEB00F1E37C /* UIKit.framework */; };
+		0584F4CC26F977BF00E07C9F /* CollectionVCtr.m in Sources */ = {isa = PBXBuildFile; fileRef = 0584F4CB26F977BF00E07C9F /* CollectionVCtr.m */; };
+		0584F4CF26F9CBCC00E07C9F /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0584F4CE26F9CBCC00E07C9F /* CollectionViewCell.m */; };
+		0584F4D226F9DE5B00E07C9F /* AdvertisingColumn.m in Sources */ = {isa = PBXBuildFile; fileRef = 0584F4D126F9DE5A00E07C9F /* AdvertisingColumn.m */; };
 		058BEA1D1FE7724300C49393 /* BSGuPiaoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */; };
 		059AC98F2022B7CE00E66F7C /* 常用代码块.m in Sources */ = {isa = PBXBuildFile; fileRef = 059AC98E2022B7CE00E66F7C /* 常用代码块.m */; };
 		05B29E16214F871E00A9993B /* BSFMDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B29E15214F871E00A9993B /* BSFMDBModel.m */; };
@@ -327,6 +330,12 @@
 		057992401FB2FE1F00F1E37C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		057992421FB2FE5300F1E37C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		057992441FB2FEEB00F1E37C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0584F4CA26F977BF00E07C9F /* CollectionVCtr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionVCtr.h; sourceTree = "<group>"; };
+		0584F4CB26F977BF00E07C9F /* CollectionVCtr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionVCtr.m; sourceTree = "<group>"; };
+		0584F4CD26F9CBCC00E07C9F /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		0584F4CE26F9CBCC00E07C9F /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		0584F4D026F9DE5800E07C9F /* AdvertisingColumn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdvertisingColumn.h; sourceTree = "<group>"; };
+		0584F4D126F9DE5A00E07C9F /* AdvertisingColumn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdvertisingColumn.m; sourceTree = "<group>"; };
 		058BEA1B1FE7724300C49393 /* BSGuPiaoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSGuPiaoVC.h; sourceTree = "<group>"; };
 		058BEA1C1FE7724300C49393 /* BSGuPiaoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSGuPiaoVC.m; sourceTree = "<group>"; };
 		059AC98E2022B7CE00E66F7C /* 常用代码块.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "常用代码块.m"; sourceTree = "<group>"; };
@@ -1212,6 +1221,12 @@
 			children = (
 				05B4D5521FB41F1800819CF8 /* VC_03.h */,
 				05B4D5531FB41F1800819CF8 /* VC_03.m */,
+				0584F4CA26F977BF00E07C9F /* CollectionVCtr.h */,
+				0584F4CB26F977BF00E07C9F /* CollectionVCtr.m */,
+				0584F4CD26F9CBCC00E07C9F /* CollectionViewCell.h */,
+				0584F4CE26F9CBCC00E07C9F /* CollectionViewCell.m */,
+				0584F4D026F9DE5800E07C9F /* AdvertisingColumn.h */,
+				0584F4D126F9DE5A00E07C9F /* AdvertisingColumn.m */,
 			);
 			path = VC_03;
 			sourceTree = "<group>";
@@ -1461,6 +1476,7 @@
 				057992171FB2FAA400F1E37C /* ZBAppObject.m in Sources */,
 				0579921D1FB2FAA400F1E37C /* ZBConvertStringObject.m in Sources */,
 				057992091FB2FAA400F1E37C /* BSAppObject.m in Sources */,
+				0584F4D226F9DE5B00E07C9F /* AdvertisingColumn.m in Sources */,
 				05435AF11FF5E7E100A9A5FA /* ZBStock.m in Sources */,
 				055232321FDA287D00C55711 /* BSTimeVC.m in Sources */,
 				05CF347A20085B0300B873C6 /* ZBTimeLunarCalendar.m in Sources */,
@@ -1509,6 +1525,7 @@
 				052AACE01FCBE7F600DC098F /* BSUpdate.m in Sources */,
 				0579921F1FB2FAA400F1E37C /* ZBPredicateObject.m in Sources */,
 				057992041FB2FAA400F1E37C /* RTLabel.m in Sources */,
+				0584F4CC26F977BF00E07C9F /* CollectionVCtr.m in Sources */,
 				0579920D1FB2FAA400F1E37C /* BSRegisterTool.m in Sources */,
 				0579923C1FB2FAA400F1E37C /* UIColor+Extension.m in Sources */,
 				057992371FB2FAA400F1E37C /* ZBDocumentInteractionTool.m in Sources */,
@@ -1526,6 +1543,7 @@
 				057992231FB2FAA400F1E37C /* ZBSandBoxObject.m in Sources */,
 				057991ED1FB2FAA400F1E37C /* BSTabBarCtrl.m in Sources */,
 				050253BB1FB2F496009735E2 /* AppDelegate.m in Sources */,
+				0584F4CF26F9CBCC00E07C9F /* CollectionViewCell.m in Sources */,
 				057992361FB2FAA400F1E37C /* NSArray+ZBCategory.m in Sources */,
 				057992181FB2FAA400F1E37C /* ZBTime.m in Sources */,
 				05B4D5681FB41F1800819CF8 /* VC_04.m in Sources */,

@@ -40,6 +40,7 @@
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView headerRefreshAction:^{
         NSLog(@"刷新开始");
         [self.tableView.mj_header beginRefreshing];

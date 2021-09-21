@@ -26,7 +26,7 @@
 
     
     NSArray *vctrArr = @[@"VC_01",@"VC_02",@"VC_03",@"VC_04"];
-    NSArray *tabTitleArr  = @[@"1",@"2",@"3",@"4"];
+    NSArray *tabTitleArr  = @[@"控件",@"业务",@"UI",@"其他"];
     NSArray *navTitleArr  = @[@"1",@"2",@"3",@"4"];
     NSArray *imgArr1  = @[@"tab_Home_1",@"tab_GB_1",@"tab_Match_1",@"tab_My_1"];
     NSArray *imgArr2  = @[@"tab_Home_2",@"tab_GB_2",@"tab_Match_2",@"tab_My_2"];
