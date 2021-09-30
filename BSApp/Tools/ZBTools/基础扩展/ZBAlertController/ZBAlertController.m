@@ -79,6 +79,10 @@
 }
 
 #pragma mark - 显示窗口
+-(void)alertShow{
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [self alertShow:viewController completion:nil];
+}
 /// 显示窗口，不指定显示viewController，在当前keyWindow中显示
 -(void)alertShow:(void (^)(void))completion{
     UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;

@@ -82,6 +82,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 显示窗口
 
+-(void)alertShow;
+
 /// 显示窗口，不指定显示viewController，在当前keyWindow中显示
 /// @param completion 显示完成后回调
 -(void)alertShow:(void (^ __nullable)(void))completion;

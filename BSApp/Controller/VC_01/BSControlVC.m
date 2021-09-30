@@ -120,18 +120,16 @@
        NSLog(@"alert打开完成");
     }];
     
-//    [ac alertShow:^{
-//        NSLog(@"弹窗打开完成");
-//    }];
 
 }
 -(void)btnaction2{
     ZBAlertController *sheet = [ZBAlertController sheet:@"sheet" messge:@"sheet测试" actions:kAlertActions handler:^(UIAlertAction * _Nonnull action) {
         NSLog(@"%@",action.title);
     }];
-    [sheet alertShow:^{
-        NSLog(@"sheet显示");
-    }];
+    [sheet alertShow];
+//    [sheet alertShow:^{
+//        NSLog(@"sheet显示");
+//    }];
     
     
 }
