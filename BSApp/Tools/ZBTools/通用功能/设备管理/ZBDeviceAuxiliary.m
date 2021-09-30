@@ -146,4 +146,23 @@
     
 }
 
++(CGFloat)statusBarHeight{
+    CGFloat height = 0;
+    if(@available(iOS 13.0,*)){
+        height = [UIApplication sharedApplication].windows.firstObject.windowScene.statusBarManager.statusBarFrame.size.height;
+    }else{
+        height = [UIApplication sharedApplication].statusBarFrame.size.height;
+    }
+    return height;
+}
+
++(CGFloat)navigationBarHeight:(UIViewController *)viewController{
+    CGFloat height = viewController.navigationController.navigationBar.frame.size.height + [self statusBarHeight];
+    return height;
+}
+
++(CGFloat)tabBarHeight:(UIViewController *)viewController{
+    CGFloat height = viewController.tabBarController.tabBar.bounds.size.height;
+    return height;
+}
 @end

@@ -38,7 +38,7 @@
         for (int j = 0; j < 2; j++) {
             
             CGFloat wid =  (kScreenWidth-gap*3)/2;
-            BSListCell *cell = [[BSListCell alloc]initWithFrame:CGRectMake(gap+(gap+wid)*j, kNavBarHeight+10+(gap+hei)*i,wid, hei) title:titles[i][j] placeholder:@"0" leftViewWidth:75];
+            BSListCell *cell = [[BSListCell alloc]initWithFrame:CGRectMake(gap+(gap+wid)*j, kNavigationBarHeight(self)+10+(gap+hei)*i,wid, hei) title:titles[i][j] placeholder:@"0" leftViewWidth:75];
             cell.inputTF.tag = tg;
             cell.fontSize = 13;
             cell.inputTF.delegate = self;

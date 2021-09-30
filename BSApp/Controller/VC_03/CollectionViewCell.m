@@ -15,7 +15,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor purpleColor];
+//        self.backgroundColor = [UIColor purpleColor];
+        
+        self.contentView.layer.cornerRadius = 10.0;
+        self.contentView.layer.shadowColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.1].CGColor;
+        self.contentView.layer.shadowOffset = CGSizeMake(0,10);
+        self.contentView.layer.shadowOpacity = 1;
+        self.contentView.layer.shadowRadius = 4;
+        self.contentView.layer.backgroundColor = kRedColor.CGColor;
+        
         
         self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(5, 5, CGRectGetWidth(self.frame)-10, CGRectGetWidth(self.frame)-10)];
         self.imgView.backgroundColor = [UIColor groupTableViewBackgroundColor];
@@ -34,6 +42,15 @@
         [self addSubview:self.btn];
     }
     return self;
+}
+
+-(void)setData:(NSDictionary *)data{
+    _data = data;
+    UIColor *color =  (UIColor *)data[@"color"];
+    self.contentView.layer.backgroundColor = color.CGColor;
+    self.imgView.image = [UIImage imageNamed:data[@"image_name"]];
+    self.text.text = data[@"main_title"];
+    [self.btn setTitle:data[@"btn_title"] forState:0];
 }
 
 @end

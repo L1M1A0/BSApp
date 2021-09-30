@@ -45,7 +45,8 @@
     CGFloat btnWidth = frame.size.height-leftGap*2;
     CGFloat textFWidth = frame.size.width - btnWidth * 2 - leftGap * 3;
     
-    self.leftBtn = [UIButton button:CGRectZero title:@"" tColor:kBlackColor target:self action:@selector(btnAction:)];
+    self.leftBtn = [UIButton button:CGRectZero title:@""];
+    [self.leftBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     self.leftBtn.backgroundColor = RGB(0, 146, 255);
     [self.leftBtn image:@"icon_jian"];
     self.leftBtn.tag = 1;
@@ -72,7 +73,8 @@
     }];
     
     
-    self.rightBtn = [UIButton button:CGRectZero title:@"" tColor:kBlackColor target:self action:@selector(btnAction:)];
+    self.rightBtn = [UIButton button:CGRectZero title:@""];
+    [self.rightBtn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
     self.rightBtn.tag = 2;
     self.rightBtn.backgroundColor = RGB(0, 146, 255);
     [self.rightBtn image:@"icon_jia"];

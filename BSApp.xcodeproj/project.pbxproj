@@ -134,6 +134,7 @@
 		05ED6FE81FBD3663001D3D4A /* UITableViewCell+ZBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ED6FE71FBD3663001D3D4A /* UITableViewCell+ZBCategory.m */; };
 		05ED6FEB1FBD71B2001D3D4A /* ZBTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ED6FEA1FBD71B2001D3D4A /* ZBTableViewCell.m */; };
 		05F3AA2B1FC6C87800BEF5DF /* ZBStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F3AA2A1FC6C87800BEF5DF /* ZBStatusBar.m */; };
+		05FF55E427055410005B3980 /* NSDictionary+ZBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 05FF55E327055410005B3980 /* NSDictionary+ZBCategory.m */; };
 		AEE4D55594B86C96AD394FFA /* libPods-BSApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FCEAB718BDC11C65D6F74B /* libPods-BSApp.a */; };
 /* End PBXBuildFile section */
 
@@ -380,6 +381,8 @@
 		05ED6FEA1FBD71B2001D3D4A /* ZBTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBTableViewCell.m; sourceTree = "<group>"; };
 		05F3AA291FC6C87800BEF5DF /* ZBStatusBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZBStatusBar.h; sourceTree = "<group>"; };
 		05F3AA2A1FC6C87800BEF5DF /* ZBStatusBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZBStatusBar.m; sourceTree = "<group>"; };
+		05FF55E227055410005B3980 /* NSDictionary+ZBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ZBCategory.h"; sourceTree = "<group>"; };
+		05FF55E327055410005B3980 /* NSDictionary+ZBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ZBCategory.m"; sourceTree = "<group>"; };
 		94FCEAB718BDC11C65D6F74B /* libPods-BSApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BSApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79762A03F435D93BA1A2A3D /* Pods-BSApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BSApp/Pods-BSApp.debug.xcconfig"; sourceTree = "<group>"; };
 		EBCB78F87915822B11F3F6C5 /* Pods-BSApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BSApp/Pods-BSApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -486,6 +489,7 @@
 			children = (
 				05C07D5B23540EC700A49EB4 /* UIView+BorderLine.h */,
 				05C07D5C23540EC700A49EB4 /* UIView+BorderLine.m */,
+				05FF55E127055410005B3980 /* ZBDictionary */,
 				053858051FCFEC0800C65796 /* ZBPasteboard */,
 				05F3AA281FC6C80A00BEF5DF /* ZBStatusBar */,
 				053E64AC1FB582C9007027F2 /* ZBAlertController */,
@@ -1272,6 +1276,15 @@
 			path = ZBStatusBar;
 			sourceTree = "<group>";
 		};
+		05FF55E127055410005B3980 /* ZBDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				05FF55E227055410005B3980 /* NSDictionary+ZBCategory.h */,
+				05FF55E327055410005B3980 /* NSDictionary+ZBCategory.m */,
+			);
+			path = ZBDictionary;
+			sourceTree = "<group>";
+		};
 		0C766BFDF5E80E5742CDAE08 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1526,6 +1539,7 @@
 				0579921F1FB2FAA400F1E37C /* ZBPredicateObject.m in Sources */,
 				057992041FB2FAA400F1E37C /* RTLabel.m in Sources */,
 				0584F4CC26F977BF00E07C9F /* CollectionVCtr.m in Sources */,
+				05FF55E427055410005B3980 /* NSDictionary+ZBCategory.m in Sources */,
 				0579920D1FB2FAA400F1E37C /* BSRegisterTool.m in Sources */,
 				0579923C1FB2FAA400F1E37C /* UIColor+Extension.m in Sources */,
 				057992371FB2FAA400F1E37C /* ZBDocumentInteractionTool.m in Sources */,

@@ -63,7 +63,7 @@
 //    self.tabBar.bounds.size.height
     
     CGFloat tabbarItemHeight = self.tabBar.bounds.size.height;
-    tabbarItemHeight = kTabBarHeight;
+    tabbarItemHeight = kTabBarHeight2;
     
     
     CGSize indicatorItemSize = CGSizeMake(self.tabBar.bounds.size.width/[vctrArr count],tabbarItemHeight);

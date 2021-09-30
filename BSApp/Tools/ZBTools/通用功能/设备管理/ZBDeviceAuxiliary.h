@@ -39,10 +39,19 @@
 #define is_iPhoneXs ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 #define is_iPhoneXs_Max ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2688), [[UIScreen mainScreen] currentMode].size) : NO)
 
-//iPhoneX系列
-#define kStatusBarHeight ((is_iPhoneX==YES || is_iPhoneXr ==YES || is_iPhoneXs== YES || is_iPhoneXs_Max== YES) ? 44.0 : 20.0)
-#define kNavBarHeight    ((is_iPhoneX==YES || is_iPhoneXr ==YES || is_iPhoneXs== YES || is_iPhoneXs_Max== YES) ? 88.0 : 64.0)
-#define kTabBarHeight    ((is_iPhoneX==YES || is_iPhoneXr ==YES || is_iPhoneXs== YES || is_iPhoneXs_Max== YES) ? 83.0 : 49.0)
+#define is_iPhone12 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1170, 2532), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhone12_mini ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1080, 2340), [[UIScreen mainScreen] currentMode].size) : NO)
+#define is_iPhone12_Max_pro ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1282, 2778), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define kIsiPhone12Series ((is_iPhone12==YES || is_iPhone12_mini ==YES || is_iPhone12_Max_pro== YES) ? YES : NO)
+#define kIsMaxStatusBarSeries ((is_iPhoneX==YES || is_iPhoneXr ==YES || is_iPhoneXs== YES || is_iPhoneXs_Max== YES) ? YES : NO)
+
+
+//iPhone 特性高度计算
+#define kStatusBarHeight  ([ZBDeviceAuxiliary statusBarHeight])
+#define kNavigationBarHeight(viewController)   ([ZBDeviceAuxiliary navigationBarHeight:viewController])
+#define kTabBarHeight(viewController)   ([ZBDeviceAuxiliary tabBarHeight:viewController])
+#define kTabBarHeight2 ((kIsMaxStatusBarSeries==YES || kIsiPhone12Series==YES) ? 83.0 : 49.0)
 
 
 /** 设备型号*通过像素点判断 */
@@ -123,4 +132,18 @@
  @return 如iPhone 6
  */
 + (NSString *)deviceModel;
+
+
+/// 获取状态栏高度
++ (CGFloat)statusBarHeight;
+
+
+/// 获取导航栏高度（包含状态栏）
+/// @param viewController  当前viewController，传入self
++ (CGFloat)navigationBarHeight:(UIViewController *)viewController;
+
+/// 获取底部标签栏高度
+/// @param viewController 当前viewController，传入self
++(CGFloat)tabBarHeight:(UIViewController *)viewController;
+
 @end

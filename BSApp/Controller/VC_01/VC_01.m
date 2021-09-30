@@ -40,13 +40,21 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES];
+    [self.tabBarController.tabBar setHidden:NO];
+    self.hidesBottomBarWhenPushed = NO;//解决push页面之后，返回后切换tabbarItem导致的tabbar隐藏问题
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     vctrs = @[@"BSControlVC",@"BSFMDBVC",@"BSTimeVC",@"BSStatusVC",@"双色球"];
     texts = @[@"控件页面",@"FMDB数据库",@"时间管理",@"状态栏与横屏",@"双色球"];
 
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavBarHeight) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kNavigationBarHeight(self)) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [UIView new];
@@ -106,13 +114,18 @@
         [self doubleColorBall];
     }else{
 
-        Class vcName = NSClassFromString(vctrs[indexPath.row]);
-        UIViewController * vc = [[vcName alloc]init];
+        [self setHidesBottomBarWhenPushed:YES];
+        [self.tabBarController.tabBar setHidden:YES];
+        Class vcname = NSClassFromString(vctrs[indexPath.row]);
+        UIViewController *vc = [[vcname alloc]init];
         vc.title = texts[indexPath.row];
-        vc.hidesBottomBarWhenPushed = YES;
         vc.view.backgroundColor = kWhiteColor;
         [self.navigationController pushViewController:vc animated:YES];
     }
+    
+    
+    
+    
     
 
 }

@@ -10,37 +10,11 @@
 
 @implementation UIButton (ZBCategory)
 
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor{
-    
-    UIButton *button = [self button:frame title:title tColor:tColor bColor:kClearColor imageName:@""];
-    return button;
-}
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor bColor:(UIColor *)bgColor{
-    
-    UIButton *button = [self button:frame title:title tColor:tColor bColor:bgColor imageName:@""];
-    return button;
-}
 
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor bgImageName:(NSString *)bgImageName{
-    
-    UIButton *button = [self button:frame title:title tColor:tColor bColor:kClearColor imageName:bgImageName];
-    
-    return button;
-}
-
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor target:(id)target action:(SEL)action{
-    UIButton *button = [self button:frame title:title tColor:tColor bColor:kClearColor imageName:@""];
-    [button tag:0 target:target action:action];
-    return button;
-}
-
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor bColor:(UIColor *)bgColor imageName:(NSString *)imageName{
++ (UIButton *)button:(CGRect)frame title:(NSString *)title {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:frame];
     [button setTitle:title forState:UIControlStateNormal];
-    [button setTitleColor:tColor forState:UIControlStateNormal];
-    [button setBackgroundImage:kImage(imageName) forState:UIControlStateNormal];
-    [button setBackgroundColor:bgColor];
     [button.titleLabel setTextAlignment:NSTextAlignmentCenter];
 //    [button setContentHorizontalAlignment:UIControlContentHorizontalAlignmentLeft];//文字居左
     return button;
@@ -49,6 +23,11 @@
 
 
 #pragma mark - 附属设置
+
+- (void)target:(id)target action:(SEL)action{
+    [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+}
+
 - (void)tag:(NSInteger)tag target:(id)target action:(SEL)action{
     [self setTag:tag];
     [self addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];

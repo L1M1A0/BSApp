@@ -42,7 +42,7 @@
  @return Message-Digest Algorithm 5（信息-摘要算法5）
  */
 + (NSString *)MD5:(NSString *)string;
-
++ (NSString *)MD5:(NSString *)string bitLength:(NSInteger)bitLength;
 
 /**
  生成token

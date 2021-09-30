@@ -18,17 +18,9 @@
 
  @param frame frame
  @param title title
- @param tColor title color
- @param bgColor background color
- @param imageName imageName
  @return UIbutton
  */
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor bColor:(UIColor *)bgColor imageName:(NSString *)imageName;
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor;
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor bColor:(UIColor *)bgColor;
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor bgImageName:(NSString *)bgImageName;
-+ (UIButton *)button:(CGRect)frame title:(NSString *)title tColor:(UIColor *)tColor target:(id)target action:(SEL)action;
-
++ (UIButton *)button:(CGRect)frame title:(NSString *)title;
 
 #pragma mark - 属性扩展
 /**
@@ -39,6 +31,7 @@
  @param action 响应方法
  */
 - (void)tag:(NSInteger)tag target:(id)target action:(SEL)action;
+- (void)target:(id)target action:(SEL)action;
 
 - (void)isBtnCanUse:(BOOL)isBtnCanUse;
 

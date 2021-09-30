@@ -16,6 +16,12 @@
 @end
 
 @implementation VC_03
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.tabBarController.tabBar setHidden:NO];
+    self.hidesBottomBarWhenPushed = NO;//解决push页面之后，返回后切换tabbarItem导致的tabbar隐藏问题
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +30,7 @@
     self.dataSource = @[
     @{@"title":@"UICollectionView",@"vctr":@"CollectionVCtr"}];
 
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,kNavBarHeight, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,kNavigationBarHeight(self), kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.tableFooterView = [UIView new];

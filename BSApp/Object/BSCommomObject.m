@@ -13,7 +13,7 @@
 @implementation BSCommomObject
 
 +(UIButton *)cycleButton:(CGRect)frame image:(NSString *)image target:(id)target action:(SEL)action{
-    UIButton *btn = [UIButton button:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.width) title:nil tColor:[UIColor clearColor] bColor:RGBAlpha(255, 255, 255, 0.4) imageName:@""];
+    UIButton *btn = [UIButton button:CGRectMake(frame.origin.x, frame.origin.y, frame.size.width, frame.size.width) title:@""];
     [btn setImage:[UIImage imageNamed:image] forState:0];
     [btn tag:0 target:target action:action];
     [btn layerWidth:0 color:kClearColor masksToBounds:YES cornerRadius:frame.size.width/2];

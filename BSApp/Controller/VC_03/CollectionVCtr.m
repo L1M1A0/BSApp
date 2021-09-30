@@ -19,6 +19,7 @@ static NSString *headidne = @"headidne111";
 @property (strong, nonatomic) AdvertisingColumn *headView; //广告栏
 @property (strong, nonatomic) UICollectionView *collectView;
 @property (copy, nonatomic) NSArray *datas;
+@property (copy, nonatomic) NSDictionary *funcNameDic;
 
 @end
 
@@ -29,7 +30,42 @@ static NSString *headidne = @"headidne111";
     // Do any additional setup after loading the view.
     self.view.backgroundColor = kWhiteColor;
     self.title = @"自定义UICollectionView";
+    [self initData];
+    [self creatView];
     
+//    self.datas = [imgArray mutableCopy];
+    
+}
+-(void)initData{
+    self.funcNameDic = @{
+        @"cat1":@"cat1",
+        @"cat2":@"cat2",
+        @"cat3":@"cat3",
+        @"cat4":@"cat4",
+        @"cat5":@"cat5",
+        @"cat6":@"cat6",
+        @"cat7":@"cat7",
+        @"cat8":@"cat8",
+        @"cat9":@"cat9",
+        @"cat10":@"cat10"
+    };
+    
+    self.datas = @[
+        @{@"main_title":self.funcNameDic[@"cat1"],@"btn_title":@"cat1",@"image_name":@"cat.png",@"color":RGBAlpha(255, 243, 197, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat2"],@"btn_title":@"cat1",@"image_name":@"cat.png",@"color":RGBAlpha(255, 243, 197, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat3"],@"btn_title":@"cat3",@"image_name":@"cat.png",@"color":RGBAlpha(252, 226, 215, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat4"],@"btn_title":@"cat4",@"image_name":@"cat.png",@"color":RGBAlpha(223, 223, 255, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat5"],@"btn_title":@"cat5",@"image_name":@"cat.png",@"color":RGBAlpha(255, 247, 224, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat6"],@"btn_title":@"cat6",@"image_name":@"cat.png",@"color":RGBAlpha(210, 249, 254, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat7"],@"btn_title":@"cat7",@"image_name":@"cat.png",@"color":RGBAlpha(223, 255, 237, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat8"],@"btn_title":@"cat8",@"image_name":@"cat.png",@"color":RGBAlpha(222, 240, 254, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat9"],@"btn_title":@"cat9",@"image_name":@"cat.png",@"color":RGBAlpha(255, 234, 236, 1.0),@"vctr":@""},
+        @{@"main_title":self.funcNameDic[@"cat10"],@"btn_title":@"cat10",@"image_name":@"cat.png",@"color":RGBAlpha(255, 243, 197, 1.0),@"vctr":@""}
+    ];
+    
+}
+
+-(void)creatView{
     [self.view addSubview:self.collectView];
     
     self.headView = [[AdvertisingColumn alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, headHeight)];
@@ -46,9 +82,8 @@ static NSString *headidne = @"headidne111";
     NSArray *imgArray = [NSArray arrayWithObjects:@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png",@"cat.png", nil];
     [self.headView setArray:imgArray];
     
-    self.datas = [imgArray mutableCopy];
-    
 }
+
 
 -(UICollectionView *)collectView{
     if(_collectView == nil){
@@ -107,8 +142,10 @@ static NSString *headidne = @"headidne111";
     
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellidne forIndexPath:indexPath];
     [cell sizeToFit];
-    cell.imgView.image = [UIImage imageNamed:self.datas[indexPath.item]];
-    cell.text.text = [NSString stringWithFormat:@"cat %ld",indexPath.item];
+//    cell.imgView.image = [UIImage imageNamed:self.datas[indexPath.item]];
+//    cell.text.text = [NSString stringWithFormat:@"cat %ld",indexPath.item];
+    cell.data = self.datas[indexPath.item];
+
     return cell;
 }
 

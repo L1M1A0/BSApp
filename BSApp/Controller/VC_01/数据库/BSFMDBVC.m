@@ -34,6 +34,11 @@
 @end
 
 @implementation BSFMDBVC
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+  
+}
 - (void)viewDidLoad {
     // Do any additional setup after loading the view, typically from a nib.
     [super viewDidLoad];
@@ -92,7 +97,7 @@
 }
 
 -(BSListCell *)cell:(CGFloat)index title:(NSString *)title holder:(NSString *)holder{
-    BSListCell *cell = [[BSListCell alloc]initWithFrame:CGRectMake(10, kNavBarHeight+10+(35+10)*index, kScreenWidth-20, 35) title:title placeholder:holder leftViewWidth:80];
+    BSListCell *cell = [[BSListCell alloc]initWithFrame:CGRectMake(10, kNavigationBarHeight(self)+10+(35+10)*index, kScreenWidth-20, 35) title:title placeholder:holder leftViewWidth:80];
     [cell showDefaultLayer:kRedColor];
     [self.view addSubview:cell];
     return cell;

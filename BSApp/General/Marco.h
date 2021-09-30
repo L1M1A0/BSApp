@@ -26,8 +26,9 @@
 //#endif
 
 /** 对NSLog的格式化宏 */
+//NSLOG 解决log没法正常显示中文:在"NSArray+ZBCategory.m" 和 "NSDictionary+ZBCategory.m"中重写方法- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level即可。参考地址：https://blog.csdn.net/saw471/article/details/73225094
 #if DEBUG
-#define NSLog(FORMAT, ...) fprintf(stderr,"\nfunction:%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#define NSLog(FORMAT, ...) fprintf(stderr,"\n%s line:%d content:%s\n", __FUNCTION__, __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 #else
 #define NSLog(FORMAT, ...) nil
 #endif

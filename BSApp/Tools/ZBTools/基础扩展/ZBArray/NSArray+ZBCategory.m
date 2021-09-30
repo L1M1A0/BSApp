@@ -10,6 +10,26 @@
 
 @implementation NSArray (ZBCategory)
 
+
+/// 重写此方法后，NSLog中打印的中文能正常显示，目前还不知道有没有其他问题
+/// @param locale <#locale description#>
+/// @param level <#level description#>
+- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level {
+
+    NSMutableString *str = [NSMutableString stringWithFormat:@"%lu (\n", (unsigned long)self.count];
+
+    for (id obj in self) {
+
+        [str appendFormat:@"\t%@, \n", obj];
+
+    }
+
+    [str appendString:@")"];
+
+    return str;
+
+}
+
 /** 将一维数组转换成二维数组 */
 + (NSArray *)arrayTo2DArray:(NSArray *)array size:(NSInteger)size{
     

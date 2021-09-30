@@ -14,6 +14,11 @@
 @end
 
 @implementation BSControlVC
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO];
+  
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -40,12 +45,19 @@
     }];
     [self.view addSubview:imgv];
     
-    UIButton *btn = [UIButton button:CGRectMake(200, 100, 80, 50) title:@"弹窗" tColor:kWhiteColor bColor:kBlueColor];
+
+    
+    UIButton *btn = [UIButton button:CGRectMake(200, 100, 80, 50) title:@"ZBAlert"];
     [btn shadowColor:kPurpleColor opacity:0.9 radius:10 offset:CGSizeMake(0, -3)];
     [btn layerWidth:3 color:kGreenColor masksToBounds:NO cornerRadius:25];
     [btn tag:0 target:self action:@selector(btnaction)];
     [self.view addSubview:btn];
-  
+    
+    UIButton *btn2 = [UIButton button:CGRectMake(CGRectGetMaxX(btn.frame)+10, 100, 80, 50) title:@"ZBSheet"];
+    btn2.backgroundColor = kRedColor;
+    [btn2 target:self action:@selector(btnaction2)];
+    [self.view addSubview:btn2];
+    
     
     if(systemVersionInt >= 13){
         
@@ -59,6 +71,7 @@
         [tem shadowColor:kGrayColor opacity:1 radius:10 offset:CGSizeMake(0, -5)];
     }
 
+    
     
 }
 -(void)labAction{
@@ -104,13 +117,23 @@
     }];
 
     [ac alertShow:self completion:^{
-       NSLog(@"弹窗打开完成");
+       NSLog(@"alert打开完成");
     }];
     
 //    [ac alertShow:^{
 //        NSLog(@"弹窗打开完成");
 //    }];
 
+}
+-(void)btnaction2{
+    ZBAlertController *sheet = [ZBAlertController sheet:@"sheet" messge:@"sheet测试" actions:kAlertActions handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"%@",action.title);
+    }];
+    [sheet alertShow:^{
+        NSLog(@"sheet显示");
+    }];
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

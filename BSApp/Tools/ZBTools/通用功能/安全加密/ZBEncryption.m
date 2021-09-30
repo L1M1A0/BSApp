@@ -86,19 +86,22 @@
 }
 
 
-
-////32位MD5加密方式
-//- (NSString *)getMd5_32Bit_String:(NSString *)srcString{
-//    const char *cStr = [srcString UTF8String];
-//    unsigned char digest[CC_MD5_DIGEST_LENGTH];
-//    // CC_MD5( cStr, strlen(cStr), digest ); 这里的用法明显是错误的，但是不知道为什么依然可以在网络上得以流传。当srcString中包含空字符（\0）时
-//    CC_MD5( cStr, (unsigned int)self.length, digest );//self是字符串
-//    NSMutableString *result = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-//    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
-//        [result appendFormat:@"%02x", digest[i]];
-//
-//    return result;
-//}
++ (NSString *)MD5:(NSString *)string bitLength:(NSInteger)bitLength {
+    NSString *md5Str = nil;
+    const char *input = [string UTF8String];//UTF8转码
+    unsigned char result[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(input, (CC_LONG)strlen(input), result);
+    NSMutableString *digestStr = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];//直接先获取32位md5字符串,16位是通过它演化而来
+    for (NSInteger i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
+        [digestStr appendFormat:@"%02x", result[i]];//%02x即小写,%02X即大写
+    }
+    if (bitLength == 32) {
+        md5Str = digestStr;
+    } else {
+        md5Str = [digestStr substringWithRange:NSMakeRange(8, 16)];//16位的选择范围，有争议，有人说是NSMakeRange(7, 15)
+    }
+    return md5Str;
+}
 
 
 
@@ -139,3 +142,4 @@
 }
 
 @end
+

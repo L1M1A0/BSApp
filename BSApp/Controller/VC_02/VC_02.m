@@ -20,9 +20,12 @@
 
 @implementation VC_02
 
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+    [self.tabBarController.tabBar setHidden:NO];
+    self.hidesBottomBarWhenPushed = NO;//解决push页面之后，返回后切换tabbarItem导致的tabbar隐藏问题
+    
 }
 //-(void)viewDidAppear:(BOOL)animated{
 //    [super viewDidAppear:animated];
@@ -76,11 +79,16 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.hidesBottomBarWhenPushed = YES;
-    self.tabBarController.tabBar.hidden = YES;
-    Class vcclass = NSClassFromString(vctrls[indexPath.row]);
-    UIViewController *vc = [[vcclass alloc]init];
-    [self.navigationController pushViewController:vc animated:NO];
+    
+    if(![vctrls[indexPath.row] isEqualToString:@""]){
+        
+        [self setHidesBottomBarWhenPushed:YES];
+        [self.tabBarController.tabBar setHidden:YES];
+        
+        Class vcclass = NSClassFromString(vctrls[indexPath.row]);
+        UIViewController *vc = [[vcclass alloc]init];
+        [self.navigationController pushViewController:vc animated:NO];
+    }
     
 }
 
